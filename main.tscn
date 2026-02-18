@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bgs1s5f4qf2oq"]
+
+[ext_resource type="Script" uid="uid://mskcgyybb7od" path="res://Scripts/TileGenerator.cs" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://csphs4nufpcth" path="res://tile.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://3uayx624cber" path="res://Scripts/Camera.cs" id="3_h2yge"]
+
+[node name="Node2D" type="Node2D" unique_id=1331184047]
+
+[node name="Tiles" type="Node" parent="." unique_id=775533480]
+script = ExtResource("1_0xm2m")
+TileScene = ExtResource("2_0xm2m")
+
+[node name="Tile" parent="Tiles" unique_id=32004639 instance=ExtResource("2_0xm2m")]
+position = Vector2(128, 128)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1291291693]
+position_smoothing_enabled = true
+script = ExtResource("3_h2yge")
+PanSpeed = 8.0
+PanLerpFactor = 250.0
