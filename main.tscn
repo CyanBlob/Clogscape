@@ -2,19 +2,31 @@
 
 [ext_resource type="Script" uid="uid://mskcgyybb7od" path="res://Scripts/TileGenerator.cs" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://csphs4nufpcth" path="res://tile.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b4y6mahplg2se" path="res://tooltip_button.tscn" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://3uayx624cber" path="res://Scripts/Camera.cs" id="3_h2yge"]
 
 [node name="Node2D" type="Node2D" unique_id=1331184047]
-
-[node name="Tiles" type="Node" parent="." unique_id=775533480]
-script = ExtResource("1_0xm2m")
-TileScene = ExtResource("2_0xm2m")
-
-[node name="Tile" parent="Tiles" unique_id=32004639 instance=ExtResource("2_0xm2m")]
-position = Vector2(128, 128)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1291291693]
 position_smoothing_enabled = true
 script = ExtResource("3_h2yge")
 PanSpeed = 8.0
 PanLerpFactor = 250.0
+
+[node name="Tiles" type="Node" parent="." unique_id=775533480]
+script = ExtResource("1_0xm2m")
+TileScene = ExtResource("2_0xm2m")
+
+[node name="TooltipButton" parent="Tiles" unique_id=796071662 instance=ExtResource("3_1bvp3")]
+modulate = Color(0.9892371, 0.3679411, 0.9999997, 1)
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 319.0
+offset_bottom = 136.0
+mouse_filter = 1
+disabled = true
+
+[node name="Tile" parent="Tiles" unique_id=32004639 instance=ExtResource("2_0xm2m")]
+position = Vector2(128, 128)
+
+[connection signal="gui_input" from="Tiles/TooltipButton" to="Camera2D" method="_on_gui_input"]

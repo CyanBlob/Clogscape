@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b4y6mahplg2se"]
+
+[ext_resource type="Texture2D" uid="uid://clbko7tcgprob" path="res://icon.svg" id="1_gm1ki"]
+
+[node name="Button" type="Button" unique_id=796071662]
+z_index = 10
+offset_left = 128.0
+offset_top = -256.0
+offset_right = 447.0
+offset_bottom = -120.0
+text = "This is a sample button"
+icon = ExtResource("1_gm1ki")
