@@ -1,0 +1,3 @@
+[submodule "Resources/resource-packs"]
+	path = Resources/resource-packs
+	url = https://github.com/melkypie/resource-packs.git

@@ -27,7 +27,7 @@ public class Clog
     public int? collections_hiscores_rank { get; set; }
     // Items
     [JsonPropertyName("items")]
-    public Dictionary<String, List<Item>> sources {get; set;}
+    public Dictionary<string, List<Item>> sources { get; set; }
 }
 
 public class Source
@@ -64,7 +64,64 @@ public class ClogItems {
     public Dictionary<String, String> items {get; set;}
 }
 
+public class ItemOverview
+{
+    public string batchcomplete { get; set; }
+
+    public ItemOverviewQuery query { get; set; }
+
+    public string GetFirstThumbnailUrl()
+    {
+        if (query?.pages == null) return null;
+        foreach (var p in query.pages.Values)
+        {
+            if (p?.thumbnail?.source != null) return p.thumbnail.source;
+        }
+        return null;
+    }
+}
+
+public class ItemOverviewQuery
+{
+    public List<ItemOverviewNormalized> normalized { get; set; }
+
+    public Dictionary<string, ItemOverviewPage> pages { get; set; }
+}
+
+public class ItemOverviewNormalized
+{
+    public string from { get; set; }
+
+    public string to { get; set; }
+}
+
+public class ItemOverviewPage
+{
+    public int pageid { get; set; }
+
+    public int ns { get; set; }
+
+    public string title { get; set; }
+
+    public ItemOverviewThumbnail thumbnail { get; set; }
+
+    public string pageimage { get; set; }
+}
+
+public class ItemOverviewThumbnail
+{
+    public string source { get; set; }
+
+    public int width { get; set; }
+
+    public int height { get; set; }
+}
+/// End item overview
 public class ClogItemsIntId {
     public Dictionary<int, String> items {get; set;}
 }
 /// End clog items API
+/// Begin item thumbnail API
+/// Begin item thumbnail API
+// Duplicate/empty placeholder removed — thumbnail types are defined above.
+/// End item thumbnail API

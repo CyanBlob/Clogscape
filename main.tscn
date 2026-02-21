@@ -48,6 +48,13 @@ layout_mode = 2
 text = "Items"
 script = ExtResource("5_lquwl")
 
+[node name="ItemIconsButtom" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=787997725]
+z_index = 104
+layout_mode = 2
+text = "Items with icons"
+script = ExtResource("5_lquwl")
+
 [connection signal="gui_input" from="Tiles/TooltipButton" to="Camera2D" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/SyncButton" to="CanvasLayer/VBoxContainer/SyncButton" method="_on_sync_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ItemsButton" to="CanvasLayer/VBoxContainer/ItemsButton" method="_on_items_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ItemIconsButtom" to="CanvasLayer/VBoxContainer/ItemIconsButtom" method="_on_items_with_icons_pressed"]

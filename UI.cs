@@ -1,17 +1,27 @@
 using Godot;
 using System;
+using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
 using HttpClient = System.Net.Http.HttpClient;
 
 public partial class UI : Button
 {
     // HttpClient is intended to be instantiated once per application, rather than per-use. See Remarks.
-    static readonly HttpClient client = new HttpClient();
+    static HttpClient client;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        client = new HttpClient();
+        client.DefaultRequestHeaders.UserAgent.ParseAdd(
+            "Clogscape/1.0 (+https://github.com/CyanBlob/clogscape; andrewthomas255@duck.com)");
+
+        //client.DefaultRequestHeaders.UserAgent.ParseAdd(
+        //"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36");
+        client.DefaultRequestHeaders.Accept.ParseAdd("image/*,*/*;q=0.8");
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,7 +32,6 @@ public partial class UI : Button
     public async void _on_sync_pressed()
     {
         GD.Print("Sync");
-        // Call asynchronous network methods in a try/catch block to handle exceptions.
         try
         {
             using HttpResponseMessage response = await client.GetAsync("https://templeosrs.com/api/collection-log/player_collection_log.php?player=MagentaBlob&categories=bosses%2Craids%2Cclues%2Cminigames%2Cother&includenames=1&dateformat=unix");
@@ -55,7 +64,6 @@ public partial class UI : Button
     public async void _on_items_button_pressed()
     {
         GD.Print("Items");
-        // Call asynchronous network methods in a try/catch block to handle exceptions.
         try
         {
             HttpResponseMessage response = await client.GetAsync("https://templeosrs.com/api/collection-log/categories.php?");
@@ -78,7 +86,7 @@ public partial class UI : Button
 
             foreach (var item in items.items)
             {
-               itemsIntId.items.Add(Int32.Parse(item.Key), item.Value);
+                itemsIntId.items.Add(Int32.Parse(item.Key), item.Value);
             }
 
             foreach (var boss in categories.bosses)
@@ -89,6 +97,83 @@ public partial class UI : Button
                     GD.Print($"\t{itemsIntId.items[item]}");
                 }
             }
+        }
+        catch (HttpRequestException e)
+        {
+            Console.WriteLine("\nException Caught!");
+            Console.WriteLine("Message :{0} ", e.Message);
+        }
+    }
+
+    public async void _on_items_with_icons_pressed()
+    {
+        GD.Print("Items with icons");
+        try
+        {
+            //HttpResponseMessage response = await client.GetAsync("https://templeosrs.com/api/collection-log/categories.php?");
+            //response.EnsureSuccessStatusCode();
+            //string responseBody = await response.Content.ReadAsStringAsync();
+
+            //ClogCategories categories = await response.Content.ReadFromJsonAsync<ClogCategories>();
+            //GD.Print(categories.bosses);
+
+            HttpResponseMessage response = await client.GetAsync("https://templeosrs.com/api/collection-log/items.php");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+            ClogItems items = await response.Content.ReadFromJsonAsync<ClogItems>();
+
+            //var basePngUri = "https://oldschool.runescape.wiki/w/File:";
+
+            var queryUri = "https://oldschool.runescape.wiki/api.php?action=query&titles=<ITEM_NAME>&prop=pageimages&format=json&pithumbsize=64";
+
+            GD.Print("Downloading...");
+            foreach (var item in items.items)
+            {
+                var query = queryUri.Replace("<ITEM_NAME>", item.Value.Replace(" ", "_"));
+                String thumbnailQuery = "";
+                ItemOverview overview = new();
+                try
+                {
+
+                    response = await client.GetAsync(query);
+
+                    overview = await response.Content.ReadFromJsonAsync<ItemOverview>();
+
+                    thumbnailQuery = overview.GetFirstThumbnailUrl();
+                    response = await client.GetAsync(thumbnailQuery);
+                    var bytes = await response.Content.ReadAsByteArrayAsync();
+
+                    var file = File.OpenWrite($"Resources/Items/{item.Value}.png");
+                    file.Write(bytes);
+                }
+                catch
+                {
+                    GD.Print($"Warning: Failed to download thumbnail for: {item.Value}");
+                    GD.Print(query);
+                    GD.Print(thumbnailQuery);
+                }
+            }
+            GD.Print("Downloading complete");
+
+            /*var basePngUri = "https://oldschool.runescape.wiki/images/";
+            var basePngUriSuffix = "_detail.png";
+
+            foreach (var item in items.items)
+            {
+                var uri = $"{basePngUri}{item.Key.Replace(" ", "_")}{basePngUriSuffix}";
+                GD.Print(uri);
+                response = await client.GetAsync(uri);
+
+                var file = File.OpenWrite($"Resources/Items/{item.Key}.png");
+                //var bytes = await response.Content.ReadAsByteArrayAsync();
+                var strbytes = await response.Content.ReadAsStringAsync();
+                var bytes = Encoding.Unicode.GetBytes(strbytes);
+
+                file.Write(bytes);
+                break;
+            }*/
+
         }
         catch (HttpRequestException e)
         {
