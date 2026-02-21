@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://csphs4nufpcth" path="res://tile.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b4y6mahplg2se" path="res://tooltip_button.tscn" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://3uayx624cber" path="res://Scripts/Camera.cs" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://gbf8301f1iv3" path="res://UI.cs" id="5_lquwl"]
 
 [node name="Node2D" type="Node2D" unique_id=1331184047]
 
@@ -29,4 +30,14 @@ disabled = true
 [node name="Tile" parent="Tiles" unique_id=32004639 instance=ExtResource("2_0xm2m")]
 position = Vector2(128, 128)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=996357377]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1734037534]
+z_index = 104
+offset_right = 44.0
+offset_bottom = 31.0
+text = "Sync"
+script = ExtResource("5_lquwl")
+
 [connection signal="gui_input" from="Tiles/TooltipButton" to="Camera2D" method="_on_gui_input"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_sync_pressed"]
