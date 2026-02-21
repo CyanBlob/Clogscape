@@ -42,7 +42,52 @@ public partial class UI : Button
             foreach (var source in clog.sources)
             {
                 foreach (var item in source.Value)
-                GD.Print($"{source.Key}: {item.name}");
+                    GD.Print($"{source.Key}: {item.name}");
+            }
+        }
+        catch (HttpRequestException e)
+        {
+            Console.WriteLine("\nException Caught!");
+            Console.WriteLine("Message :{0} ", e.Message);
+        }
+    }
+
+    public async void _on_items_button_pressed()
+    {
+        GD.Print("Items");
+        // Call asynchronous network methods in a try/catch block to handle exceptions.
+        try
+        {
+            HttpResponseMessage response = await client.GetAsync("https://templeosrs.com/api/collection-log/categories.php?");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+            ClogCategories categories = await response.Content.ReadFromJsonAsync<ClogCategories>();
+            GD.Print(categories.bosses);
+
+            response = await client.GetAsync("https://templeosrs.com/api/collection-log/items.php");
+            response.EnsureSuccessStatusCode();
+            responseBody = await response.Content.ReadAsStringAsync();
+
+            ClogItems items = await response.Content.ReadFromJsonAsync<ClogItems>();
+
+            ClogItemsIntId itemsIntId = new()
+            {
+                items = new()
+            };
+
+            foreach (var item in items.items)
+            {
+               itemsIntId.items.Add(Int32.Parse(item.Key), item.Value);
+            }
+
+            foreach (var boss in categories.bosses)
+            {
+                GD.Print($"{boss.Key}:");
+                foreach (var item in boss.Value)
+                {
+                    GD.Print($"\t{itemsIntId.items[item]}");
+                }
             }
         }
         catch (HttpRequestException e)

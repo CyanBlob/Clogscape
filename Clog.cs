@@ -7,6 +7,7 @@ public class ClogData
     public Clog data {get; set;}
 }
 
+/// Begin player clog API
 public class Clog
 {
     public String player { get; set; }
@@ -41,3 +42,29 @@ public class Item
     public int date{get; set;}
     public String name{get; set;}
 }
+
+/// End player clog API
+
+/// Begin clog categories API
+public class ClogCategories {
+    public Dictionary<string, List<int>> bosses { get; set; }
+    public Dictionary<string, List<int>> raids { get; set; }
+    public Dictionary<string, List<int>> clues { get; set; }
+    public Dictionary<string, List<int>> minigames { get; set; }
+    public Dictionary<string, List<int>> other { get; set; }
+}
+
+public class ClogCategory {
+    public Dictionary<String, List<int>> CategoryEntry {get; set;}
+}
+/// End clog categories API
+
+/// Begin clog items API
+public class ClogItems {
+    public Dictionary<String, String> items {get; set;}
+}
+
+public class ClogItemsIntId {
+    public Dictionary<int, String> items {get; set;}
+}
+/// End clog items API

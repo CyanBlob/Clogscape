@@ -32,12 +32,22 @@ position = Vector2(128, 128)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=996357377]
 
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=1734037534]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1342843202]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SyncButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1734037534]
 z_index = 104
-offset_right = 44.0
-offset_bottom = 31.0
+layout_mode = 2
 text = "Sync"
 script = ExtResource("5_lquwl")
 
+[node name="ItemsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=618121912]
+z_index = 104
+layout_mode = 2
+text = "Items"
+script = ExtResource("5_lquwl")
+
 [connection signal="gui_input" from="Tiles/TooltipButton" to="Camera2D" method="_on_gui_input"]
-[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_sync_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/SyncButton" to="CanvasLayer/VBoxContainer/SyncButton" method="_on_sync_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ItemsButton" to="CanvasLayer/VBoxContainer/ItemsButton" method="_on_items_button_pressed"]
