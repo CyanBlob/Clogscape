@@ -17,6 +17,7 @@ PanLerpFactor = 250.0
 [node name="Tiles" type="Node" parent="." unique_id=775533480]
 script = ExtResource("1_0xm2m")
 TileScene = ExtResource("2_0xm2m")
+TileSpacing = 8
 
 [node name="TooltipButton" parent="Tiles" unique_id=796071662 instance=ExtResource("3_1bvp3")]
 modulate = Color(0.9892371, 0.3679411, 0.9999997, 1)
@@ -28,6 +29,7 @@ mouse_filter = 1
 disabled = true
 
 [node name="Tile" parent="Tiles" unique_id=32004639 instance=ExtResource("2_0xm2m")]
+visible = false
 position = Vector2(128, 128)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=996357377]
@@ -51,6 +53,7 @@ script = ExtResource("5_lquwl")
 [node name="ItemIconsButtom" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=787997725]
 z_index = 104
 layout_mode = 2
+disabled = true
 text = "Items with icons"
 script = ExtResource("5_lquwl")
 

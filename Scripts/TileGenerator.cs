@@ -23,8 +23,15 @@ public partial class TileGenerator : Node
         {
             for (int y = -GridSize + GridSize / 2; y < GridSize / 2; ++y)
             {
-                var instance = TileScene.Instantiate<Node2D>();
-                instance.Position = new Vector2(x * 128, y * 128);
+                var instance = TileScene.Instantiate<Sprite2D>();
+                instance.Position = new Vector2(x * (TileSize + TileSpacing), y * (TileSize + TileSpacing));
+
+                /*ImageTexture texture = new ImageTexture();
+                Image image = new Image();
+                image.Load("Resources/Items/3rd age amulet.png");
+                texture.SetImage(image);
+                instance.Texture = texture;*/
+
                 AddChild(instance);
             }
         }
