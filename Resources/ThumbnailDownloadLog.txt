@@ -1,0 +1,471 @@
+Godot Engine v4.6.1.stable.mono.official.14d19694e - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M2 Pro (Apple8)
+
+Items with icons
+Downloading...
+Warning: Failed to download thumbnail for: Trident of the seas (full)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Trident_of_the_seas_(full)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Torva full helm (damaged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Torva_full_helm_(damaged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Torva platebody (damaged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Torva_platebody_(damaged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Torva platelegs (damaged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Torva_platelegs_(damaged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Giant egg sac(full)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Giant_egg_sac(full)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Tome of water (empty)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Tome_of_water_(empty)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Tome of fire (empty)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Tome_of_fire_(empty)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Dragon legs/skirt ornament kit
+https://oldschool.runescape.wiki/api.php?action=query&titles=Dragon_legs/skirt_ornament_kit&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Dragon_legs%2Bskirt_ornament_kit_detail.png/64px-Dragon_legs%2Bskirt_ornament_kit_detail.png?55bcd
+Warning: Failed to download thumbnail for: Arceuus scarf
+https://oldschool.runescape.wiki/api.php?action=query&titles=Arceuus_scarf&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Hosidius scarf
+https://oldschool.runescape.wiki/api.php?action=query&titles=Hosidius_scarf&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Piscarilius scarf
+https://oldschool.runescape.wiki/api.php?action=query&titles=Piscarilius_scarf&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Shayzien scarf
+https://oldschool.runescape.wiki/api.php?action=query&titles=Shayzien_scarf&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Lovakengj scarf
+https://oldschool.runescape.wiki/api.php?action=query&titles=Lovakengj_scarf&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Amulet of glory (t4)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Amulet_of_glory_(t4)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Master scroll book (empty)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Master_scroll_book_(empty)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative helm
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_helm&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative full helm
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_full_helm&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative sword
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_sword&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative shield
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_shield&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative boots
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_boots&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative helm
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_helm&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative full helm
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_full_helm&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative sword
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_sword&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative shield
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_shield&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative boots
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_boots&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative helm
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_helm&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative full helm
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_full_helm&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative sword
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_sword&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative shield
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_shield&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative boots
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_boots&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Castlewars hood
+https://oldschool.runescape.wiki/api.php?action=query&titles=Castlewars_hood&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Castlewars cloak
+https://oldschool.runescape.wiki/api.php?action=query&titles=Castlewars_cloak&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Castlewars hood
+https://oldschool.runescape.wiki/api.php?action=query&titles=Castlewars_hood&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Castlewars cloak
+https://oldschool.runescape.wiki/api.php?action=query&titles=Castlewars_cloak&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Decorative armour
+https://oldschool.runescape.wiki/api.php?action=query&titles=Decorative_armour&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Ore pack
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ore_pack&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Abyssal pearls
+https://oldschool.runescape.wiki/api.php?action=query&titles=Abyssal_pearls&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Strange old lockpick (full)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Strange_old_lockpick_(full)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Ring of endurance (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ring_of_endurance_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Mysterious page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Mysterious_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Mysterious_page_detail.png/64px-Mysterious_page_detail.png?b149c
+Warning: Failed to download thumbnail for: Mysterious page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Mysterious_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Mysterious_page_detail.png/64px-Mysterious_page_detail.png?b149c
+Warning: Failed to download thumbnail for: Mysterious page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Mysterious_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Mysterious_page_detail.png/64px-Mysterious_page_detail.png?b149c
+Warning: Failed to download thumbnail for: Mysterious page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Mysterious_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Mysterious_page_detail.png/64px-Mysterious_page_detail.png?b149c
+Warning: Failed to download thumbnail for: Golden armadyl special attack
+https://oldschool.runescape.wiki/api.php?action=query&titles=Golden_armadyl_special_attack&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Golden bandos special attack
+https://oldschool.runescape.wiki/api.php?action=query&titles=Golden_bandos_special_attack&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Golden saradomin special attack
+https://oldschool.runescape.wiki/api.php?action=query&titles=Golden_saradomin_special_attack&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Golden zamorak special attack
+https://oldschool.runescape.wiki/api.php?action=query&titles=Golden_zamorak_special_attack&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Bones to peaches
+https://oldschool.runescape.wiki/api.php?action=query&titles=Bones_to_peaches&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Supply crate
+https://oldschool.runescape.wiki/api.php?action=query&titles=Supply_crate&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Void seal(8)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Void_seal(8)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Amulet of the damned (full)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Amulet_of_the_damned_(full)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Rum
+https://oldschool.runescape.wiki/api.php?action=query&titles=Rum&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Rum_detail.png/64px-Rum_detail.png?7df93
+Warning: Failed to download thumbnail for: Large water container
+https://oldschool.runescape.wiki/api.php?action=query&titles=Large_water_container&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chompy bird hat
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chompy_bird_hat&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Pharaoh's sceptre (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Pharaoh's_sceptre_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+  WARNING: drivers/png/png_driver_common.cpp:55 - Not a PNG file
+  ERROR: drivers/png/png_driver_common.cpp:68 - Condition "!success" is true. Returning: ERR_FILE_CORRUPT
+  ERROR: core/io/image_loader.cpp:100 - Error loading image: 'res://Resources/Items/Crier bell.png'.
+  ERROR: Error importing 'res://Resources/Items/Crier bell.png'.
+  WARNING: drivers/png/png_driver_common.cpp:55 - png_image_begin_read_from_memory: invalid argument
+  ERROR: drivers/png/png_driver_common.cpp:68 - Condition "!success" is true. Returning: ERR_FILE_CORRUPT
+  ERROR: core/io/image_loader.cpp:100 - Error loading image: 'res://Resources/Items/Mossy key.png'.
+  ERROR: Error importing 'res://Resources/Items/Mossy key.png'.
+  WARNING: drivers/png/png_driver_common.cpp:55 - png_image_begin_read_from_memory: invalid argument
+  ERROR: drivers/png/png_driver_common.cpp:68 - Condition "!success" is true. Returning: ERR_FILE_CORRUPT
+  ERROR: core/io/image_loader.cpp:100 - Error loading image: 'res://Resources/Items/Giant key.png'.
+  ERROR: Error importing 'res://Resources/Items/Giant key.png'.
+  WARNING: drivers/png/png_driver_common.cpp:55 - png_image_begin_read_from_memory: invalid argument
+  ERROR: drivers/png/png_driver_common.cpp:68 - Condition "!success" is true. Returning: ERR_FILE_CORRUPT
+  ERROR: core/io/image_loader.cpp:100 - Error loading image: 'res://Resources/Items/Top of sceptre.png'.
+  ERROR: Error importing 'res://Resources/Items/Top of sceptre.png'.
+  WARNING: drivers/png/png_driver_common.cpp:55 - Not a PNG file
+  ERROR: drivers/png/png_driver_common.cpp:68 - Condition "!success" is true. Returning: ERR_FILE_CORRUPT
+  ERROR: core/io/image_loader.cpp:100 - Error loading image: 'res://Resources/Items/Volcanic whip mix.png'.
+  ERROR: Error importing 'res://Resources/Items/Volcanic whip mix.png'.
+  WARNING: drivers/png/png_driver_common.cpp:55 - png_image_begin_read_from_memory: invalid argument
+  ERROR: drivers/png/png_driver_common.cpp:68 - Condition "!success" is true. Returning: ERR_FILE_CORRUPT
+  ERROR: core/io/image_loader.cpp:100 - Error loading image: 'res://Resources/Items/Bottom of sceptre.png'.
+  ERROR: Error importing 'res://Resources/Items/Bottom of sceptre.png'.
+Warning: Failed to download thumbnail for: Xeric's talisman (inert)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Xeric's_talisman_(inert)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Karamjan monkey
+https://oldschool.runescape.wiki/api.php?action=query&titles=Karamjan_monkey&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Skeleton monkey
+https://oldschool.runescape.wiki/api.php?action=query&titles=Skeleton_monkey&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Zombie monkey
+https://oldschool.runescape.wiki/api.php?action=query&titles=Zombie_monkey&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Ancient page
+https://oldschool.runescape.wiki/api.php?action=query&titles=Ancient_page&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Ancient_page_detail.png/64px-Ancient_page_detail.png?9f349
+Warning: Failed to download thumbnail for: Viggora's chainmace (u)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Viggora's_chainmace_(u)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Craw's bow (u)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Craw's_bow_(u)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Thammaron's sceptre (u)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Thammaron's_sceptre_(u)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Bracelet of ethereum (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Bracelet_of_ethereum_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Celestial ring (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Celestial_ring_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Crawling hand
+https://oldschool.runescape.wiki/api.php?action=query&titles=Crawling_hand&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Black mask (10)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Black_mask_(10)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Uncharged trident
+https://oldschool.runescape.wiki/api.php?action=query&titles=Uncharged_trident&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Scythe of vitur (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Scythe_of_vitur_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Sanguinesti staff (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Sanguinesti_staff_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Tumeken's shadow (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Tumeken's_shadow_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Pendant of ates (inert)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Pendant_of_ates_(inert)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Dizana's quiver (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Dizana's_quiver_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Tonalztics of ralos (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Tonalztics_of_ralos_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Tome of earth (empty)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Tome_of_earth_(empty)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Chugging barrel (disassembled)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Chugging_barrel_(disassembled)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Warped sceptre (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Warped_sceptre_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Barrel of demonic tallow (full)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Barrel_of_demonic_tallow_(full)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Eye of ayak (uncharged)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Eye_of_ayak_(uncharged)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Horn of plenty (Empty)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Horn_of_plenty_(Empty)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Boat bottle (empty)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Boat_bottle_(empty)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Medallion fragment
+https://oldschool.runescape.wiki/api.php?action=query&titles=Medallion_fragment&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Medallion_fragment_%281%29_detail.png/64px-Medallion_fragment_%281%29_detail.png?ad97a
+Warning: Failed to download thumbnail for: Medallion fragment
+https://oldschool.runescape.wiki/api.php?action=query&titles=Medallion_fragment&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Medallion_fragment_%281%29_detail.png/64px-Medallion_fragment_%281%29_detail.png?ad97a
+Warning: Failed to download thumbnail for: Medallion fragment
+https://oldschool.runescape.wiki/api.php?action=query&titles=Medallion_fragment&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Medallion_fragment_%281%29_detail.png/64px-Medallion_fragment_%281%29_detail.png?ad97a
+Warning: Failed to download thumbnail for: Medallion fragment
+https://oldschool.runescape.wiki/api.php?action=query&titles=Medallion_fragment&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Medallion_fragment_%281%29_detail.png/64px-Medallion_fragment_%281%29_detail.png?ad97a
+Warning: Failed to download thumbnail for: Medallion fragment
+https://oldschool.runescape.wiki/api.php?action=query&titles=Medallion_fragment&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Medallion_fragment_%281%29_detail.png/64px-Medallion_fragment_%281%29_detail.png?ad97a
+Warning: Failed to download thumbnail for: Medallion fragment
+https://oldschool.runescape.wiki/api.php?action=query&titles=Medallion_fragment&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Medallion_fragment_%281%29_detail.png/64px-Medallion_fragment_%281%29_detail.png?ad97a
+Warning: Failed to download thumbnail for: Medallion fragment
+https://oldschool.runescape.wiki/api.php?action=query&titles=Medallion_fragment&prop=pageimages&format=json&pithumbsize=64
+https://oldschool.runescape.wiki/images/thumb/Medallion_fragment_%281%29_detail.png/64px-Medallion_fragment_%281%29_detail.png?ad97a
+Warning: Failed to download thumbnail for: Sailors' amulet (inert)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Sailors'_amulet_(inert)&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Rosewood & cotton sails schematic
+https://oldschool.runescape.wiki/api.php?action=query&titles=Rosewood_&_cotton_sails_schematic&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Smashed Mirror
+https://oldschool.runescape.wiki/api.php?action=query&titles=Smashed_Mirror&prop=pageimages&format=json&pithumbsize=64
+
+Warning: Failed to download thumbnail for: Facility bottle (empty)
+https://oldschool.runescape.wiki/api.php?action=query&titles=Facility_bottle_(empty)&prop=pageimages&format=json&pithumbsize=64
+
+Downloading complete
