@@ -8,6 +8,7 @@
 size = Vector2(120, 120)
 
 [node name="Tile" type="Sprite2D" unique_id=32004639]
+z_index = 1
 scale = Vector2(2, 2)
 texture = ExtResource("1_a2t34")
 script = ExtResource("2_vx4y2")

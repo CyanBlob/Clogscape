@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4y6mahplg2se" path="res://tooltip_button.tscn" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://3uayx624cber" path="res://Scripts/Camera.cs" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://vltbwgfswd8t" path="res://Resources/resource-packs/skill/firemaking.png" id="5_7mycd"]
+[ext_resource type="FontFile" uid="uid://c5e4i4ullqe30" path="res://Resources/Fonts/runescape_uf.ttf" id="5_272bh"]
 [ext_resource type="Script" uid="uid://gbf8301f1iv3" path="res://Scripts/UI.cs" id="5_lquwl"]
 
 [node name="Node2D" type="Node2D" unique_id=1331184047]
@@ -22,13 +23,18 @@ TileSize = 50
 TileSpacing = 24
 
 [node name="TooltipButton" parent="Tiles" unique_id=796071662 instance=ExtResource("3_1bvp3")]
+visible = false
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 216.0
 offset_bottom = 64.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("5_272bh")
 disabled = true
 icon = ExtResource("5_7mycd")
+alignment = 0
 
 [node name="Tile" parent="Tiles" unique_id=32004639 instance=ExtResource("2_0xm2m")]
 visible = false
@@ -43,18 +49,21 @@ offset_bottom = 40.0
 [node name="SyncButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1734037534]
 z_index = 104
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_272bh")
 text = "Sync"
 script = ExtResource("5_lquwl")
 
 [node name="ItemsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=618121912]
 z_index = 104
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_272bh")
 text = "Items"
 script = ExtResource("5_lquwl")
 
 [node name="ItemIconsButtom" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=787997725]
 z_index = 104
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_272bh")
 disabled = true
 text = "Items with icons"
 script = ExtResource("5_lquwl")

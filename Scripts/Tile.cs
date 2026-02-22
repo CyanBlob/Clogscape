@@ -28,7 +28,9 @@ public partial class Tile : Sprite2D
         TooltipButton.Disabled = false;
         TooltipButton.Position = Position + new Vector2(25, -50);
         TooltipButton.Visible = true;
-        TooltipButton.Icon = this.unlockable.GetTexture();
+        TooltipButton.Icon = unlockable.GetTexture();
+        TooltipButton.Text = unlockable.ToString();
+        TooltipButton.ResetSize();
     }
 
     public void _on_mouse_exited()
@@ -43,7 +45,7 @@ public partial class Tile : Sprite2D
 
     public void _on_input_event(Node viewport, InputEvent inputEvent, int shape_idx)
     {
-        if (inputEvent.IsPressed())
+        if (inputEvent.IsPressed() && inputEvent is InputEventMouseButton mouseEvent && mouseEvent.ButtonIndex == MouseButton.Left)
         {
             GD.Print($"Input event: {inputEvent}");
             TooltipButton.MouseFilter = Control.MouseFilterEnum.Stop;

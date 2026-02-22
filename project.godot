@@ -15,6 +15,11 @@ run/main_scene="uid://bgs1s5f4qf2oq"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/extend_to_title=true
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="Clogscape"
@@ -59,3 +64,5 @@ pan_down={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true

@@ -16,9 +16,6 @@ public partial class TileGenerator : Node
     [Export]
     int TileSpacing = 0;
 
-    [Export]
-    int GridSize = 10;
-
     public List<SkillUnlock> skillUnlocks = new();
 
     public override void _Ready()
@@ -33,10 +30,18 @@ public partial class TileGenerator : Node
 
         var rand = new Random();
 
-        for (int x = -GridSize + GridSize / 2; x < GridSize / 2; ++x)
+        int GridSizeX = (int)Math.Ceiling(Math.Sqrt(allUnlocks.Count));
+        int GridSizeY = (int)Math.Ceiling(Math.Sqrt(allUnlocks.Count));
+
+        for (int x = -GridSizeX + GridSizeX / 2; x < GridSizeX / 2; ++x)
         {
-            for (int y = -GridSize + GridSize / 2; y < GridSize / 2; ++y)
+            for (int y = -GridSizeY + GridSizeY / 2; y < GridSizeY / 2; ++y)
             {
+
+                if (allUnlocks.Count == 0)
+                {
+                    break;
+                }
                 var instance = TileScene.Instantiate<Sprite2D>();
                 instance.Position = new Vector2(x * (TileSize + TileSpacing), y * (TileSize + TileSpacing));
 
