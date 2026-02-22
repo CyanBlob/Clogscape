@@ -22,6 +22,8 @@ public partial class TileGenerator : Node
 
     private Random rand = new();
 
+    public List<Tile> tiles = new();
+
     public override void _Ready()
     {
         var allSkillUnlocks = SkillUnlock.GetSkillUnlocks();
@@ -31,38 +33,6 @@ public partial class TileGenerator : Node
         GD.Print($"{allSkillUnlocks.Count} skills, {allQuestUnlocks.Count} quests, {allDiaryUnlocks.Count} diaries, {allSkillUnlocks.Count + allQuestUnlocks.Count + allDiaryUnlocks.Count} total unlocks");
 
         List<Unlockable> allUnlocks = GetInterleavedUnlockes(allSkillUnlocks, allQuestUnlocks, allDiaryUnlocks);
-        //allUnlocks.AddRange(allSkillUnlocks);
-        //allUnlocks.AddRange(allQuestUnlocks);
-        //allUnlocks.AddRange(allDiaryUnlocks);
-
-
-
-        /*int GridSizeX = (int)Math.Ceiling(Math.Sqrt(allUnlocks.Count));
-        int GridSizeY = (int)Math.Ceiling(Math.Sqrt(allUnlocks.Count));
-
-        for (int x = -GridSizeX + GridSizeX / 2; x < GridSizeX / 2; ++x)
-        {
-            for (int y = -GridSizeY + GridSizeY / 2; y < GridSizeY / 2; ++y)
-            {
-
-                if (allUnlocks.Count == 0)
-                {
-                    break;
-                }
-                var instance = TileScene.Instantiate<Sprite2D>();
-                instance.Position = new Vector2(x * (TileSize + TileSpacing), y * (TileSize + TileSpacing));
-
-                Tile tile = (Tile)instance;
-
-                tile.unlockable = GetAndPopUnlockable(allUnlocks);
-
-                tile.Texture = tile.unlockable.GetTexture();
-
-                //GD.Print(tile.unlockable);
-
-                AddChild(instance);
-            }
-        }*/
 
         // Generate larger and larger overlapping grids until we run out of tiles, skipping placed tiles.
         // This ensures we place lower tier unlocks towards the center.
@@ -87,21 +57,43 @@ public partial class TileGenerator : Node
 
                     placedTiles.Add(new Vector2(x, y));
 
-                    var instance = TileScene.Instantiate<Sprite2D>();
+                    var instance = TileScene.Instantiate<Node2D>();
                     instance.Position = new Vector2(x * (TileSize + TileSpacing), y * (TileSize + TileSpacing));
 
                     Tile tile = (Tile)instance;
+                    tiles.Add(tile);
 
-                    tile.unlockable = GetAndPopUnlockable(allUnlocks);
+                    tile.tileGenerator = this;
 
-                    tile.Texture = tile.unlockable.GetTexture();
+                    // First tile is free
+                    tile.unlockable = GetAndPopUnlockable(allUnlocks, squareSize == 1);
 
-                    //GD.Print(tile.unlockable);
+                    //tile.Texture = tile.unlockable.GetTexture();
+                    var sprite = (Sprite2D)tile.FindChild("Icon");
+                    sprite.Texture = tile.unlockable.GetTexture();
+
+                    /*if (squareSize == 1)
+                    {
+                        sprite.Modulate = new Color(255, 128, 128, 255);
+                    }*/
+
 
                     AddChild(instance);
                 }
             }
         }
+
+        UpdateState();
+
+    }
+
+    public void UpdateState()
+    {
+        foreach(var tile in tiles)
+        {
+            tile._on_board_state_changed();
+        }
+
     }
 
     public List<Unlockable> GetInterleavedUnlockes(List<SkillUnlock> skillUnlocks, List<QuestUnlock> questUnlocks, List<DiaryUnlock> diaryUnlocks)
@@ -124,11 +116,6 @@ public partial class TileGenerator : Node
             diaryUnlocks.Insert(rand.Next(0, diaryUnlocks.Count), null);
         }
 
-        foreach (var diary in diaryUnlocks)
-        {
-            GD.Print(diary);
-        }
-
         var mixed = skillUnlocks.Interleave<Unlockable>(questUnlocks);
         mixed = mixed.Interleave<Unlockable>(diaryUnlocks);
 
@@ -140,9 +127,14 @@ public partial class TileGenerator : Node
         return unlockables;
     }
 
-    public Unlockable GetAndPopUnlockable(List<Unlockable> allUnlockables)
+    public Unlockable GetAndPopUnlockable(List<Unlockable> allUnlockables, bool firstTile)
     {
-        List<Range> windows = [0..12, 0..12, 0..24, 0..36];
+        List<Range> windows = [0..12, 0..24, 0..36, 0..48, 0..96, 0..128];
+
+        if (firstTile)
+        {
+            return new FreeTile();
+        }
 
         Range randomWindow = windows[rand.Next(0, windows.Count)];
 

@@ -93,7 +93,7 @@ public class SkillUnlock : Unlockable, IComparable
 
         if (previousLevelsIndex > 0)
         {
-            if (levelsUnlocked[previousLevelsIndex].IsUnlocked(unlocks, quests))
+            if (levelsUnlocked[previousLevelsIndex].IsUnlocked())
             {
                 GD.Print($"Requirements met! {skill}: {levels}");
                 return true;
@@ -142,5 +142,10 @@ public class SkillUnlock : Unlockable, IComparable
     public override string ToString()
     {
         return $"{skill}: {levels}";
+    }
+
+    public override String DifficultyToString()
+    {
+        return $"{levels.Start.Value} - {levels.End.Value}";
     }
 }

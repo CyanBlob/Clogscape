@@ -46,6 +46,11 @@ public class DiaryUnlock : Unlockable
         return $"{name} {diaryDifficulty} Diary";
     }
 
+    public override String DifficultyToString()
+    {
+        return $"{diaryDifficulty}";
+    }
+
     public static List<DiaryUnlock> GetDiaries()
     {
         List<DiaryUnlock> diaryUnlocks = new();

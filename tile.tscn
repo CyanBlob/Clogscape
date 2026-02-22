@@ -1,17 +1,33 @@
 [gd_scene format=3 uid="uid://csphs4nufpcth"]
 
-[ext_resource type="Texture2D" uid="uid://vltbwgfswd8t" path="res://Resources/resource-packs/skill/firemaking.png" id="1_a2t34"]
 [ext_resource type="Script" uid="uid://dx6s0xcoh07ka" path="res://Scripts/Tile.cs" id="2_vx4y2"]
 [ext_resource type="Texture2D" uid="uid://df0wi08hih1kw" path="res://Resources/resource-packs/dialog/background.png" id="3_a2t34"]
+[ext_resource type="Texture2D" uid="uid://ctbsxsw8a3pae" path="res://Resources/resource-packs/skill/thieving.png" id="3_tfor0"]
+[ext_resource type="FontFile" uid="uid://c5e4i4ullqe30" path="res://Resources/Fonts/runescape_uf.ttf" id="4_tfor0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3f48"]
 size = Vector2(120, 120)
 
-[node name="Tile" type="Sprite2D" unique_id=32004639]
+[node name="Tile" type="Node2D" unique_id=1328665337]
 z_index = 1
-scale = Vector2(2, 2)
-texture = ExtResource("1_a2t34")
 script = ExtResource("2_vx4y2")
+
+[node name="Label" type="Label" parent="." unique_id=1063871421]
+offset_left = -32.0
+offset_top = 8.0
+offset_right = 32.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_tfor0")
+theme_override_font_sizes/font_size = 12
+text = "Intermediate"
+horizontal_alignment = 1
+vertical_alignment = 2
+text_overrun_behavior = 5
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1508859198]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_tfor0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1190884943]
 input_pickable = true
@@ -21,7 +37,10 @@ visible = false
 scale = Vector2(0.22, 0.22)
 shape = SubResource("RectangleShape2D_n3f48")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=398298821]
+[node name="Node2D" type="Node2D" parent="." unique_id=29535823]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=398298821]
 z_index = -1
 scale = Vector2(0.364, 0.533)
 texture = ExtResource("3_a2t34")
