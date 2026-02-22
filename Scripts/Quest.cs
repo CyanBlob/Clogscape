@@ -265,7 +265,7 @@ public class QuestUnlock : Unlockable
         QuestUnlock AnotherSliceOfHAM = new("Another Slice of H.A.M.");
         AnotherSliceOfHAM.questDifficulty = QuestDifficulty.Intermediate;
         quests.Add(AnotherSliceOfHAM);
-        AnotherSliceOfHAM.skillRequirements.Add((Skill.Attack, 15));
+        //AnotherSliceOfHAM.skillRequirements.Add((Skill.Attack, 15));
         QuestUnlock TheAscentOfArceuus = new("The Ascent of Arceuus");
         TheAscentOfArceuus.questDifficulty = QuestDifficulty.Intermediate;
         quests.Add(TheAscentOfArceuus);
@@ -316,7 +316,7 @@ public class QuestUnlock : Unlockable
         QuestUnlock ElementalWorkshopIi = new("Elemental Workshop II");
         ElementalWorkshopIi.questDifficulty = QuestDifficulty.Intermediate;
         quests.Add(ElementalWorkshopIi);
-        ElementalWorkshopIi.skillRequirements.Add((Skill.Magic, 20));
+        //ElementalWorkshopIi.skillRequirements.Add((Skill.Magic, 20));
         QuestUnlock EnlightenedJourney = new("Enlightened Journey");
         EnlightenedJourney.questDifficulty = QuestDifficulty.Intermediate;
         quests.Add(EnlightenedJourney);
@@ -465,7 +465,7 @@ public class QuestUnlock : Unlockable
         QuestUnlock SpiritsOfTheElid = new("Spirits of the Elid");
         SpiritsOfTheElid.questDifficulty = QuestDifficulty.Intermediate;
         quests.Add(SpiritsOfTheElid);
-        SpiritsOfTheElid.skillRequirements.Add((Skill.Magic, 33));
+        //SpiritsOfTheElid.skillRequirements.Add((Skill.Magic, 33));
         QuestUnlock TaiBwoWannaiTrio = new("Tai Bwo Wannai Trio");
         TaiBwoWannaiTrio.questDifficulty = QuestDifficulty.Intermediate;
         quests.Add(TaiBwoWannaiTrio);
@@ -516,7 +516,7 @@ public class QuestUnlock : Unlockable
         QuestUnlock Watchtower = new("Watchtower");
         Watchtower.questDifficulty = QuestDifficulty.Intermediate;
         quests.Add(Watchtower);
-        Watchtower.skillRequirements.Add((Skill.Magic, 14));
+        //Watchtower.skillRequirements.Add((Skill.Magic, 14));
         QuestUnlock WaterfallQuest = new("Waterfall Quest");
         WaterfallQuest.questDifficulty = QuestDifficulty.Intermediate;
         quests.Add(WaterfallQuest);
@@ -645,7 +645,7 @@ public class QuestUnlock : Unlockable
         FamilyCrest.skillRequirements.Add((Skill.Mining, 40));
         TheGreatBrainRobbery.skillRequirements.Add((Skill.Crafting, 16));
         TheHeartOfDarkness.skillRequirements.Add((Skill.Mining, 55));
-        KingSRansom.skillRequirements.Add((Skill.Magic, 45));
+        //KingSRansom.skillRequirements.Add((Skill.Magic, 45));
         MyArmSBigAdventure.skillRequirements.Add((Skill.Farming, 29));
         RagAndBoneManIi.skillRequirements.Add((Skill.Slayer, 40));
         RoyalTrouble.skillRequirements.Add((Skill.Agility, 40));
@@ -726,16 +726,16 @@ public class QuestUnlock : Unlockable
         DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Firemaking, 75));
         DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Mining, 60));
         DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Construction, 60));
-        DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Attack, 1));
+        //DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Attack, 1));
         DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Herblore, 62));
-        DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Hitpoints, 25));
-        DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Magic, 75));
+        //DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Hitpoints, 25));
+        //DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Magic, 75));
         DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Runecraft, 60));
         DesertTreasureIiTheFallenEmpire.skillRequirements.Add((Skill.Thieving, 70));
 
         TheFremennikExiles.skillRequirements.Add((Skill.Crafting, 65));
         MakingFriendsWithMyArm.skillRequirements.Add((Skill.Firemaking, 66));
-        MourningSEndPartI.skillRequirements.Add((Skill.Ranged, 60));
+        //MourningSEndPartI.skillRequirements.Add((Skill.Ranged, 60));
         PerilousMoons.skillRequirements.Add((Skill.Slayer, 48));
         SecretsOfTheNorth.skillRequirements.Add((Skill.Agility, 69));
         TheCurseOfArrav.skillRequirements.Add((Skill.Mining, 64));
@@ -747,8 +747,8 @@ public class QuestUnlock : Unlockable
         DragonSlayerIi.skillRequirements.Add((Skill.Smithing, 70));
         DragonSlayerIi.skillRequirements.Add((Skill.Mining, 68));
         DragonSlayerIi.skillRequirements.Add((Skill.Crafting, 62));
-        DragonSlayerIi.skillRequirements.Add((Skill.Hitpoints, 50));
-        DragonSlayerIi.skillRequirements.Add((Skill.Magic, 75));
+        //DragonSlayerIi.skillRequirements.Add((Skill.Hitpoints, 50));
+        //DragonSlayerIi.skillRequirements.Add((Skill.Magic, 75));
 
         MonkeyMadnessIi.skillRequirements.Add((Skill.Agility, 55));
         MonkeyMadnessIi.skillRequirements.Add((Skill.Thieving, 55));
@@ -765,17 +765,17 @@ public class QuestUnlock : Unlockable
         SongOfTheElves.skillRequirements.Add((Skill.Mining, 70));
         SongOfTheElves.skillRequirements.Add((Skill.Smithing, 70));
         SongOfTheElves.skillRequirements.Add((Skill.Woodcutting, 70));
-        SongOfTheElves.skillRequirements.Add((Skill.Hitpoints, 5));
-        SongOfTheElves.skillRequirements.Add((Skill.Magic, 80));
+        //SongOfTheElves.skillRequirements.Add((Skill.Hitpoints, 5));
+        //SongOfTheElves.skillRequirements.Add((Skill.Magic, 80));
         SongOfTheElves.skillRequirements.Add((Skill.Prayer, 40));
 
         WhileGuthixSleeps.skillRequirements.Add((Skill.Agility, 66));
-        WhileGuthixSleeps.skillRequirements.Add((Skill.Attack, 99));
+        //WhileGuthixSleeps.skillRequirements.Add((Skill.Attack, 99));
         WhileGuthixSleeps.skillRequirements.Add((Skill.Farming, 65));
         WhileGuthixSleeps.skillRequirements.Add((Skill.Herblore, 65));
         WhileGuthixSleeps.skillRequirements.Add((Skill.Hunter, 62));
-        WhileGuthixSleeps.skillRequirements.Add((Skill.Magic, 67));
-        WhileGuthixSleeps.skillRequirements.Add((Skill.Strength, 99));
+        //WhileGuthixSleeps.skillRequirements.Add((Skill.Magic, 67));
+        //WhileGuthixSleeps.skillRequirements.Add((Skill.Strength, 99));
         WhileGuthixSleeps.skillRequirements.Add((Skill.Thieving, 72));
 
         DesertTreasureIiTheFallenEmpire.questRequirements.Add(DragonSlayerIi);
