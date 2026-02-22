@@ -54,13 +54,13 @@ public class SkillUnlock : Unlockable, IComparable
     }
 
 #nullable enable
-    public Texture? GetTexture()
+    public override Texture2D? GetTexture()
     {
         try
         {
             ImageTexture texture = new ImageTexture();
             Image image = new Image();
-            image.Load($"Resources/Items/{skill}.png");
+            image.Load($"Resources/resource-packs/skill/{skill}.png");
             texture.SetImage(image);
             return texture;
         }
@@ -71,7 +71,7 @@ public class SkillUnlock : Unlockable, IComparable
     }
 
     // TODO: Unit tests
-    public bool RequirementsMet(List<SkillUnlock> unlocks)
+    public override bool RequirementsMet(List<SkillUnlock> unlocks, List<QuestUnlock> quests, int combatLevel = 0)
     {
         List<SkillUnlock> levelsUnlocked = unlocks.TakeWhile(unlock =>
         {
@@ -93,7 +93,7 @@ public class SkillUnlock : Unlockable, IComparable
 
         if (previousLevelsIndex > 0)
         {
-            if (levelsUnlocked[previousLevelsIndex].IsUnlocked())
+            if (levelsUnlocked[previousLevelsIndex].IsUnlocked(unlocks, quests))
             {
                 GD.Print($"Requirements met! {skill}: {levels}");
                 return true;
@@ -121,6 +121,26 @@ public class SkillUnlock : Unlockable, IComparable
         {
             return -1;
         }
+    }
 
+    public static List<SkillUnlock> GetSkillUnlocks()
+    {
+        List<SkillUnlock> skillUnlocks = new();
+
+        foreach (var range in standardRanges)
+        {
+            foreach (var skill in Enum.GetValues(typeof(Skill)))
+            {
+               SkillUnlock newUnlock = new SkillUnlock((Skill)skill, range, false); 
+               skillUnlocks.Add(newUnlock);
+            }
+        }
+
+        return skillUnlocks;
+    }
+
+    public override string ToString()
+    {
+        return $"{skill}: {levels}";
     }
 }

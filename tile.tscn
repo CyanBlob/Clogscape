@@ -1,20 +1,29 @@
 [gd_scene format=3 uid="uid://csphs4nufpcth"]
 
-[ext_resource type="Texture2D" uid="uid://clbko7tcgprob" path="res://icon.svg" id="1_n3f48"]
+[ext_resource type="Texture2D" uid="uid://vltbwgfswd8t" path="res://Resources/resource-packs/skill/firemaking.png" id="1_a2t34"]
 [ext_resource type="Script" uid="uid://dx6s0xcoh07ka" path="res://Scripts/Tile.cs" id="2_vx4y2"]
+[ext_resource type="Texture2D" uid="uid://df0wi08hih1kw" path="res://Resources/resource-packs/dialog/background.png" id="3_a2t34"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3f48"]
 size = Vector2(120, 120)
 
 [node name="Tile" type="Sprite2D" unique_id=32004639]
-texture = ExtResource("1_n3f48")
+scale = Vector2(2, 2)
+texture = ExtResource("1_a2t34")
 script = ExtResource("2_vx4y2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1190884943]
 input_pickable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1672197339]
+visible = false
+scale = Vector2(0.22, 0.22)
 shape = SubResource("RectangleShape2D_n3f48")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=398298821]
+z_index = -1
+scale = Vector2(0.364, 0.533)
+texture = ExtResource("3_a2t34")
 
 [connection signal="input_event" from="StaticBody2D" to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="StaticBody2D" to="." method="_on_mouse_entered"]

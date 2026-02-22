@@ -8,6 +8,8 @@ public partial class Tile : Sprite2D
 
     static bool ButtonLocked = false;
 
+    public Unlockable unlockable;
+
     public override void _Ready()
     {
         TooltipButton = GetParent().GetChild<Button>(0);
@@ -24,9 +26,9 @@ public partial class Tile : Sprite2D
             return;
         }
         TooltipButton.Disabled = false;
-        TooltipButton.Position = Position + new Vector2(50, -64);
+        TooltipButton.Position = Position + new Vector2(25, -50);
         TooltipButton.Visible = true;
-        Modulate = Color.Color8(128, 128, 128, 255);
+        TooltipButton.Icon = this.unlockable.GetTexture();
     }
 
     public void _on_mouse_exited()
@@ -37,7 +39,6 @@ public partial class Tile : Sprite2D
         }
         TooltipButton.Disabled = true;
         TooltipButton.Visible = false;
-        Modulate = Color.Color8(255, 255, 255, 255);
     }
 
     public void _on_input_event(Node viewport, InputEvent inputEvent, int shape_idx)

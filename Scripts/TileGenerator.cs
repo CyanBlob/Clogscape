@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 public partial class TileGenerator : Node
 {
@@ -22,6 +23,16 @@ public partial class TileGenerator : Node
 
     public override void _Ready()
     {
+        var allSkillUnlocks = SkillUnlock.GetSkillUnlocks();
+        var allQuestUnlocks = QuestUnlock.GetQuests();
+        List<Unlockable> allUnlocks = new();
+        allUnlocks.AddRange(allSkillUnlocks);
+        allUnlocks.AddRange(allQuestUnlocks);
+
+        GD.Print($"{allSkillUnlocks.Count} skills, {allQuestUnlocks.Count} quests, {allSkillUnlocks.Count + allQuestUnlocks.Count} total unlocks");
+
+        var rand = new Random();
+
         for (int x = -GridSize + GridSize / 2; x < GridSize / 2; ++x)
         {
             for (int y = -GridSize + GridSize / 2; y < GridSize / 2; ++y)
@@ -29,15 +40,23 @@ public partial class TileGenerator : Node
                 var instance = TileScene.Instantiate<Sprite2D>();
                 instance.Position = new Vector2(x * (TileSize + TileSpacing), y * (TileSize + TileSpacing));
 
+                Tile tile = (Tile)instance;
+
+                int unlockIndex = rand.Next(0, allUnlocks.Count);
+                tile.unlockable = allUnlocks[unlockIndex];
+                allUnlocks.RemoveAt(unlockIndex);
+
+                tile.Texture = tile.unlockable.GetTexture();
+
+                GD.Print(tile.unlockable);
+
                 AddChild(instance);
             }
         }
 
-        skillUnlocks.Add(new SkillUnlock(Skill.Prayer, SkillUnlock.standardRanges[0], true));
-        skillUnlocks.Add(new SkillUnlock(Skill.Prayer, SkillUnlock.standardRanges[1], false));
 
-        GD.Print(skillUnlocks[0].RequirementsMet(skillUnlocks));
-        GD.Print(skillUnlocks[1].RequirementsMet(skillUnlocks));
+
+
     }
 
     public override void _Process(double delta)
