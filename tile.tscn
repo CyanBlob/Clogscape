@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://df0wi08hih1kw" path="res://Resources/resource-packs/dialog/background.png" id="3_a2t34"]
 [ext_resource type="Texture2D" uid="uid://ctbsxsw8a3pae" path="res://Resources/resource-packs/skill/thieving.png" id="3_tfor0"]
 [ext_resource type="FontFile" uid="uid://c5e4i4ullqe30" path="res://Resources/Fonts/runescape_uf.ttf" id="4_tfor0"]
+[ext_resource type="Texture2D" uid="uid://byw2rneay11nj" path="res://Resources/Items/Gold locks.png" id="5_cpv6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3f48"]
 size = Vector2(120, 120)
@@ -26,6 +27,7 @@ vertical_alignment = 2
 text_overrun_behavior = 5
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1508859198]
+visible = false
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_tfor0")
 
@@ -37,13 +39,20 @@ visible = false
 scale = Vector2(0.22, 0.22)
 shape = SubResource("RectangleShape2D_n3f48")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=29535823]
+[node name="Background" type="Node2D" parent="." unique_id=29535823]
 scale = Vector2(2, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=398298821]
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=398298821]
 z_index = -1
 scale = Vector2(0.364, 0.533)
 texture = ExtResource("3_a2t34")
+
+[node name="Locks" type="Node2D" parent="." unique_id=1718077092]
+
+[node name="Sprite2D" type="Sprite2D" parent="Locks" unique_id=344143960]
+position = Vector2(0, -24)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_cpv6t")
 
 [connection signal="input_event" from="StaticBody2D" to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="StaticBody2D" to="." method="_on_mouse_entered"]

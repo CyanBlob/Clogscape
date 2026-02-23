@@ -8,6 +8,11 @@ public class FreeTile : Unlockable
         return "Free!";
     }
 
+    public override string ToString()
+    {
+        return "It's a free tile!";
+    }
+
     public override Texture2D GetTexture()
     {
         return null;

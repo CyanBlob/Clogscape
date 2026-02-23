@@ -1,7 +1,9 @@
 using Godot;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
@@ -22,7 +24,7 @@ public partial class TileGenerator : Node
 
     private Random rand = new();
 
-    public List<Tile> tiles = new();
+    public Hashtable hashedTiles = new();
 
     public override void _Ready()
     {
@@ -41,9 +43,9 @@ public partial class TileGenerator : Node
 
         for (int squareSize = 1; squareSize < 100; squareSize += 2)
         {
-            for (var x = -squareSize + squareSize / 2; x < squareSize / 2; x++)
+            for (var x = (squareSize - 1) / - 2; x <= squareSize / 2; ++x)
             {
-                for (var y = -squareSize + squareSize / 2; y < squareSize / 2; y++)
+                for (var y = (squareSize - 1) / - 2; y <= squareSize / 2; ++y)
                 {
                     if (allUnlocks.Count == 0) // Out of tiles!
                     {
@@ -61,7 +63,8 @@ public partial class TileGenerator : Node
                     instance.Position = new Vector2(x * (TileSize + TileSpacing), y * (TileSize + TileSpacing));
 
                     Tile tile = (Tile)instance;
-                    tiles.Add(tile);
+                    tile.gridPos = new Vector2(x, y);
+                    hashedTiles.Add(new Vector2(x, y), tile);
 
                     tile.tileGenerator = this;
 
@@ -89,9 +92,9 @@ public partial class TileGenerator : Node
 
     public void UpdateState()
     {
-        foreach(var tile in tiles)
+        foreach(Tile tile in hashedTiles.Values)
         {
-            tile._on_board_state_changed();
+            tile._on_board_state_changed(hashedTiles);
         }
 
     }
@@ -129,7 +132,7 @@ public partial class TileGenerator : Node
 
     public Unlockable GetAndPopUnlockable(List<Unlockable> allUnlockables, bool firstTile)
     {
-        List<Range> windows = [0..12, 0..24, 0..36, 0..48, 0..96, 0..128];
+        List<Range> windows = [0..12, 0..24, 0..24, 0..36, 0..48, 0..96, 0..128];
 
         if (firstTile)
         {

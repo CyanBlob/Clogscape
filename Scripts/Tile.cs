@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 public partial class Tile : Node2D
@@ -11,6 +13,11 @@ public partial class Tile : Node2D
     public Unlockable unlockable;
 
     private Sprite2D icon;
+    private Node2D lockIcon;
+    private Label text;
+    private Node2D background;
+
+    public Vector2 gridPos;
 
     // TODO: Use a signal instead
     public TileGenerator tileGenerator;
@@ -20,8 +27,10 @@ public partial class Tile : Node2D
         TooltipButton = GetParent().GetChild<Button>(0);
 
         icon = (Sprite2D)FindChild("Icon");
+        lockIcon = (Node2D)FindChild("Locks");
 
-        var text = (Label)FindChild("Label");
+        text = (Label)FindChild("Label");
+        background = (Node2D)FindChild("Background");
 
         if (text == null)
         {
@@ -69,7 +78,6 @@ public partial class Tile : Node2D
     {
         if (inputEvent.IsPressed() && inputEvent is InputEventMouseButton mouseEvent && mouseEvent.ButtonIndex == MouseButton.Left)
         {
-            GD.Print($"Input event: {inputEvent}");
             TooltipButton.MouseFilter = Control.MouseFilterEnum.Stop;
 
             // Ensure the button is placed properly before locking
@@ -85,15 +93,49 @@ public partial class Tile : Node2D
         }
     }
 
-    public void _on_board_state_changed()
+    public void _on_board_state_changed(Hashtable tiles)
     {
         if (unlockable.IsUnlocked())
         {
-           icon.Modulate = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            icon.Modulate = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
         else
         {
-           icon.Modulate = new Color(.5f, .5f, .5f, .5f);
+            icon.Modulate = new Color(.5f, .5f, .5f, .5f);
+        }
+
+        lockIcon.Visible = !unlockable.IsUnlocked();
+
+        // Locked tiles can't be hidden
+        if (!unlockable.IsUnlocked())
+        {
+            var hidden = true;
+            var leftTile = (Tile)tiles[new Vector2((int)gridPos.X - 1, (int)gridPos.Y)];
+            var rightTile = (Tile)tiles[new Vector2((int)gridPos.X + 1, (int)gridPos.Y)];
+            var upTile = (Tile)tiles[new Vector2((int)gridPos.X, (int)gridPos.Y - 1)];
+            var downTile = (Tile)tiles[new Vector2((int)gridPos.X, (int)gridPos.Y + 1)];
+
+            if (leftTile != null && leftTile.unlockable.IsUnlocked())
+            {
+                hidden = false;
+            }
+            else if (rightTile != null && rightTile.unlockable.IsUnlocked())
+            {
+                hidden = false;
+            }
+            else if (upTile != null && upTile.unlockable.IsUnlocked())
+            {
+                hidden = false;
+            }
+            else if (downTile != null && downTile.unlockable.IsUnlocked())
+            {
+                hidden = false;
+            }
+
+            icon.Visible = !hidden;
+            text.Visible = !hidden;
+
+            background.Modulate = hidden ? new Color(.5f, .5f, .5f, .75f) : new Color(1, 1, 1, 1);
         }
     }
 }

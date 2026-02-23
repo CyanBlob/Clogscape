@@ -7,14 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://vltbwgfswd8t" path="res://Resources/resource-packs/skill/firemaking.png" id="5_7mycd"]
 [ext_resource type="FontFile" uid="uid://c5e4i4ullqe30" path="res://Resources/Fonts/runescape_uf.ttf" id="5_272bh"]
 [ext_resource type="Script" uid="uid://gbf8301f1iv3" path="res://Scripts/UI.cs" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://bdv5alq62gpm3" path="res://Resources/resource-packs/ge/selected_item_box.png" id="6_5vw27"]
 
 [node name="Node2D" type="Node2D" unique_id=1331184047]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1291291693]
+zoom = Vector2(0.75, 0.75)
 position_smoothing_enabled = true
 script = ExtResource("3_h2yge")
 PanSpeed = 8.0
-PanLerpFactor = 250.0
+PanLerpFactor = 225.0
 
 [node name="Tiles" type="Node" parent="." unique_id=775533480]
 script = ExtResource("1_0xm2m")
@@ -23,7 +25,6 @@ TileSize = 50
 TileSpacing = 24
 
 [node name="TooltipButton" parent="Tiles" unique_id=796071662 instance=ExtResource("3_1bvp3")]
-visible = false
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 216.0
@@ -32,9 +33,24 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("5_272bh")
-disabled = true
 icon = ExtResource("5_7mycd")
+flat = true
 alignment = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Tiles/TooltipButton" unique_id=1440936667]
+z_index = -1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_5vw27")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
 [node name="Tile" parent="Tiles" unique_id=32004639 instance=ExtResource("2_0xm2m")]
 visible = false
@@ -43,6 +59,7 @@ position = Vector2(128, 128)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=996357377]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1342843202]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
