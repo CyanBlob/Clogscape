@@ -3,6 +3,11 @@ using Godot;
 
 public class FreeTile : Unlockable
 {
+    public FreeTile()
+    {
+        unlockableType = UnlockableType.Free;
+    }
+
     public override string DifficultyToString()
     {
         return "Free!";

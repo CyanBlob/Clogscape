@@ -20,14 +20,52 @@ public partial class TileGenerator : Node
     [Export]
     int TileSpacing = 0;
 
-    public List<SkillUnlock> skillUnlocks = new();
+    private Random rand { get; set; }
 
-    private Random rand = new();
+    public void ClearTiles()
+    {
+        foreach (var child in GetChildren())
+        {
+            if (child is Tile)
+            {
+                child.QueueFree();
+            }
+        }
+    }
 
-    public Hashtable hashedTiles = new();
+    public void AddTileFromUnlock(Unlockable unlockable)
+    {
+        int x = unlockable.gridPosX;
+        int y = unlockable.gridPosY;
+
+        var instance = TileScene.Instantiate<Node2D>();
+        instance.Position = new Vector2(x * (TileSize + TileSpacing), y * (TileSize + TileSpacing));
+
+        Tile tile = (Tile)instance;
+        tile.gridPos = new Vector2(x, y);
+        GameManager.GetState().hashedTiles.Add(new Vector2(x, y), tile);
+
+        tile.tileGenerator = this;
+
+        tile.unlockable = unlockable;
+
+        // These are duplicated in the unlockable for easier serialization
+        tile.unlockable.gridPosX = x;
+        tile.unlockable.gridPosY = y;
+
+        //tile.Texture = tile.unlockable.GetTexture();
+        var sprite = (Sprite2D)tile.FindChild("Icon");
+        sprite.Texture = tile.unlockable.GetTexture();
+
+        AddChild(instance);
+    }
+
 
     public override void _Ready()
     {
+        GameManager.GetState().hashedTiles = new();
+        rand = new();
+
         var allSkillUnlocks = SkillUnlock.GetSkillUnlocks();
         var allQuestUnlocks = QuestUnlock.GetQuests();
         var allDiaryUnlocks = DiaryUnlock.GetDiaries();
@@ -39,13 +77,15 @@ public partial class TileGenerator : Node
         // Generate larger and larger overlapping grids until we run out of tiles, skipping placed tiles.
         // This ensures we place lower tier unlocks towards the center.
 
+        ClearTiles();
+
         HashSet<Vector2> placedTiles = new();
 
         for (int squareSize = 1; squareSize < 100; squareSize += 2)
         {
-            for (var x = (squareSize - 1) / - 2; x <= squareSize / 2; ++x)
+            for (var x = (squareSize - 1) / -2; x <= squareSize / 2; ++x)
             {
-                for (var y = (squareSize - 1) / - 2; y <= squareSize / 2; ++y)
+                for (var y = (squareSize - 1) / -2; y <= squareSize / 2; ++y)
                 {
                     if (allUnlocks.Count == 0) // Out of tiles!
                     {
@@ -64,22 +104,20 @@ public partial class TileGenerator : Node
 
                     Tile tile = (Tile)instance;
                     tile.gridPos = new Vector2(x, y);
-                    hashedTiles.Add(new Vector2(x, y), tile);
+                    GameManager.GetState().hashedTiles.Add(new Vector2(x, y), tile);
 
                     tile.tileGenerator = this;
 
                     // First tile is free
                     tile.unlockable = GetAndPopUnlockable(allUnlocks, squareSize == 1);
 
+                    // These are duplicated in the unlockable for easier serialization
+                    tile.unlockable.gridPosX = x;
+                    tile.unlockable.gridPosY = y;
+
                     //tile.Texture = tile.unlockable.GetTexture();
                     var sprite = (Sprite2D)tile.FindChild("Icon");
                     sprite.Texture = tile.unlockable.GetTexture();
-
-                    /*if (squareSize == 1)
-                    {
-                        sprite.Modulate = new Color(255, 128, 128, 255);
-                    }*/
-
 
                     AddChild(instance);
                 }
@@ -92,11 +130,10 @@ public partial class TileGenerator : Node
 
     public void UpdateState()
     {
-        foreach(Tile tile in hashedTiles.Values)
+        foreach (Tile tile in GameManager.GetState().hashedTiles.Values)
         {
-            tile._on_board_state_changed(hashedTiles);
+            tile._on_board_state_changed(GameManager.GetState().hashedTiles);
         }
-
     }
 
     public List<Unlockable> GetInterleavedUnlockes(List<SkillUnlock> skillUnlocks, List<QuestUnlock> questUnlocks, List<DiaryUnlock> diaryUnlocks)

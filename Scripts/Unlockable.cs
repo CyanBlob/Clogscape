@@ -1,15 +1,32 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using Godot;
+
+public enum UnlockableType
+{
+    Skill,
+    Quest,
+    Diary,
+    Free
+}
 
 public abstract class Unlockable
 {
+    [JsonInclude]
     private bool Unlocked = false;
+
+    [JsonInclude]
     private bool Claimed = false;
 
     public List<QuestUnlock> questRequirements = new();
     public List<(Skill, int)> skillRequirements = new();
     public int combatRequirement = 0;
+
+    public UnlockableType unlockableType {get; set;}
+
+    public int gridPosX {get; set; }
+    public int gridPosY {get; set; }
 
     public virtual bool IsUnlocked()
     {

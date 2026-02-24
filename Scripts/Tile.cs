@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text.Json;
 
 public partial class Tile : Node2D
 {
@@ -12,9 +13,9 @@ public partial class Tile : Node2D
     static Control UnlockContainer;
     static Control ClaimContainer;
 
-    #nullable enable
+#nullable enable
     static Tile? ButtonLocked = null;
-    #nullable disable
+#nullable disable
 
     public Unlockable unlockable;
 
@@ -53,7 +54,7 @@ public partial class Tile : Node2D
         }
         else if (unlockable == null)
         {
-            GD.Print($"Could not find unlocabke for tile at {Position}");
+            GD.Print($"Could not find unlockable for tile at {Position}");
         }
         else
         {
@@ -203,5 +204,31 @@ public partial class Tile : Node2D
 
             background.Modulate = hidden ? new Color(.5f, .5f, .5f, .75f) : new Color(1, 1, 1, 1);
         }
+    }
+
+    public String Serialize()
+    {
+        String str = $"{gridPos.X}|{gridPos.Y}|{(int)unlockable.unlockableType}|";
+
+        string json = "";
+        switch (unlockable.unlockableType)
+        {
+            case UnlockableType.Skill:
+                json = JsonSerializer.Serialize((SkillUnlock)unlockable);
+                break;
+            case UnlockableType.Quest:
+                json = JsonSerializer.Serialize((QuestUnlock)unlockable);
+                break;
+            case UnlockableType.Diary:
+                json = JsonSerializer.Serialize((DiaryUnlock)unlockable);
+                break;
+            case UnlockableType.Free:
+                json = JsonSerializer.Serialize((FreeTile)unlockable);
+                break;
+        }
+
+        str += json;
+
+        return str;
     }
 }

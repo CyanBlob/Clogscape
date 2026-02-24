@@ -9,14 +9,13 @@ public enum QuestDifficulty
 
 public class QuestUnlock : Unlockable
 {
-    public String name;
-    public QuestDifficulty questDifficulty;
-    #nullable enable
-    public Monster? toughestEnemy;
+    public String name {get; set; }
+    public QuestDifficulty questDifficulty {get; set; }
 
     public QuestUnlock(String name)
     {
         this.name = name;
+        unlockableType = UnlockableType.Quest;
     }
 
     public override bool RequirementsMet(List<SkillUnlock> unlocks, List<QuestUnlock> quests, int combatLevel = 0)

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -11,10 +12,22 @@ public partial class UI : Button
 {
     // HttpClient is intended to be instantiated once per application, rather than per-use. See Remarks.
     static HttpClient client;
+    static String nameFilePath = "name.txt";
+    static TileGenerator tileGenerator;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        if (File.Exists(nameFilePath))
+        {
+            GameManager.GetState().playerName = File.ReadAllLines(nameFilePath)[0];
+
+            var playerNameEdit = (LineEdit)GetParent().FindChild("PlayerName");
+
+            playerNameEdit.Text = GameManager.GetState().playerName;
+            GameManager.GetState().playerName = playerNameEdit.Text;
+        }
+
         client = new HttpClient();
         client.DefaultRequestHeaders.UserAgent.ParseAdd(
             "Clogscape/1.0 (+https://github.com/CyanBlob/clogscape; andrewthomas255@duck.com)");
@@ -180,5 +193,46 @@ public partial class UI : Button
             Console.WriteLine("\nException Caught!");
             Console.WriteLine("Message :{0} ", e.Message);
         }
+    }
+
+    public void _on_player_save()
+    {
+        var playerNameEdit = (LineEdit)GetParent().FindChild("PlayerName");
+        GameManager.Save(playerNameEdit.Text);
+    }
+    public void _on_player_load()
+    {
+        var playerNameEdit = (LineEdit)GetParent().FindChild("PlayerName");
+        if (tileGenerator == null)
+        {
+            tileGenerator = (TileGenerator)GetParent().GetParent().GetParent().FindChild("Tiles");
+        }
+        GameManager.Load(playerNameEdit.Text, tileGenerator);
+    }
+    public void _on_create_player()
+    {
+        var state = GameManager.GetDefaultState();
+
+        var playerNameEdit = (LineEdit)GetParent().FindChild("PlayerName");
+        state.playerName = playerNameEdit.Text;
+
+        GameManager.SetState(state);
+
+        if (tileGenerator == null)
+        {
+            tileGenerator = (TileGenerator)GetParent().GetParent().GetParent().FindChild("Tiles");
+        }
+
+        tileGenerator._Ready();
+    }
+
+    public void _on_player_text_changed(String name)
+    {
+        var lines = new List<String>
+        {
+            name
+        };
+        GD.Print($"Writing {name} to {nameFilePath}");
+        File.WriteAllLines(nameFilePath, lines);
     }
 }

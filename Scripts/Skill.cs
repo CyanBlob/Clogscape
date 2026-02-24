@@ -36,16 +36,18 @@ public enum Skill
 
 public class SkillUnlock : Unlockable, IComparable
 {
-    public Skill skill;
+    public Skill skill {get; set; }
 
     public static List<Range> standardRanges = [new Range(1, 10), new Range(11, 20), new Range(21, 30), new Range(31, 40), new Range(41, 50), new Range(51, 60), new Range(61, 70), new Range(71, 75), new Range(76, 80), new Range(81, 85), new Range(86, 90), new Range(91, 95), new Range(96, 99)];
 
-    public Range levels;
+    public Range levels {get; set; }
 
     public SkillUnlock(Skill skill, Range levels, bool unlocked)
     {
         this.skill = skill;
         this.levels = levels;
+
+        unlockableType = UnlockableType.Skill;
 
         if (unlocked)
         {

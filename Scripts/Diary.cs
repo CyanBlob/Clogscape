@@ -10,13 +10,14 @@ public enum DiaryDifficulty
 
 public class DiaryUnlock : Unlockable
 {
-    public String name;
-    public DiaryDifficulty diaryDifficulty;
+    public String name {get; set; }
+    public DiaryDifficulty diaryDifficulty {get; set; }
 
     public DiaryUnlock(String name, DiaryDifficulty diaryDifficulty)
     {
         this.name = name;
         this.diaryDifficulty = diaryDifficulty;
+        unlockableType = UnlockableType.Diary;
     }
 
     public override bool RequirementsMet(List<SkillUnlock> unlocks, List<QuestUnlock> quests, int combatLevel = 0)
