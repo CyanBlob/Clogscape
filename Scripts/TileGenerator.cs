@@ -56,6 +56,7 @@ public partial class TileGenerator : Node
         //tile.Texture = tile.unlockable.GetTexture();
         var sprite = (Sprite2D)tile.FindChild("Icon");
         sprite.Texture = tile.unlockable.GetTexture();
+        sprite.Visible = true;
 
         AddChild(instance);
     }
