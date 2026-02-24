@@ -75,11 +75,12 @@ public static class GameManager
         if (!File.Exists($"{state.playerName}.json") || !File.Exists($"{state.playerName}_tiles.json")) {
             return false;
         }
+        GD.Print($"Loading {player}");
 
         JsonSerializerOptions options = new();
         options.Converters.Add(new RangeSystemTextJsonConverter());
 
-        var file = File.OpenRead($"{state.playerName}.json");
+        var file = File.OpenRead($"{player}.json");
         byte[] bytes = new byte[file.Length];
         file.ReadExactly(bytes, 0, (int)file.Length);
 
@@ -89,7 +90,7 @@ public static class GameManager
 
         tileGenerator.ClearTiles();
 
-        foreach (var line in File.ReadLines($"{state.playerName}_tiles.json"))
+        foreach (var line in File.ReadLines($"{player}_tiles.json"))
         {
             var split = line.Split("|");
 

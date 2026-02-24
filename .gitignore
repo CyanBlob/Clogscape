@@ -3,3 +3,4 @@ build/
 .godot/
 /android/
 *.import
+*.json

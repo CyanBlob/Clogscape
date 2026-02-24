@@ -239,7 +239,6 @@ public partial class UI : Button
         {
             name
         };
-        GD.Print($"Writing {name} to {nameFilePath}");
         File.WriteAllLines(nameFilePath, lines);
     }
 }
