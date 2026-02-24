@@ -9,7 +9,10 @@ public enum BountyType
     Minigame,
     Grind,
     Skilling,
-    Misc
+    Challenge,
+    Misc,
+    Fetch,
+    RealLife
 }
 
 public enum Difficulty
@@ -24,15 +27,29 @@ public enum Difficulty
 
 public class Bounty
 {
-    public String name;
-    public Texture2D texture;
-    public int keyValue;
-    public String description;
-    public String help;
+    public String name {get; set; }
+    public String imagePath {get; set; }
+    public float keyChance {get; set; }
+    public float extraKeyChance {get; set;}
+    public int minKeys {get; set; }
+    public int maxKeys {get; set; }
+    public int minGp {get; set; }
+    public int maxGp {get; set; }
 
-    public int combatLevel = 0;
-    public bool isWildy = false;
+    public Difficulty difficulty {get; set; }
 
-    public bool requirementLocked = false;
-    public bool completedLocked = true; // Used for tasks that can no longer be completed
+#nullable enable
+    // Chance that the bounty will be skipped if rolled
+    public float skipChance {get; set; }
+    public String? description {get; set; }
+    public String? help {get; set; }
+
+    public DateTime? lastCompleted {get; set; }
+    public DateTime? lastRolled {get; set; }
+
+    public int combatLevel {get; set; }
+    public bool isWildy {get; set; }
+
+    public bool? requirementLocked {get; set; }
+    public bool? completedLocked {get; set; } // Used for tasks that can no longer be complete
 }

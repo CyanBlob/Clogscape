@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -13,6 +14,8 @@ using Range = System.Range;
 public static class GameManager
 {
     private static GameState state = new();
+
+    private static Random rand = new();
 
     public static void SetState(GameState state)
     {
@@ -39,7 +42,29 @@ public static class GameManager
         state.quest = new QuestUnlock("TEST");
         state.diary = new DiaryUnlock("DIARY", DiaryDifficulty.Medium);
 
+        state.allBounties = new();
+        state.currentBounties = new();
+        state.completedBounties = new();
+
         state.hashedTiles = new();
+
+        var bounty = new Bounty();
+        bounty.name = "Test bounty";
+        bounty.imagePath = "img";
+        bounty.keyChance = 100f;
+        bounty.minKeys = 1;
+        bounty.maxKeys = 1;
+        bounty.minGp = 100;
+        bounty.maxGp = 1000;
+        bounty.difficulty = Difficulty.Novice;
+        bounty.skipChance = 0f;
+        bounty.description = "A bounty";
+        bounty.help = "Just do it";
+        bounty.isWildy = false;
+        bounty.requirementLocked = false;
+        bounty.completedLocked = false;
+
+        state.allBounties.Add(bounty);
 
         return state;
     }
@@ -57,22 +82,31 @@ public static class GameManager
         {
             json
         };
-        File.WriteAllLines($"{playerName}.json", lines);
+        File.WriteAllLines(PlayerFile(playerName), lines);
 
-        File.Delete($"{playerName}_tiles.json");
+        File.Delete(TilesFile(playerName));
 
         foreach (Tile tile in state.hashedTiles.Values)
         {
             var tileJson = new List<String> {
                 tile.Serialize()
             };
-            File.AppendAllLines($"{playerName}_tiles.json", tileJson);
+            File.AppendAllLines(TilesFile(playerName), tileJson);
         }
+
+        String allBountiesJson = JsonSerializer.Serialize(state.allBounties, options);
+
+        var allBountiesLines = new List<String>
+        {
+            allBountiesJson
+        };
+        File.WriteAllLines(PossibleBountiesFile(playerName), allBountiesLines);
     }
 
     public static bool Load(String player, TileGenerator tileGenerator)
     {
-        if (!File.Exists($"{state.playerName}.json") || !File.Exists($"{state.playerName}_tiles.json")) {
+        if (!File.Exists(PlayerFile(player)) || !File.Exists(TilesFile(player)))
+        {
             return false;
         }
         GD.Print($"Loading {player}");
@@ -80,7 +114,7 @@ public static class GameManager
         JsonSerializerOptions options = new();
         options.Converters.Add(new RangeSystemTextJsonConverter());
 
-        var file = File.OpenRead($"{player}.json");
+        var file = File.OpenRead(PlayerFile(player));
         byte[] bytes = new byte[file.Length];
         file.ReadExactly(bytes, 0, (int)file.Length);
 
@@ -90,7 +124,7 @@ public static class GameManager
 
         tileGenerator.ClearTiles();
 
-        foreach (var line in File.ReadLines($"{player}_tiles.json"))
+        foreach (var line in File.ReadLines(TilesFile(player)))
         {
             var split = line.Split("|");
 
@@ -120,12 +154,87 @@ public static class GameManager
         }
 
         tileGenerator.UpdateState();
+
+        String[] lines = [];
+        if (File.Exists(PossibleBountiesFile(player)))
+        {
+            lines = File.ReadAllLines(PossibleBountiesFile(player));
+        }
+        else
+        {
+            lines = File.ReadAllLines(DefaultPossibleBountiesFile());
+        }
+
+        var singleLine = String.Join(" ", lines);
+
+        GD.Print(singleLine);
+
+        var combinedLines = new List<String>
+        {
+            singleLine
+        };
+
+        // Bounties should be on one line for now
+        state.allBounties = JsonSerializer.Deserialize<List<Bounty>>(combinedLines[0], options);
+
         return true;
     }
 
     public static void LoadFromFile(String filePath)
     {
 
+    }
+
+    public static void UpdateAllowance(int gp)
+    {
+        state.playerAllowance += gp;
+    }
+
+    public static List<Bounty> UpdateBounties()
+    {
+        List<Bounty> bounties = new();
+
+        var newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+
+        bounties.Add(newBounty);
+
+        newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+        while (bounties.Contains(newBounty))
+        {
+            newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+        }
+
+        bounties.Add(newBounty);
+
+        newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+        while (bounties.Contains(newBounty))
+        {
+            newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+        }
+
+        bounties.Add(newBounty);
+
+        state.currentBounties = bounties;
+
+        return bounties;
+    }
+
+    public static String PlayerFile(String playerName)
+    {
+        return $"{playerName}.json";
+    }
+    public static String TilesFile(String playerName)
+    {
+        return $"{playerName}_tiles.json";
+    }
+    public static String PossibleBountiesFile(String playerName)
+    {
+        return $"{playerName}_possible_bounties.json";
+    }
+
+    public static String DefaultPossibleBountiesFile()
+    {
+        return $"default_possible_bounties.json";
     }
 }
 
@@ -140,6 +249,12 @@ public class GameState
     public SkillUnlock skill { get; set; }
     public QuestUnlock quest { get; set; }
     public DiaryUnlock diary { get; set; }
+
+    public List<Bounty> currentBounties { get; set; }
+    public List<Bounty> completedBounties { get; set; }
+
+    [JsonIgnore] // Serialized to a different file
+    public List<Bounty> allBounties { get; set; }
 
     [JsonIgnore]
     public Hashtable hashedTiles { get; set; }

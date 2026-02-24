@@ -193,6 +193,35 @@ theme_override_fonts/font = ExtResource("5_272bh")
 text = "Create Player"
 script = ExtResource("5_lquwl")
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer" unique_id=1684814623]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="AllowanceEdit" type="LineEdit" parent="CanvasLayer/VBoxContainer2" unique_id=1983489975]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_272bh")
+placeholder_text = "Allowance"
+expand_to_text_length = true
+
+[node name="KeysLabel" type="Label" parent="CanvasLayer/VBoxContainer2" unique_id=520891877]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "0 Keys"
+
+[node name="RollBountiesButton" type="Button" parent="CanvasLayer/VBoxContainer2" unique_id=383077066]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "Roll Bounties"
+
+[node name="CompleteBountyButton" type="Button" parent="CanvasLayer/VBoxContainer2" unique_id=1292625399]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "Complete Bounty"
+
 [connection signal="gui_input" from="Tiles/TooltipButton" to="Camera2D" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/SyncButton" to="CanvasLayer/VBoxContainer/SyncButton" method="_on_sync_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ItemsButton" to="CanvasLayer/VBoxContainer/ItemsButton" method="_on_items_button_pressed"]
@@ -201,3 +230,6 @@ script = ExtResource("5_lquwl")
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/SaveButton" to="CanvasLayer/VBoxContainer/SaveButton" method="_on_player_save"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/LoadButton" to="CanvasLayer/VBoxContainer/LoadButton" method="_on_player_load"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/CreateButton" to="CanvasLayer/VBoxContainer/CreateButton" method="_on_create_player"]
+[connection signal="text_changed" from="CanvasLayer/VBoxContainer2/AllowanceEdit" to="Camera2D" method="_on_allowance_edit_text_changed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer2/RollBountiesButton" to="CanvasLayer/VBoxContainer/CreateButton" method="_on_roll_bounties_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer2/CompleteBountyButton" to="CanvasLayer/VBoxContainer/CreateButton" method="_on_complete_bounty_button_pressed"]

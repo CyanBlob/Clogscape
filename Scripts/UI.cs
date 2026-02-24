@@ -241,4 +241,24 @@ public partial class UI : Button
         };
         File.WriteAllLines(nameFilePath, lines);
     }
+
+    public void _on_roll_bounties_button_pressed()
+    {
+        var bounties = GameManager.UpdateBounties();
+
+        foreach(var bounty in bounties)
+        {
+            GD.Print($"{bounty.name}");
+        }
+    }
+
+    public void _on_complete_bounty_button_pressed()
+    {
+
+    }
+
+    public void _on_allowance_edit_text_changed(String allowance)
+    {
+
+    }
 }
