@@ -5,6 +5,7 @@ using Godot;
 public abstract class Unlockable
 {
     private bool Unlocked = false;
+    private bool Claimed = false;
 
     public List<QuestUnlock> questRequirements = new();
     public List<(Skill, int)> skillRequirements = new();
@@ -18,6 +19,16 @@ public abstract class Unlockable
     public void Unlock()
     {
         Unlocked = true;
+    }
+
+    public virtual bool IsClaimed()
+    {
+        return Claimed;
+    }
+
+    public void Claim()
+    {
+        Claimed = true;
     }
 
     #nullable enable

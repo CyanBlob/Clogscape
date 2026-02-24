@@ -27,4 +27,9 @@ public class FreeTile : Unlockable
     {
         return true;
     }
+
+    public override bool IsClaimed()
+    {
+        return true;
+    }
 }

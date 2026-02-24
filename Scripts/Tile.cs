@@ -7,17 +7,26 @@ using System.Diagnostics;
 public partial class Tile : Node2D
 {
     static Button TooltipButton;
+    static Button UnlockButton;
+    static Button ClaimButton;
+    static Control UnlockContainer;
+    static Control ClaimContainer;
 
-    static bool ButtonLocked = false;
+    #nullable enable
+    static Tile? ButtonLocked = null;
+    #nullable disable
 
     public Unlockable unlockable;
 
     private Sprite2D icon;
     private Node2D lockIcon;
+    private Node2D checkIcon;
     private Label text;
     private Node2D background;
 
     public Vector2 gridPos;
+
+    public bool hidden = true;
 
     // TODO: Use a signal instead
     public TileGenerator tileGenerator;
@@ -25,9 +34,15 @@ public partial class Tile : Node2D
     public override void _Ready()
     {
         TooltipButton = GetParent().GetChild<Button>(0);
+        UnlockContainer = (Control)TooltipButton.FindChild("UnlockContainer");
+        ClaimContainer = (Control)TooltipButton.FindChild("ClaimContainer");
+
+        UnlockButton = UnlockContainer.GetChild(0).GetChild<Button>(0);
+        ClaimButton = ClaimContainer.GetChild(0).GetChild<Button>(0);
 
         icon = (Sprite2D)FindChild("Icon");
         lockIcon = (Node2D)FindChild("Locks");
+        checkIcon = (Node2D)FindChild("Checks");
 
         text = (Label)FindChild("Label");
         background = (Node2D)FindChild("Background");
@@ -50,23 +65,65 @@ public partial class Tile : Node2D
     {
     }
 
+    public void Unlock()
+    {
+        unlockable.Unlock();
+        tileGenerator.UpdateState();
+        _on_mouse_entered();
+        UnlockButton.Pressed -= Unlock;
+        ClaimButton.Pressed += Claim;
+    }
+
+    public void Claim()
+    {
+        unlockable.Claim();
+        tileGenerator.UpdateState();
+        _on_mouse_entered();
+        ClaimButton.Pressed -= Claim;
+    }
+
     public void _on_mouse_entered()
     {
-        if (ButtonLocked)
+        if (ButtonLocked == this /*|| ButtonLocked == null*/)
+        {
+            if (unlockable.IsUnlocked() && !unlockable.IsClaimed())
+            {
+                ClaimContainer.Visible = true;
+                UnlockContainer.Visible = false;
+            }
+            else if (unlockable.IsClaimed())
+            {
+                ClaimContainer.Visible = false;
+                UnlockContainer.Visible = false;
+            }
+            else
+            {
+                UnlockContainer.Visible = true;
+                ClaimContainer.Visible = false;
+            }
+
+            if (unlockable.IsClaimed())
+            {
+            }
+        }
+
+        if (ButtonLocked != null || hidden)
         {
             return;
         }
+
         TooltipButton.Disabled = false;
         TooltipButton.Position = Position + new Vector2(25, -50);
         TooltipButton.Visible = true;
         TooltipButton.Icon = unlockable.GetTexture();
         TooltipButton.Text = unlockable.ToString();
         TooltipButton.ResetSize();
+
     }
 
     public void _on_mouse_exited()
     {
-        if (ButtonLocked)
+        if (ButtonLocked != null)
         {
             return;
         }
@@ -81,14 +138,23 @@ public partial class Tile : Node2D
             TooltipButton.MouseFilter = Control.MouseFilterEnum.Stop;
 
             // Ensure the button is placed properly before locking
-            if (!ButtonLocked)
+            if (ButtonLocked == null && !hidden)
             {
-                unlockable.Unlock();
+                if (!unlockable.IsUnlocked())
+                {
+                    UnlockButton.Pressed += Unlock;
+                }
+                else if (!unlockable.IsClaimed())
+                {
+                    ClaimButton.Pressed += Claim;
+                }
+
+                ButtonLocked = this;
                 _on_mouse_entered();
-                tileGenerator.UpdateState();
+                return;
             }
 
-            ButtonLocked = !ButtonLocked;
+            ButtonLocked = null;
 
         }
     }
@@ -105,11 +171,11 @@ public partial class Tile : Node2D
         }
 
         lockIcon.Visible = !unlockable.IsUnlocked();
+        checkIcon.Visible = unlockable.IsClaimed() && unlockable.IsUnlocked();
 
         // Locked tiles can't be hidden
         if (!unlockable.IsUnlocked())
         {
-            var hidden = true;
             var leftTile = (Tile)tiles[new Vector2((int)gridPos.X - 1, (int)gridPos.Y)];
             var rightTile = (Tile)tiles[new Vector2((int)gridPos.X + 1, (int)gridPos.Y)];
             var upTile = (Tile)tiles[new Vector2((int)gridPos.X, (int)gridPos.Y - 1)];

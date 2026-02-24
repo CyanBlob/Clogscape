@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ctbsxsw8a3pae" path="res://Resources/resource-packs/skill/thieving.png" id="3_tfor0"]
 [ext_resource type="FontFile" uid="uid://c5e4i4ullqe30" path="res://Resources/Fonts/runescape_uf.ttf" id="4_tfor0"]
 [ext_resource type="Texture2D" uid="uid://byw2rneay11nj" path="res://Resources/Items/Gold locks.png" id="5_cpv6t"]
+[ext_resource type="Texture2D" uid="uid://ef4m1dkhtuwj" path="res://Resources/resource-packs/icon/checkmark_green.png" id="6_0w8l7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3f48"]
 size = Vector2(120, 120)
@@ -48,11 +49,18 @@ scale = Vector2(0.364, 0.533)
 texture = ExtResource("3_a2t34")
 
 [node name="Locks" type="Node2D" parent="." unique_id=1718077092]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Locks" unique_id=344143960]
 position = Vector2(0, -24)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_cpv6t")
+
+[node name="Checks" type="Node2D" parent="." unique_id=223401016]
+
+[node name="Sprite2D" type="Sprite2D" parent="Checks" unique_id=1519070624]
+position = Vector2(0, -24)
+texture = ExtResource("6_0w8l7")
 
 [connection signal="input_event" from="StaticBody2D" to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="StaticBody2D" to="." method="_on_mouse_entered"]

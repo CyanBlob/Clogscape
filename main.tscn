@@ -8,6 +8,9 @@
 [ext_resource type="FontFile" uid="uid://c5e4i4ullqe30" path="res://Resources/Fonts/runescape_uf.ttf" id="5_272bh"]
 [ext_resource type="Script" uid="uid://gbf8301f1iv3" path="res://Scripts/UI.cs" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://bdv5alq62gpm3" path="res://Resources/resource-packs/ge/selected_item_box.png" id="6_5vw27"]
+[ext_resource type="Texture2D" uid="uid://c5koiws76gs14" path="res://Resources/resource-packs/ge/selected_item_box_glowing.png" id="8_kek77"]
+[ext_resource type="Texture2D" uid="uid://b44ipbxrtybiv" path="res://Resources/resource-packs/bank/placeholders_lock.png" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://ef4m1dkhtuwj" path="res://Resources/resource-packs/icon/checkmark_green.png" id="10_efxa6"]
 
 [node name="Node2D" type="Node2D" unique_id=1331184047]
 
@@ -25,17 +28,17 @@ TileSize = 50
 TileSpacing = 24
 
 [node name="TooltipButton" parent="Tiles" unique_id=796071662 instance=ExtResource("3_1bvp3")]
+custom_minimum_size = Vector2(216, 64)
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 216.0
 offset_bottom = 64.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("5_272bh")
 icon = ExtResource("5_7mycd")
 flat = true
 alignment = 0
+text_overrun_behavior = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Tiles/TooltipButton" unique_id=1440936667]
 z_index = -1
@@ -51,6 +54,85 @@ patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
+
+[node name="UnlockContainer" type="Control" parent="Tiles/TooltipButton" unique_id=1151530484]
+visible = false
+anchors_preset = 0
+offset_left = 22.0
+offset_top = 61.0
+offset_right = 197.0
+offset_bottom = 106.0
+
+[node name="UnlockRect" type="NinePatchRect" parent="Tiles/TooltipButton/UnlockContainer" unique_id=547737780]
+z_index = -3
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_kek77")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Button" type="Button" parent="Tiles/TooltipButton/UnlockContainer/UnlockRect" unique_id=1103982980]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "Unlock"
+icon = ExtResource("9_4c57u")
+
+[node name="ClaimContainer" type="Control" parent="Tiles/TooltipButton" unique_id=1566989239]
+visible = false
+anchors_preset = 0
+offset_left = 22.0
+offset_top = 61.0
+offset_right = 197.0
+offset_bottom = 106.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Tiles/TooltipButton/ClaimContainer" unique_id=1317391269]
+z_index = -3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("8_kek77")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Button" type="Button" parent="Tiles/TooltipButton/ClaimContainer/NinePatchRect" unique_id=1022422733]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "Claim"
+icon = ExtResource("10_efxa6")
 
 [node name="Tile" parent="Tiles" unique_id=32004639 instance=ExtResource("2_0xm2m")]
 visible = false
