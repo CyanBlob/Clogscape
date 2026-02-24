@@ -18,6 +18,7 @@ public partial class UI : Button
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        tileGenerator = (TileGenerator)GetParent().GetParent().GetParent().FindChild("Tiles");
         if (File.Exists(nameFilePath))
         {
             GameManager.GetState().playerName = File.ReadAllLines(nameFilePath)[0];
@@ -26,6 +27,12 @@ public partial class UI : Button
 
             playerNameEdit.Text = GameManager.GetState().playerName;
             GameManager.GetState().playerName = playerNameEdit.Text;
+
+            if (!GameManager.Load(playerNameEdit.Text, tileGenerator))
+            {
+                GameManager.SetState(GameManager.GetDefaultState());
+                GameManager.Save(playerNameEdit.Text);
+            }
         }
 
         client = new HttpClient();

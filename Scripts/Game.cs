@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Godot;
+using Range = System.Range;
 
 public static class GameManager
 {
@@ -45,9 +46,12 @@ public static class GameManager
 
     public static void Save(String playerName)
     {
+        JsonSerializerOptions options = new();
+        options.Converters.Add(new RangeSystemTextJsonConverter());
+
         state.playerName = playerName;
 
-        String json = JsonSerializer.Serialize(state);
+        String json = JsonSerializer.Serialize(state, options);
 
         var lines = new List<String>
         {
@@ -66,13 +70,20 @@ public static class GameManager
         }
     }
 
-    public static void Load(String player, TileGenerator tileGenerator)
+    public static bool Load(String player, TileGenerator tileGenerator)
     {
+        if (!File.Exists($"{state.playerName}.json") || !File.Exists($"{state.playerName}_tiles.json")) {
+            return false;
+        }
+
+        JsonSerializerOptions options = new();
+        options.Converters.Add(new RangeSystemTextJsonConverter());
+
         var file = File.OpenRead($"{state.playerName}.json");
         byte[] bytes = new byte[file.Length];
         file.ReadExactly(bytes, 0, (int)file.Length);
 
-        state = JsonSerializer.Deserialize<GameState>(bytes);
+        state = JsonSerializer.Deserialize<GameState>(bytes, options);
 
         state.hashedTiles = new();
 
@@ -89,29 +100,26 @@ public static class GameManager
             switch (type)
             {
                 case UnlockableType.Skill:
-                    SkillUnlock skill = JsonSerializer.Deserialize<SkillUnlock>(split[3]);
-                    //state.hashedTiles.Add(new Vector2(skill.gridPosX, skill.gridPosY), skill);
+                    SkillUnlock skill = JsonSerializer.Deserialize<SkillUnlock>(split[3], options);
                     tileGenerator.AddTileFromUnlock(skill);
                     break;
                 case UnlockableType.Quest:
-                    QuestUnlock quest = JsonSerializer.Deserialize<QuestUnlock>(split[3]);
-                    //state.hashedTiles.Add(new Vector2(quest.gridPosX, quest.gridPosY), quest);
+                    QuestUnlock quest = JsonSerializer.Deserialize<QuestUnlock>(split[3], options);
                     tileGenerator.AddTileFromUnlock(quest);
                     break;
                 case UnlockableType.Diary:
-                    DiaryUnlock diary = JsonSerializer.Deserialize<DiaryUnlock>(split[3]);
-                    //state.hashedTiles.Add(new Vector2(diary.gridPosX, diary.gridPosY), diary);
+                    DiaryUnlock diary = JsonSerializer.Deserialize<DiaryUnlock>(split[3], options);
                     tileGenerator.AddTileFromUnlock(diary);
                     break;
                 case UnlockableType.Free:
-                    FreeTile free = JsonSerializer.Deserialize<FreeTile>(split[3]);
-                    //state.hashedTiles.Add(new Vector2(free.gridPosX, free.gridPosY), free);
+                    FreeTile free = JsonSerializer.Deserialize<FreeTile>(split[3], options);
                     tileGenerator.AddTileFromUnlock(free);
                     break;
             }
         }
 
         tileGenerator.UpdateState();
+        return true;
     }
 
     public static void LoadFromFile(String filePath)
@@ -135,4 +143,31 @@ public class GameState
     [JsonIgnore]
     public Hashtable hashedTiles { get; set; }
 
+}
+
+// Required to correctly deserialize Ranges
+public class RangeSystemTextJsonConverter : JsonConverter<System.Range>
+{
+    public override Range Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        using var doc = JsonDocument.ParseValue(ref reader);
+        var root = doc.RootElement;
+        var start = root.GetProperty("Start").GetProperty("Value").GetInt32();
+        var end = root.GetProperty("End").GetProperty("Value").GetInt32();
+        return new Range(start, end);
+    }
+
+    public override void Write(Utf8JsonWriter writer, Range value, JsonSerializerOptions options)
+    {
+        writer.WriteStartObject();
+        writer.WriteStartObject("Start");
+        writer.WriteNumber("Value", value.Start.Value);
+        writer.WriteBoolean("IsFromEnd", value.Start.IsFromEnd);
+        writer.WriteEndObject();
+        writer.WriteStartObject("End");
+        writer.WriteNumber("Value", value.End.Value);
+        writer.WriteBoolean("IsFromEnd", value.End.IsFromEnd);
+        writer.WriteEndObject();
+        writer.WriteEndObject();
+    }
 }

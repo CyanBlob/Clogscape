@@ -211,19 +211,22 @@ public partial class Tile : Node2D
         String str = $"{gridPos.X}|{gridPos.Y}|{(int)unlockable.unlockableType}|";
 
         string json = "";
+        JsonSerializerOptions options = new();
+        options.Converters.Add(new RangeSystemTextJsonConverter());
+
         switch (unlockable.unlockableType)
         {
             case UnlockableType.Skill:
-                json = JsonSerializer.Serialize((SkillUnlock)unlockable);
+                json = JsonSerializer.Serialize((SkillUnlock)unlockable, options);
                 break;
             case UnlockableType.Quest:
-                json = JsonSerializer.Serialize((QuestUnlock)unlockable);
+                json = JsonSerializer.Serialize((QuestUnlock)unlockable, options);
                 break;
             case UnlockableType.Diary:
-                json = JsonSerializer.Serialize((DiaryUnlock)unlockable);
+                json = JsonSerializer.Serialize((DiaryUnlock)unlockable, options);
                 break;
             case UnlockableType.Free:
-                json = JsonSerializer.Serialize((FreeTile)unlockable);
+                json = JsonSerializer.Serialize((FreeTile)unlockable, options);
                 break;
         }
 
