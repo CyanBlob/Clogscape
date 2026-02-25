@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ctbsxsw8a3pae" path="res://Resources/resource-packs/skill/thieving.png" id="3_tfor0"]
 [ext_resource type="FontFile" uid="uid://c5e4i4ullqe30" path="res://Resources/Fonts/runescape_uf.ttf" id="4_tfor0"]
 [ext_resource type="Texture2D" uid="uid://byw2rneay11nj" path="res://Resources/Items/Gold locks.png" id="5_cpv6t"]
+[ext_resource type="Texture2D" uid="uid://dib8rgkwgfeyt" path="res://Resources/resource-packs/ge/button.png" id="5_t20d7"]
 [ext_resource type="Texture2D" uid="uid://ef4m1dkhtuwj" path="res://Resources/resource-packs/icon/checkmark_green.png" id="6_0w8l7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3f48"]
@@ -17,7 +18,7 @@ script = ExtResource("2_vx4y2")
 [node name="Label" type="Label" parent="." unique_id=1063871421]
 offset_left = -32.0
 offset_top = 8.0
-offset_right = 32.0
+offset_right = 36.0
 offset_bottom = 31.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("4_tfor0")
@@ -44,9 +45,30 @@ shape = SubResource("RectangleShape2D_n3f48")
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=398298821]
+visible = false
 z_index = -1
 scale = Vector2(0.364, 0.533)
 texture = ExtResource("3_a2t34")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Background" unique_id=1865807716]
+z_index = -1
+custom_minimum_size = Vector2(32, 44)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -22.0
+offset_right = 18.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5_t20d7")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
 [node name="Locks" type="Node2D" parent="." unique_id=1718077092]
 visible = false
