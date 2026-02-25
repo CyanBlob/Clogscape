@@ -265,8 +265,9 @@ public class GameState
         completedBounties.Add(bounty);
         playerKeys += bounty.minKeys;
         playerAllowance += rand.Next(bounty.minGp, bounty.maxGp);
-    }
 
+        GameManager.UpdateBounties();
+    }
 }
 
 // Required to correctly deserialize Ranges

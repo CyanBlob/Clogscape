@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://b44ipbxrtybiv" path="res://Resources/resource-packs/bank/placeholders_lock.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://ef4m1dkhtuwj" path="res://Resources/resource-packs/icon/checkmark_green.png" id="10_efxa6"]
 [ext_resource type="Texture2D" uid="uid://cyswcmtqxfce2" path="res://Resources/resource-packs/quests_tab/combat_achievements_combat_level.png" id="12_dg77c"]
+[ext_resource type="Script" uid="uid://ifpwtwcft5u2" path="res://Scripts/BountyContainer.cs" id="13_vivmo"]
 [ext_resource type="Texture2D" uid="uid://b2vay27wiojjo" path="res://Resources/resource-packs/chatbox/background.png" id="13_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://cid325ovdje07" path="res://Resources/resource-packs/quests_tab/combat_achievements_icon.png" id="14_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://dib8rgkwgfeyt" path="res://Resources/resource-packs/ge/button.png" id="14_w48qg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dg77c"]
@@ -33,6 +35,7 @@ TileSize = 50
 TileSpacing = 24
 
 [node name="TooltipButton" parent="Tiles" unique_id=796071662 instance=ExtResource("3_1bvp3")]
+visible = false
 custom_minimum_size = Vector2(216, 64)
 offset_left = 0.0
 offset_top = 0.0
@@ -150,12 +153,11 @@ visible = false
 position = Vector2(128, 128)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=996357377]
-visible = false
 
 [node name="Board Controls" type="VBoxContainer" parent="CanvasLayer" unique_id=1342843202]
 visible = false
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 102.0
+offset_bottom = 192.0
 
 [node name="SyncButton" type="Button" parent="CanvasLayer/Board Controls" unique_id=1734037534]
 z_index = 104
@@ -209,8 +211,8 @@ script = ExtResource("5_lquwl")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -105.0
+offset_bottom = 100.0
 grow_horizontal = 0
 
 [node name="AllowanceEdit" type="LineEdit" parent="CanvasLayer/Bounty Controls" unique_id=1983489975]
@@ -234,122 +236,30 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Complete Bounty"
 
-[node name="BountyContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1042969198]
-visible = false
-offset_right = 300.0
-offset_bottom = 175.0
-
-[node name="Control" type="Control" parent="CanvasLayer/BountyContainer" unique_id=578287103]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-
-[node name="InfoContainer" type="NinePatchRect" parent="CanvasLayer/BountyContainer/Control" unique_id=1346969199]
-layout_mode = 1
-anchors_preset = 2
+[node name="BountyContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1395489263]
+custom_minimum_size = Vector2(1000, 150)
+anchors_preset = 12
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -175.0
-offset_right = 300.0
-grow_vertical = 0
-texture = ExtResource("13_ycdy4")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BountyContainer/Control/InfoContainer" unique_id=1254500459]
-custom_minimum_size = Vector2(72, 72)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -37.5
-offset_top = -37.5
-offset_right = 34.5
-offset_bottom = 34.5
+offset_top = -12.0
 grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("12_dg77c")
-
-[node name="Title" type="Label" parent="CanvasLayer/BountyContainer/Control/InfoContainer" unique_id=1708316963]
-layout_mode = 0
-offset_right = 300.0
-offset_bottom = 35.0
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("5_272bh")
-text = "
-Boss!"
-label_settings = SubResource("LabelSettings_dg77c")
-horizontal_alignment = 1
-
-[node name="Description" type="Label" parent="CanvasLayer/BountyContainer/Control/InfoContainer" unique_id=1563482941]
-custom_minimum_size = Vector2(300, 10)
-layout_mode = 0
-offset_top = 121.0
-offset_right = 300.0
-offset_bottom = 175.0
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("5_272bh")
-text = "Kill this boss 10 times. This is a long description so it wraps
-"
-label_settings = SubResource("LabelSettings_dg77c")
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="PanelContainer" type="NinePatchRect" parent="CanvasLayer/BountyContainer/Control" unique_id=1172064438]
-z_index = -3
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 49.0
-offset_top = -15.0
-offset_right = 249.0
-offset_bottom = 60.00006
 grow_vertical = 0
-texture = ExtResource("13_ycdy4")
+size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CanvasLayer/BountyContainer/Control/PanelContainer" unique_id=1874384399]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -37.50003
-offset_right = 100.0
-offset_bottom = 37.50003
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_272bh")
-text = "Complete!"
-
-[node name="BountyContainer2" type="HBoxContainer" parent="CanvasLayer" unique_id=1395489263]
-offset_right = 300.0
-offset_bottom = 175.0
-
-[node name="Control" type="Control" parent="CanvasLayer/BountyContainer2" unique_id=138147145]
+[node name="Bounty1" type="NinePatchRect" parent="CanvasLayer/BountyContainer" unique_id=815829880]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-
-[node name="Background" type="NinePatchRect" parent="CanvasLayer/BountyContainer2/Control" unique_id=429445784]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -175.0
-offset_right = 300.0
-grow_vertical = 0
+size_flags_horizontal = 3
 texture = ExtResource("13_ycdy4")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("13_vivmo")
+bossTexture = ExtResource("14_2cqfq")
+combatTexture = ExtResource("12_dg77c")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BountyContainer2/Control/Background" unique_id=821259881]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BountyContainer/Bounty1" unique_id=1097846469]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -357,7 +267,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="CanvasLayer/BountyContainer2/Control/Background/VBoxContainer" unique_id=1849031862]
+[node name="Title" type="Label" parent="CanvasLayer/BountyContainer/Bounty1/VBoxContainer" unique_id=1724939845]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("5_272bh")
@@ -366,19 +276,19 @@ Boss!"
 label_settings = SubResource("LabelSettings_dg77c")
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BountyContainer2/Control/Background/VBoxContainer" unique_id=1395739465]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/BountyContainer/Bounty1/VBoxContainer" unique_id=1743827690]
 custom_minimum_size = Vector2(54, 54)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("12_dg77c")
 
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/BountyContainer2/Control/Background/VBoxContainer" unique_id=516683013]
+[node name="DescriptionContainer" type="MarginContainer" parent="CanvasLayer/BountyContainer/Bounty1/VBoxContainer" unique_id=1144870104]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="Description" type="Label" parent="CanvasLayer/BountyContainer2/Control/Background/VBoxContainer/MarginContainer2" unique_id=427720375]
+[node name="Description" type="Label" parent="CanvasLayer/BountyContainer/Bounty1/VBoxContainer/DescriptionContainer" unique_id=391483299]
 custom_minimum_size = Vector2(280, 10)
 layout_mode = 2
 size_flags_vertical = 8
@@ -388,20 +298,20 @@ label_settings = SubResource("LabelSettings_dg77c")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/BountyContainer2/Control/Background/VBoxContainer" unique_id=1618953738]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/BountyContainer/Bounty1/VBoxContainer" unique_id=395309551]
 layout_mode = 2
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 25
 
-[node name="Button" type="Button" parent="CanvasLayer/BountyContainer2/Control/Background/VBoxContainer/MarginContainer" unique_id=116641188]
+[node name="Button" type="Button" parent="CanvasLayer/BountyContainer/Bounty1/VBoxContainer/MarginContainer" unique_id=230631464]
 z_index = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Complete!"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/BountyContainer2/Control/Background/VBoxContainer/MarginContainer/Button" unique_id=436702655]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/BountyContainer/Bounty1/VBoxContainer/MarginContainer/Button" unique_id=912344194]
 z_index = -1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
@@ -411,10 +321,170 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_w48qg")
-patch_margin_left = 1
-patch_margin_top = 1
-patch_margin_right = 1
-patch_margin_bottom = 1
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Bounty2" type="NinePatchRect" parent="CanvasLayer/BountyContainer" unique_id=1183083783]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("13_ycdy4")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("13_vivmo")
+bountyIndex = 1
+bossTexture = ExtResource("14_2cqfq")
+combatTexture = ExtResource("12_dg77c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BountyContainer/Bounty2" unique_id=1068545329]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/BountyContainer/Bounty2/VBoxContainer" unique_id=1402832159]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "
+Boss!"
+label_settings = SubResource("LabelSettings_dg77c")
+horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/BountyContainer/Bounty2/VBoxContainer" unique_id=1889532523]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_dg77c")
+
+[node name="DescriptionContainer" type="MarginContainer" parent="CanvasLayer/BountyContainer/Bounty2/VBoxContainer" unique_id=1438310588]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Description" type="Label" parent="CanvasLayer/BountyContainer/Bounty2/VBoxContainer/DescriptionContainer" unique_id=1275469507]
+custom_minimum_size = Vector2(280, 10)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "Kill this boss 10 times. This is a long description so it wraps"
+label_settings = SubResource("LabelSettings_dg77c")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/BountyContainer/Bounty2/VBoxContainer" unique_id=1341346657]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 25
+
+[node name="Button" type="Button" parent="CanvasLayer/BountyContainer/Bounty2/VBoxContainer/MarginContainer" unique_id=758911320]
+z_index = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "Complete!"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/BountyContainer/Bounty2/VBoxContainer/MarginContainer/Button" unique_id=224906500]
+z_index = -1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_w48qg")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Bounty3" type="NinePatchRect" parent="CanvasLayer/BountyContainer" unique_id=350220766]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("13_ycdy4")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("13_vivmo")
+bountyIndex = 2
+bossTexture = ExtResource("14_2cqfq")
+combatTexture = ExtResource("12_dg77c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BountyContainer/Bounty3" unique_id=454653107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/BountyContainer/Bounty3/VBoxContainer" unique_id=634674644]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "
+Boss!"
+label_settings = SubResource("LabelSettings_dg77c")
+horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/BountyContainer/Bounty3/VBoxContainer" unique_id=1698086052]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_dg77c")
+
+[node name="DescriptionContainer" type="MarginContainer" parent="CanvasLayer/BountyContainer/Bounty3/VBoxContainer" unique_id=69372415]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Description" type="Label" parent="CanvasLayer/BountyContainer/Bounty3/VBoxContainer/DescriptionContainer" unique_id=847162495]
+custom_minimum_size = Vector2(280, 10)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "Kill this boss 10 times. This is a long description so it wraps"
+label_settings = SubResource("LabelSettings_dg77c")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/BountyContainer/Bounty3/VBoxContainer" unique_id=1459148714]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 25
+
+[node name="Button" type="Button" parent="CanvasLayer/BountyContainer/Bounty3/VBoxContainer/MarginContainer" unique_id=1117698845]
+z_index = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "Complete!"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/BountyContainer/Bounty3/VBoxContainer/MarginContainer/Button" unique_id=950945232]
+z_index = -1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_w48qg")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [connection signal="gui_input" from="Tiles/TooltipButton" to="Camera2D" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/Board Controls/SyncButton" to="CanvasLayer/Board Controls/SyncButton" method="_on_sync_pressed"]
@@ -427,3 +497,6 @@ patch_margin_bottom = 1
 [connection signal="text_changed" from="CanvasLayer/Bounty Controls/AllowanceEdit" to="CanvasLayer/Board Controls/CreateButton" method="_on_allowance_edit_text_changed"]
 [connection signal="pressed" from="CanvasLayer/Bounty Controls/RollBountiesButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_roll_bounties_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Bounty Controls/CompleteBountyButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_complete_bounty_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BountyContainer/Bounty1/VBoxContainer/MarginContainer/Button" to="CanvasLayer/BountyContainer/Bounty1" method="_on_complete_bounty_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BountyContainer/Bounty2/VBoxContainer/MarginContainer/Button" to="CanvasLayer/BountyContainer/Bounty2" method="_on_complete_bounty_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BountyContainer/Bounty3/VBoxContainer/MarginContainer/Button" to="CanvasLayer/BountyContainer/Bounty3" method="_on_complete_bounty_button_pressed"]

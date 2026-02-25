@@ -63,7 +63,9 @@ public partial class UI : Button
 
     public override void _Process(double delta)
     {
+        // TODO: I don't want to do this every frame
         UpdateKeys();
+        UpdateAllowance();
     }
 
     public async void _on_sync_pressed()
@@ -222,6 +224,11 @@ public partial class UI : Button
     public void UpdateKeys()
     {
         keysLabel.Text = GameManager.GetState().playerKeys.ToString();
+    }
+
+    public void UpdateAllowance()
+    {
+        allowanceEdit.Text = GameManager.GetState().playerAllowance.ToString();
     }
 
     public void _on_player_save()

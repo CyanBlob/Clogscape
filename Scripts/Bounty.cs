@@ -36,6 +36,8 @@ public class Bounty
     public int minGp {get; set; }
     public int maxGp {get; set; }
 
+    public BountyType bountyType {get; set; }
+
     public Difficulty difficulty {get; set; }
 
 #nullable enable
