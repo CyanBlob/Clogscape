@@ -16,6 +16,15 @@
 [ext_resource type="Texture2D" uid="uid://b2vay27wiojjo" path="res://Resources/resource-packs/chatbox/background.png" id="13_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://cid325ovdje07" path="res://Resources/resource-packs/quests_tab/combat_achievements_icon.png" id="14_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://dib8rgkwgfeyt" path="res://Resources/resource-packs/ge/button.png" id="14_w48qg"]
+[ext_resource type="Texture2D" uid="uid://dwucp50p0gb6" path="res://Resources/resource-packs/emote/party.png" id="15_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://dodncu8adxcxr" path="res://Resources/Items/Ghoul champion scroll.png" id="16_0odxb"]
+[ext_resource type="Texture2D" uid="uid://yy0jtp62dbug" path="res://Resources/resource-packs/quests_tab/red_minigames_icon.png" id="17_lswn8"]
+[ext_resource type="Texture2D" uid="uid://brnw3edyq46c8" path="res://Resources/resource-packs/bonds_pouch/inventory.png" id="18_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://xbdlaypcqmvu" path="res://Resources/resource-packs/quests_tab/combat_achievements_total_level.png" id="19_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://l1s70isdhcup" path="res://Resources/resource-packs/prayer/burst_of_strength.png" id="20_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://bpi61h4n2pudx" path="res://Resources/resource-packs/ge/make_offer_buy.png" id="21_kq58d"]
+[ext_resource type="Texture2D" uid="uid://c882uqgqr3a6j" path="res://Resources/resource-packs/options/run_energy.png" id="22_seu75"]
+[ext_resource type="Texture2D" uid="uid://cjey3at7c70aa" path="res://Resources/resource-packs/skill/slayer.png" id="23_0odxb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dg77c"]
 
@@ -257,7 +266,16 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 script = ExtResource("13_vivmo")
 bossTexture = ExtResource("14_2cqfq")
-combatTexture = ExtResource("12_dg77c")
+raidTexture = ExtResource("15_1u8w0")
+clueTexture = ExtResource("16_0odxb")
+minigameTexture = ExtResource("17_lswn8")
+grindTexture = ExtResource("18_a6jrf")
+skillingTexture = ExtResource("19_xuqvo")
+challengeTexture = ExtResource("20_qsp4k")
+miscTexture = ExtResource("10_efxa6")
+fetchTexture = ExtResource("21_kq58d")
+realLifeTexture = ExtResource("22_seu75")
+slayerTexture = ExtResource("23_0odxb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BountyContainer/Bounty1" unique_id=1097846469]
 layout_mode = 1
@@ -337,7 +355,16 @@ patch_margin_bottom = 6
 script = ExtResource("13_vivmo")
 bountyIndex = 1
 bossTexture = ExtResource("14_2cqfq")
-combatTexture = ExtResource("12_dg77c")
+raidTexture = ExtResource("15_1u8w0")
+clueTexture = ExtResource("16_0odxb")
+minigameTexture = ExtResource("17_lswn8")
+grindTexture = ExtResource("18_a6jrf")
+skillingTexture = ExtResource("19_xuqvo")
+challengeTexture = ExtResource("20_qsp4k")
+miscTexture = ExtResource("10_efxa6")
+fetchTexture = ExtResource("21_kq58d")
+realLifeTexture = ExtResource("22_seu75")
+slayerTexture = ExtResource("23_0odxb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BountyContainer/Bounty2" unique_id=1068545329]
 layout_mode = 1
@@ -417,7 +444,16 @@ patch_margin_bottom = 6
 script = ExtResource("13_vivmo")
 bountyIndex = 2
 bossTexture = ExtResource("14_2cqfq")
-combatTexture = ExtResource("12_dg77c")
+raidTexture = ExtResource("15_1u8w0")
+clueTexture = ExtResource("16_0odxb")
+minigameTexture = ExtResource("17_lswn8")
+grindTexture = ExtResource("18_a6jrf")
+skillingTexture = ExtResource("19_xuqvo")
+challengeTexture = ExtResource("20_qsp4k")
+miscTexture = ExtResource("10_efxa6")
+fetchTexture = ExtResource("21_kq58d")
+realLifeTexture = ExtResource("22_seu75")
+slayerTexture = ExtResource("23_0odxb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BountyContainer/Bounty3" unique_id=454653107]
 layout_mode = 1

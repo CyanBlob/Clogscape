@@ -1,245 +1,257 @@
 [
-	{
-		"name": "Goblin Menace",
-		"imagePath": "img/goblin.png",
-		"keyChance": 10.0,
-		"extraKeyChance": 2.5,
-		"minKeys": 0,
-		"maxKeys": 1,
-		"minGp": 50,
-		"maxGp": 200,
-		"difficulty": 0,
-		"skipChance": 5.0,
-		"description": "Kill 50 goblins across nearby camps.",
-		"help": "Use area attacks and bring food.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 3,
-		"isWildy": false,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "Cave Spider Nest",
-		"imagePath": "img/cave_spider.png",
-		"keyChance": 15.0,
-		"extraKeyChance": 3.0,
-		"minKeys": 0,
-		"maxKeys": 2,
-		"minGp": 75,
-		"maxGp": 250,
-		"difficulty": 0,
-		"skipChance": 7.0,
-		"description": "Clear 40 cave spiders from the nest.",
-		"help": "Bring ranged or high-defense melee.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 10,
-		"isWildy": false,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "Hill Giant Herd",
-		"imagePath": "img/hill_giant.png",
-		"keyChance": 20.0,
-		"extraKeyChance": 4.0,
-		"minKeys": 0,
-		"maxKeys": 2,
-		"minGp": 200,
-		"maxGp": 800,
-		"difficulty": 1,
-		"skipChance": 10.0,
-		"description": "Defeat 30 hill giants in the field.",
-		"help": "Bring a safe spot and food.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 30,
-		"isWildy": false,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "Rogue's Den Sweep",
-		"imagePath": "img/rogue.png",
-		"keyChance": 25.0,
-		"extraKeyChance": 5.0,
-		"minKeys": 0,
-		"maxKeys": 2,
-		"minGp": 250,
-		"maxGp": 900,
-		"difficulty": 1,
-		"skipChance": 12.0,
-		"description": "Clear the Rogue's Den of its inhabitants.",
-		"help": "Bring stealthy gear or ranged options.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 40,
-		"isWildy": false,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "Skeleton Legion",
-		"imagePath": "img/skeleton.png",
-		"keyChance": 30.0,
-		"extraKeyChance": 6.0,
-		"minKeys": 1,
-		"maxKeys": 3,
-		"minGp": 500,
-		"maxGp": 2000,
-		"difficulty": 2,
-		"skipChance": 15.0,
-		"description": "Eliminate 60 skeletons roaming the crypts.",
-		"help": "Use crush or blunt weapons for effectiveness.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 60,
-		"isWildy": false,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "Wyvern Patrol",
-		"imagePath": "img/wyvern.png",
-		"keyChance": 35.0,
-		"extraKeyChance": 7.0,
-		"minKeys": 1,
-		"maxKeys": 3,
-		"minGp": 1000,
-		"maxGp": 3000,
-		"difficulty": 2,
-		"skipChance": 20.0,
-		"description": "Hunt down 20 wyverns from the northern cliffs.",
-		"help": "Bring anti-poison and high-range defense.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 80,
-		"isWildy": false,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "Dagannoth Kings",
-		"imagePath": "img/dagannoth.png",
-		"keyChance": 40.0,
-		"extraKeyChance": 8.0,
-		"minKeys": 1,
-		"maxKeys": 4,
-		"minGp": 2500,
-		"maxGp": 10000,
-		"difficulty": 3,
-		"skipChance": 25.0,
-		"description": "Defeat the Dagannoth kings (all three) as a group.",
-		"help": "Recommended team; bring multi-combat setup.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 100,
-		"isWildy": false,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "Crimson Hellhound Pack",
-		"imagePath": "img/hellhound.png",
-		"keyChance": 45.0,
-		"extraKeyChance": 9.0,
-		"minKeys": 1,
-		"maxKeys": 4,
-		"minGp": 3000,
-		"maxGp": 12000,
-		"difficulty": 3,
-		"skipChance": 30.0,
-		"description": "Hunt 40 crimson hellhounds infesting the valley.",
-		"help": "Use fire-resistant gear; beware of the wildy.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 120,
-		"isWildy": true,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "Chaos Elemental Hunt",
-		"imagePath": "img/chaos_elemental.png",
-		"keyChance": 60.0,
-		"extraKeyChance": 15.0,
-		"minKeys": 2,
-		"maxKeys": 6,
-		"minGp": 5000,
-		"maxGp": 30000,
-		"difficulty": 4,
-		"skipChance": 40.0,
-		"description": "Track and defeat the Chaos Elemental in the deep wilds.",
-		"help": "High-risk; bring teleport failsafes and team.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 150,
-		"isWildy": true,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "Dragonkin Overlord",
-		"imagePath": "img/dragonkin.png",
-		"keyChance": 55.0,
-		"extraKeyChance": 12.0,
-		"minKeys": 2,
-		"maxKeys": 6,
-		"minGp": 10000,
-		"maxGp": 50000,
-		"difficulty": 4,
-		"skipChance": 35.0,
-		"description": "Confront the Dragonkin Overlord in its lair.",
-		"help": "High defense and anti-dragon shields recommended.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 160,
-		"isWildy": false,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "The Gauntlet",
-		"imagePath": "img/gauntlet.png",
-		"keyChance": 80.0,
-		"extraKeyChance": 25.0,
-		"minKeys": 3,
-		"maxKeys": 8,
-		"minGp": 25000,
-		"maxGp": 150000,
-		"difficulty": 5,
-		"skipChance": 50.0,
-		"description": "Complete the Gauntlet — a brutal, multi-phase trial.",
-		"help": "Top-tier gear required; consider group coordination.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 200,
-		"isWildy": false,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
-		"name": "Abyssal Wyrm",
-		"imagePath": "img/abyssal_wyrm.png",
-		"keyChance": 75.0,
-		"extraKeyChance": 20.0,
-		"minKeys": 3,
-		"maxKeys": 9,
-		"minGp": 50000,
-		"maxGp": 300000,
-		"difficulty": 5,
-		"skipChance": 55.0,
-		"description": "Hunt the legendary Abyssal Wyrm in the deep chasm.",
-		"help": "Prepare teleport failsafes and bring high-tier gear.",
-		"lastCompleted": null,
-		"lastRolled": null,
-		"combatLevel": 220,
-		"isWildy": true,
-		"requirementLocked": false,
-		"completedLocked": false
-	},
-	{
+  {
+	"name": "Goblin Menace",
+	"imagePath": "img/goblin.png",
+	"keyChance": 10.0,
+	"extraKeyChance": 2.5,
+	"minKeys": 0,
+	"maxKeys": 1,
+	"minGp": 50,
+	"maxGp": 200,
+	"difficulty": 0,
+	"skipChance": 5.0,
+	"description": "Kill 50 goblins across nearby camps.",
+	"help": "Use area attacks and bring food.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 3,
+	"isWildy": false,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 10
+  },
+  {
+	"name": "Cave Spider Nest",
+	"imagePath": "img/cave_spider.png",
+	"keyChance": 15.0,
+	"extraKeyChance": 3.0,
+	"minKeys": 0,
+	"maxKeys": 2,
+	"minGp": 75,
+	"maxGp": 250,
+	"difficulty": 0,
+	"skipChance": 7.0,
+	"description": "Clear 40 cave spiders from the nest.",
+	"help": "Bring ranged or high-defense melee.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 10,
+	"isWildy": false,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 10
+  },
+  {
+	"name": "Hill Giant Herd",
+	"imagePath": "img/hill_giant.png",
+	"keyChance": 20.0,
+	"extraKeyChance": 4.0,
+	"minKeys": 0,
+	"maxKeys": 2,
+	"minGp": 200,
+	"maxGp": 800,
+	"difficulty": 1,
+	"skipChance": 10.0,
+	"description": "Defeat 30 hill giants in the field.",
+	"help": "Bring a safe spot and food.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 30,
+	"isWildy": false,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 10
+  },
+  {
+	"name": "Rogue's Den Sweep",
+	"imagePath": "img/rogue.png",
+	"keyChance": 25.0,
+	"extraKeyChance": 5.0,
+	"minKeys": 0,
+	"maxKeys": 2,
+	"minGp": 250,
+	"maxGp": 900,
+	"difficulty": 1,
+	"skipChance": 12.0,
+	"description": "Clear the Rogue's Den of its inhabitants.",
+	"help": "Bring stealthy gear or ranged options.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 40,
+	"isWildy": false,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 10
+  },
+  {
+	"name": "Skeleton Legion",
+	"imagePath": "img/skeleton.png",
+	"keyChance": 30.0,
+	"extraKeyChance": 6.0,
+	"minKeys": 1,
+	"maxKeys": 3,
+	"minGp": 500,
+	"maxGp": 2000,
+	"difficulty": 2,
+	"skipChance": 15.0,
+	"description": "Eliminate 60 skeletons roaming the crypts.",
+	"help": "Use crush or blunt weapons for effectiveness.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 60,
+	"isWildy": false,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 10
+  },
+  {
+	"name": "Wyvern Patrol",
+	"imagePath": "img/wyvern.png",
+	"keyChance": 35.0,
+	"extraKeyChance": 7.0,
+	"minKeys": 1,
+	"maxKeys": 3,
+	"minGp": 1000,
+	"maxGp": 3000,
+	"difficulty": 2,
+	"skipChance": 20.0,
+	"description": "Hunt down 20 wyverns from the northern cliffs.",
+	"help": "Bring anti-poison and high-range defense.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 80,
+	"isWildy": false,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 10
+  },
+  {
+	"name": "Dagannoth Kings",
+	"imagePath": "img/dagannoth.png",
+	"keyChance": 40.0,
+	"extraKeyChance": 8.0,
+	"minKeys": 1,
+	"maxKeys": 4,
+	"minGp": 2500,
+	"maxGp": 10000,
+	"difficulty": 3,
+	"skipChance": 25.0,
+	"description": "Defeat the Dagannoth kings (all three) as a group.",
+	"help": "Recommended team; bring multi-combat setup.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 100,
+	"isWildy": false,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 0
+  },
+  {
+	"name": "Crimson Hellhound Pack",
+	"imagePath": "img/hellhound.png",
+	"keyChance": 45.0,
+	"extraKeyChance": 9.0,
+	"minKeys": 1,
+	"maxKeys": 4,
+	"minGp": 3000,
+	"maxGp": 12000,
+	"difficulty": 3,
+	"skipChance": 30.0,
+	"description": "Hunt 40 crimson hellhounds infesting the valley.",
+	"help": "Use fire-resistant gear; beware of the wildy.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 120,
+	"isWildy": true,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 10
+  },
+  {
+	"name": "Chaos Elemental Hunt",
+	"imagePath": "img/chaos_elemental.png",
+	"keyChance": 60.0,
+	"extraKeyChance": 15.0,
+	"minKeys": 2,
+	"maxKeys": 6,
+	"minGp": 5000,
+	"maxGp": 30000,
+	"difficulty": 4,
+	"skipChance": 40.0,
+	"description": "Track and defeat the Chaos Elemental in the deep wilds.",
+	"help": "High-risk; bring teleport failsafes and team.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 150,
+	"isWildy": true,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 0
+  },
+  {
+	"name": "Dragonkin Overlord",
+	"imagePath": "img/dragonkin.png",
+	"keyChance": 55.0,
+	"extraKeyChance": 12.0,
+	"minKeys": 2,
+	"maxKeys": 6,
+	"minGp": 10000,
+	"maxGp": 50000,
+	"difficulty": 4,
+	"skipChance": 35.0,
+	"description": "Confront the Dragonkin Overlord in its lair.",
+	"help": "High defense and anti-dragon shields recommended.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 160,
+	"isWildy": false,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 0
+  },
+  {
+	"name": "The Gauntlet",
+	"imagePath": "img/gauntlet.png",
+	"keyChance": 80.0,
+	"extraKeyChance": 25.0,
+	"minKeys": 3,
+	"maxKeys": 8,
+	"minGp": 25000,
+	"maxGp": 150000,
+	"difficulty": 5,
+	"skipChance": 50.0,
+	"description": "Complete the Gauntlet — a brutal, multi-phase trial.",
+	"help": "Top-tier gear required; consider group coordination.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 200,
+	"isWildy": false,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 6
+  },
+  {
+	"name": "Abyssal Wyrm",
+	"imagePath": "img/abyssal_wyrm.png",
+	"keyChance": 75.0,
+	"extraKeyChance": 20.0,
+	"minKeys": 3,
+	"maxKeys": 9,
+	"minGp": 50000,
+	"maxGp": 300000,
+	"difficulty": 5,
+	"skipChance": 55.0,
+	"description": "Hunt the legendary Abyssal Wyrm in the deep chasm.",
+	"help": "Prepare teleport failsafes and bring high-tier gear.",
+	"lastCompleted": null,
+	"lastRolled": null,
+	"combatLevel": 220,
+	"isWildy": true,
+	"requirementLocked": false,
+	"completedLocked": false,
+	"bountyType": 0
+  },
+  {
 	"name": "Bronze Age Provisioning",
 	"imagePath": "img/mining.png",
 	"keyChance": 8.0,
@@ -257,7 +269,8 @@
 	"combatLevel": 3,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Tanner's Run",
@@ -277,7 +290,8 @@
 	"combatLevel": 5,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Pond-to-Plate",
@@ -297,7 +311,8 @@
 	"combatLevel": 6,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Lumber Contract",
@@ -317,7 +332,8 @@
 	"combatLevel": 8,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Early Farmhands",
@@ -337,7 +353,8 @@
 	"combatLevel": 20,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Runecrafter's Errand",
@@ -357,7 +374,8 @@
 	"combatLevel": 25,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Herbal Remedies",
@@ -377,7 +395,8 @@
 	"combatLevel": 35,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Mahogany Homes: Rookie",
@@ -397,7 +416,8 @@
 	"combatLevel": 40,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Agility Circuit",
@@ -417,7 +437,8 @@
 	"combatLevel": 45,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Rooftop Mark Hunt",
@@ -437,7 +458,8 @@
 	"combatLevel": 60,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Birdhouse Rotation",
@@ -457,7 +479,8 @@
 	"combatLevel": 65,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Blast Furnace Shift",
@@ -477,7 +500,8 @@
 	"combatLevel": 75,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Wintertodt Supply Run",
@@ -497,7 +521,8 @@
 	"combatLevel": 80,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Tempoross Tide",
@@ -517,7 +542,8 @@
 	"combatLevel": 85,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Guardians of the Rift: Attunement",
@@ -537,7 +563,8 @@
 	"combatLevel": 95,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Tithe Farm Delivery",
@@ -557,7 +584,8 @@
 	"combatLevel": 90,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Pest Control Tour",
@@ -577,7 +605,8 @@
 	"combatLevel": 105,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Barbarian Assault Shift",
@@ -597,7 +626,8 @@
 	"combatLevel": 115,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Hallowed Sepulchre Trial",
@@ -617,7 +647,8 @@
 	"combatLevel": 140,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Volcanic Mine Expedition",
@@ -637,7 +668,8 @@
 	"combatLevel": 150,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Mage Training Arena Circuit",
@@ -657,7 +689,8 @@
 	"combatLevel": 135,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Motherlode Marathon",
@@ -677,7 +710,8 @@
 	"combatLevel": 75,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Zalcano Work Order",
@@ -697,7 +731,8 @@
 	"combatLevel": 175,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 0
   },
   {
 	"name": "Aerial Fishing Session",
@@ -717,7 +752,8 @@
 	"combatLevel": 80,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 5
   },
   {
 	"name": "Trouble Brewing: Cargo Run",
@@ -737,7 +773,8 @@
 	"combatLevel": 70,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Chicken Coop Cleanup",
@@ -757,7 +794,8 @@
 	"combatLevel": 3,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 10
   },
   {
 	"name": "Rat Infestation",
@@ -777,7 +815,8 @@
 	"combatLevel": 5,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 10
   },
   {
 	"name": "Minotaur Training Grounds",
@@ -797,7 +836,8 @@
 	"combatLevel": 15,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 10
   },
   {
 	"name": "Hobgoblin Hunt",
@@ -817,7 +857,8 @@
 	"combatLevel": 28,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 10
   },
   {
 	"name": "Ankous of the Depths",
@@ -837,7 +878,8 @@
 	"combatLevel": 45,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 10
   },
   {
 	"name": "Bloodveld Feast",
@@ -857,7 +899,8 @@
 	"combatLevel": 70,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 10
   },
   {
 	"name": "Aberrant Spectre Purge",
@@ -877,7 +920,8 @@
 	"combatLevel": 85,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 10
   },
   {
 	"name": "Gargoyle Contract",
@@ -897,7 +941,8 @@
 	"combatLevel": 95,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 10
   },
   {
 	"name": "TzHaar Warm-Up",
@@ -917,7 +962,8 @@
 	"combatLevel": 105,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 10
   },
   {
 	"name": "Barrows Rotation",
@@ -937,7 +983,8 @@
 	"combatLevel": 110,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 3
   },
   {
 	"name": "Giant Mole Stakeout",
@@ -957,7 +1004,8 @@
 	"combatLevel": 105,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 0
   },
   {
 	"name": "Sarachnis Webbreaker",
@@ -977,7 +1025,8 @@
 	"combatLevel": 120,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 0
   },
   {
 	"name": "Revenant Skirmish",
@@ -997,7 +1046,8 @@
 	"combatLevel": 140,
 	"isWildy": true,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 10
   },
   {
 	"name": "Scorpia Sting Operation",
@@ -1017,7 +1067,8 @@
 	"combatLevel": 155,
 	"isWildy": true,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 0
   },
   {
 	"name": "Callisto's Challenge",
@@ -1037,7 +1088,8 @@
 	"combatLevel": 165,
 	"isWildy": true,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 0
   },
   {
 	"name": "Zulrah Reclaimed",
@@ -1057,7 +1109,8 @@
 	"combatLevel": 175,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 0
   },
   {
 	"name": "Vorkath Cleanup Detail",
@@ -1077,7 +1130,8 @@
 	"combatLevel": 195,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 0
   },
   {
 	"name": "Alchemical Hydra Contract",
@@ -1097,7 +1151,8 @@
 	"combatLevel": 220,
 	"isWildy": false,
 	"requirementLocked": true,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 0
   },
   {
 	"name": "Chambers Scout Run",
@@ -1117,6 +1172,7 @@
 	"combatLevel": 235,
 	"isWildy": false,
 	"requirementLocked": false,
-	"completedLocked": false
+	"completedLocked": false,
+	"bountyType": 1
   }
 ]

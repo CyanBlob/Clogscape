@@ -12,7 +12,8 @@ public enum BountyType
     Challenge,
     Misc,
     Fetch,
-    RealLife
+    RealLife,
+    Slayer
 }
 
 public enum Difficulty

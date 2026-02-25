@@ -9,7 +9,25 @@ public partial class BountyContainer : NinePatchRect
     [Export]
     public Texture2D bossTexture;
     [Export]
-    public Texture2D combatTexture;
+    public Texture2D raidTexture;
+    [Export]
+    public Texture2D clueTexture;
+    [Export]
+    public Texture2D minigameTexture;
+    [Export]
+    public Texture2D grindTexture;
+    [Export]
+    public Texture2D skillingTexture;
+    [Export]
+    public Texture2D challengeTexture;
+    [Export]
+    public Texture2D miscTexture;
+    [Export]
+    public Texture2D fetchTexture;
+    [Export]
+    public Texture2D realLifeTexture;
+    [Export]
+    public Texture2D slayerTexture;
 
     Label title;
     Label description;
@@ -43,8 +61,38 @@ public partial class BountyContainer : NinePatchRect
             case BountyType.Boss:
                 icon.Texture = bossTexture;
                 break;
+            case BountyType.Raid:
+                icon.Texture = raidTexture;
+                break;
+            case BountyType.Clue:
+                icon.Texture = clueTexture;
+                break;
+            case BountyType.Minigame:
+                icon.Texture = minigameTexture;
+                break;
+            case BountyType.Grind:
+                icon.Texture = grindTexture;
+                break;
+            case BountyType.Skilling:
+                icon.Texture = skillingTexture;
+                break;
+            case BountyType.Challenge:
+                icon.Texture = challengeTexture;
+                break;
+            case BountyType.Misc:
+                icon.Texture = miscTexture;
+                break;
+            case BountyType.Fetch:
+                icon.Texture = fetchTexture;
+                break;
+            case BountyType.RealLife:
+                icon.Texture = realLifeTexture;
+                break;
+            case BountyType.Slayer:
+                icon.Texture = slayerTexture;
+                break;
             default:
-                icon.Texture = combatTexture;
+                icon.Texture = miscTexture;
                 break;
         }
     }
