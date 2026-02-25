@@ -31,6 +31,7 @@ public partial class BountyContainer : NinePatchRect
 
     Label title;
     Label description;
+    Label rewards;
     TextureRect icon;
 
     Bounty bounty;
@@ -41,6 +42,7 @@ public partial class BountyContainer : NinePatchRect
         title = (Label)container.FindChild("Title");
         icon = (TextureRect)container.FindChild("Icon");
         description = (Label)container.FindChild("DescriptionContainer").FindChild("Description");
+        rewards = (Label)container.FindChild("Rewards");
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,6 +57,8 @@ public partial class BountyContainer : NinePatchRect
 
         title.Text = "\n" + bounty.name;
         description.Text = bounty.description;
+        rewards.Text = $"Keys: {bounty.minKeys} {(bounty.maxKeys == bounty.minKeys ? "" : $"-{bounty.maxKeys}")}";
+        rewards.Text += $" GP: {bounty.minGp} {(bounty.maxGp == bounty.minGp ? "" : $"-{bounty.maxGp}")}";
 
         switch (bounty.bountyType)
         {
@@ -99,6 +103,7 @@ public partial class BountyContainer : NinePatchRect
 
     public void _on_complete_bounty_button_pressed()
     {
+        GD.Print($"Completing: {bounty.name}");
         GameManager.GetState().CompleteBounty(bounty);
     }
 }

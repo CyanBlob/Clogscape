@@ -17,6 +17,9 @@ public static class GameManager
 
     private static Random rand = new();
 
+    [JsonIgnore]
+    public static UI ui { get; set; }
+
     public static void SetState(GameState state)
     {
         GameManager.state = state;
@@ -156,7 +159,6 @@ public static class GameManager
 
         LoadBounties(player);
 
-
         return true;
     }
 
@@ -195,6 +197,7 @@ public static class GameManager
     public static void UpdateAllowance(int gp)
     {
         state.playerAllowance += gp;
+        ui.UpdateAllowance();
     }
 
     public static List<Bounty> UpdateBounties()
@@ -202,12 +205,9 @@ public static class GameManager
         List<Bounty> bounties = new();
 
         var newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-
-        bounties.Add(newBounty);
-
-        newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-        while (bounties.Contains(newBounty))
+        while (rerollBounty(newBounty) == true)
         {
+            GD.Print($"Re-rolling {newBounty.name}. {newBounty.lifetimeClaimedKeys}:{newBounty.maxLifetimeKeys}");
             newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
         }
 
@@ -217,6 +217,24 @@ public static class GameManager
         while (bounties.Contains(newBounty))
         {
             newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+
+            if (rerollBounty(newBounty) == true)
+            {
+                GD.Print($"Re-rolling {newBounty.name}. {newBounty.lifetimeClaimedKeys}:{newBounty.maxLifetimeKeys}");
+            }
+        }
+
+        bounties.Add(newBounty);
+
+        newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+        while (bounties.Contains(newBounty))
+        {
+            newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+
+            if (rerollBounty(newBounty) == true)
+            {
+                GD.Print($"Re-rolling {newBounty.name}. {newBounty.lifetimeClaimedKeys}:{newBounty.maxLifetimeKeys}");
+            }
         }
 
         bounties.Add(newBounty);
@@ -224,6 +242,21 @@ public static class GameManager
         state.currentBounties = bounties;
 
         return bounties;
+    }
+
+    public static bool rerollBounty(Bounty bounty)
+    {
+        if (rand.NextSingle() >= (bounty.skipChance / 100.0f))
+        {
+            return true;
+        }
+
+        if (bounty.lifetimeClaimedKeys >= bounty.maxLifetimeKeys)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public static String PlayerFile(String playerName)
@@ -273,8 +306,22 @@ public class GameState
     public void CompleteBounty(Bounty bounty)
     {
         completedBounties.Add(bounty);
-        playerKeys += bounty.minKeys;
-        playerAllowance += rand.Next(bounty.minGp, bounty.maxGp);
+        var bountyKeys = bounty.minKeys;
+
+        for (int i = bounty.minKeys; i <= bounty.maxKeys; ++i)
+        {
+            if (bountyKeys + bounty.lifetimeClaimedKeys >= bounty.maxLifetimeKeys)
+            {
+                break;
+            }
+            bountyKeys += rand.NextDouble() >= bounty.keyChance ? 1 : 0;
+        }
+
+        playerKeys += bountyKeys;
+
+        bounty.lifetimeClaimedKeys += bountyKeys;
+
+        GameManager.UpdateAllowance(rand.Next(bounty.minGp, bounty.maxGp));
 
         GameManager.UpdateBounties();
     }

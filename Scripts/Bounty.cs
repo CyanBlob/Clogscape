@@ -32,8 +32,13 @@ public class Bounty
     public String imagePath {get; set; }
     public float keyChance {get; set; }
     public float extraKeyChance {get; set;}
+
     public int minKeys {get; set; }
     public int maxKeys {get; set; }
+    //public int? maxLifetimeKeys {get; set;}
+    public int? maxLifetimeKeys = 2;
+    public int? lifetimeClaimedKeys {get; set;}
+
     public int minGp {get; set; }
     public int maxGp {get; set; }
 
