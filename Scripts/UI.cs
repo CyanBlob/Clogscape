@@ -15,9 +15,26 @@ public partial class UI : Button
     static String nameFilePath = "name.txt";
     static TileGenerator tileGenerator;
 
+    static Label keysLabel;
+    static LineEdit allowanceEdit;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        var label = GetParent().GetParent().FindChild("Bounty Controls").FindChild("KeysLabel");
+        if (label != null)
+        {
+            keysLabel = (Label)label;
+            keysLabel.Text = GameManager.GetState().playerKeys.ToString();
+        }
+
+        var textEdit = GetParent().GetParent().FindChild("Bounty Controls").FindChild("AllowanceEdit");
+        if (textEdit != null)
+        {
+            allowanceEdit = (LineEdit)textEdit;
+            allowanceEdit.Text = GameManager.GetState().playerAllowance.ToString();
+        }
+
         tileGenerator = (TileGenerator)GetParent().GetParent().GetParent().FindChild("Tiles");
         if (File.Exists(nameFilePath))
         {
@@ -44,9 +61,9 @@ public partial class UI : Button
         client.DefaultRequestHeaders.Accept.ParseAdd("image/*,*/*;q=0.8");
     }
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
+        UpdateKeys();
     }
 
     public async void _on_sync_pressed()
@@ -202,6 +219,11 @@ public partial class UI : Button
         }
     }
 
+    public void UpdateKeys()
+    {
+        keysLabel.Text = GameManager.GetState().playerKeys.ToString();
+    }
+
     public void _on_player_save()
     {
         var playerNameEdit = (LineEdit)GetParent().FindChild("PlayerName");
@@ -246,7 +268,7 @@ public partial class UI : Button
     {
         var bounties = GameManager.UpdateBounties();
 
-        foreach(var bounty in bounties)
+        foreach (var bounty in bounties)
         {
             GD.Print($"{bounty.name}");
         }
@@ -254,11 +276,27 @@ public partial class UI : Button
 
     public void _on_complete_bounty_button_pressed()
     {
+        if (GameManager.GetState().currentBounties.Count == 0)
+        {
+            GD.Print("No bounties. Re-rolling");
+            _on_roll_bounties_button_pressed();
+            return;
+        }
+        GameManager.GetState().CompleteBounty(GameManager.GetState().currentBounties[0]);
+        keysLabel.Text = GameManager.GetState().playerKeys.ToString();
+        allowanceEdit.Text = GameManager.GetState().playerAllowance.ToString();
 
+        _on_roll_bounties_button_pressed();
     }
 
     public void _on_allowance_edit_text_changed(String allowance)
     {
+        int newAllowance;
 
+        if (Int32.TryParse(allowance, out newAllowance))
+        {
+            GD.Print(newAllowance);
+            GameManager.GetState().playerAllowance = newAllowance;
+        }
     }
 }

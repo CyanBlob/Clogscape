@@ -14,10 +14,10 @@ public enum UnlockableType
 public abstract class Unlockable
 {
     [JsonInclude]
-    private bool Unlocked = false;
+    public bool Unlocked = false;
 
     [JsonInclude]
-    private bool Claimed = false;
+    public bool Claimed = false;
 
     public List<QuestUnlock> questRequirements = new();
     public List<(Skill, int)> skillRequirements = new();

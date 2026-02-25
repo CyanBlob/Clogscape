@@ -20,10 +20,14 @@ public partial class TileGenerator : Node
     [Export]
     int TileSpacing = 0;
 
+    [Export]
+    float FreeTilePercentage = 0.05f;
+
     private Random rand { get; set; }
 
     public void ClearTiles()
     {
+        GameManager.GetState().hashedTiles = new();
         foreach (var child in GetChildren())
         {
             if (child is Tile)
@@ -71,9 +75,18 @@ public partial class TileGenerator : Node
         var allQuestUnlocks = QuestUnlock.GetQuests();
         var allDiaryUnlocks = DiaryUnlock.GetDiaries();
 
-        GD.Print($"{allSkillUnlocks.Count} skills, {allQuestUnlocks.Count} quests, {allDiaryUnlocks.Count} diaries, {allSkillUnlocks.Count + allQuestUnlocks.Count + allDiaryUnlocks.Count} total unlocks");
+        var totalCount = allSkillUnlocks.Count + allQuestUnlocks.Count + allDiaryUnlocks.Count;
 
-        List<Unlockable> allUnlocks = GetInterleavedUnlockes(allSkillUnlocks, allQuestUnlocks, allDiaryUnlocks);
+        var freeTiles = new List<FreeTile>();
+
+        for (int i = 0; i < totalCount * FreeTilePercentage; ++i)
+        {
+            freeTiles.Add(new FreeTile());
+        }
+
+        GD.Print($"{allSkillUnlocks.Count} skills, {allQuestUnlocks.Count} quests, {allDiaryUnlocks.Count} diaries, {freeTiles.Count} free, {totalCount + freeTiles.Count} total unlocks");
+
+        List<Unlockable> allUnlocks = GetInterleavedUnlockes(allSkillUnlocks, allQuestUnlocks, allDiaryUnlocks, freeTiles);
 
         // Generate larger and larger overlapping grids until we run out of tiles, skipping placed tiles.
         // This ensures we place lower tier unlocks towards the center.
@@ -110,7 +123,17 @@ public partial class TileGenerator : Node
                     tile.tileGenerator = this;
 
                     // First tile is free
-                    tile.unlockable = GetAndPopUnlockable(allUnlocks, squareSize == 1);
+                    if (squareSize == 1)
+                    {
+                        tile.unlockable = GetAndPopUnlockable(allUnlocks, true);
+                        tile.unlockable.Unlock();
+                        tile.unlockable.Claim();
+                    }
+                    else
+                    {
+
+                        tile.unlockable = GetAndPopUnlockable(allUnlocks, false);
+                    }
 
                     // These are duplicated in the unlockable for easier serialization
                     tile.unlockable.gridPosX = x;
@@ -131,13 +154,14 @@ public partial class TileGenerator : Node
 
     public void UpdateState()
     {
+        while (!IsNodeReady()) { }
         foreach (Tile tile in GameManager.GetState().hashedTiles.Values)
         {
             tile._on_board_state_changed(GameManager.GetState().hashedTiles);
         }
     }
 
-    public List<Unlockable> GetInterleavedUnlockes(List<SkillUnlock> skillUnlocks, List<QuestUnlock> questUnlocks, List<DiaryUnlock> diaryUnlocks)
+    public List<Unlockable> GetInterleavedUnlockes(List<SkillUnlock> skillUnlocks, List<QuestUnlock> questUnlocks, List<DiaryUnlock> diaryUnlocks, List<FreeTile> freeTiles)
     {
         List<Unlockable> unlockables = new();
 
@@ -156,9 +180,14 @@ public partial class TileGenerator : Node
         {
             diaryUnlocks.Insert(rand.Next(0, diaryUnlocks.Count), null);
         }
+        while (freeTiles.Count < maxLength * 2)
+        {
+            freeTiles.Insert(rand.Next(0, freeTiles.Count), null);
+        }
 
         var mixed = skillUnlocks.Interleave<Unlockable>(questUnlocks);
         mixed = mixed.Interleave<Unlockable>(diaryUnlocks);
+        mixed = mixed.Interleave<Unlockable>(freeTiles);
 
         //var valid = mixed.TakeWhile(e => {return e != null;}).ToList<Unlockable>();
         var valid = mixed.Where(e => { return e != null; }).ToList<Unlockable>();

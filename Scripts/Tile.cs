@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Text.Json;
 
@@ -68,6 +69,15 @@ public partial class Tile : Node2D
 
     public void Unlock()
     {
+
+        if (GameManager.GetState().playerKeys <= 0)
+        {
+            GD.Print("No keys! Can't unlock");
+            return;
+        }
+
+        GameManager.GetState().playerKeys -= 1;
+
         unlockable.Unlock();
         tileGenerator.UpdateState();
         _on_mouse_entered();
@@ -81,6 +91,7 @@ public partial class Tile : Node2D
         tileGenerator.UpdateState();
         _on_mouse_entered();
         ClaimButton.Pressed -= Claim;
+        ButtonLocked = null;
     }
 
     public void _on_mouse_entered()
@@ -171,36 +182,43 @@ public partial class Tile : Node2D
             icon.Modulate = new Color(.5f, .5f, .5f, .5f);
         }
 
-        lockIcon.Visible = !unlockable.IsUnlocked();
-        checkIcon.Visible = unlockable.IsClaimed() && unlockable.IsUnlocked();
+        lockIcon.Visible = !unlockable.IsUnlocked();// && !(unlockable is FreeTile);
+        checkIcon.Visible = unlockable.IsClaimed() && unlockable.IsUnlocked();// && !(unlockable is FreeTile);
 
-        // Locked tiles can't be hidden
-        if (!unlockable.IsUnlocked())
+        // Unlocked tiles can't be hidden
+        if (!unlockable.IsUnlocked()/* || unlockable is FreeTile*/)
         {
             var leftTile = (Tile)tiles[new Vector2((int)gridPos.X - 1, (int)gridPos.Y)];
             var rightTile = (Tile)tiles[new Vector2((int)gridPos.X + 1, (int)gridPos.Y)];
             var upTile = (Tile)tiles[new Vector2((int)gridPos.X, (int)gridPos.Y - 1)];
             var downTile = (Tile)tiles[new Vector2((int)gridPos.X, (int)gridPos.Y + 1)];
 
-            if (leftTile != null && leftTile.unlockable.IsUnlocked())
+            if (leftTile != null && leftTile.unlockable.IsClaimed())
             {
                 hidden = false;
             }
-            else if (rightTile != null && rightTile.unlockable.IsUnlocked())
+            else if (rightTile != null && rightTile.unlockable.IsClaimed())
             {
                 hidden = false;
             }
-            else if (upTile != null && upTile.unlockable.IsUnlocked())
+            else if (upTile != null && upTile.unlockable.IsClaimed())
             {
                 hidden = false;
             }
-            else if (downTile != null && downTile.unlockable.IsUnlocked())
+            else if (downTile != null && downTile.unlockable.IsClaimed())
             {
                 hidden = false;
             }
 
             icon.Visible = !hidden;
             text.Visible = !hidden;
+
+            if (unlockable is FreeTile && !hidden)
+            {
+                unlockable.Unlock();
+                unlockable.Claim();
+                tileGenerator.UpdateState();
+            }
 
             background.Modulate = hidden ? new Color(.5f, .5f, .5f, .75f) : new Color(1, 1, 1, 1);
         }

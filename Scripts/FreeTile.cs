@@ -30,11 +30,11 @@ public class FreeTile : Unlockable
 
     public override bool IsUnlocked()
     {
-        return true;
+        return Unlocked;
     }
 
     public override bool IsClaimed()
     {
-        return true;
+        return Claimed;
     }
 }

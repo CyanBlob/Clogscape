@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://c5koiws76gs14" path="res://Resources/resource-packs/ge/selected_item_box_glowing.png" id="8_kek77"]
 [ext_resource type="Texture2D" uid="uid://b44ipbxrtybiv" path="res://Resources/resource-packs/bank/placeholders_lock.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://ef4m1dkhtuwj" path="res://Resources/resource-packs/icon/checkmark_green.png" id="10_efxa6"]
+[ext_resource type="Texture2D" uid="uid://cyswcmtqxfce2" path="res://Resources/resource-packs/quests_tab/combat_achievements_combat_level.png" id="12_dg77c"]
+[ext_resource type="Texture2D" uid="uid://b2vay27wiojjo" path="res://Resources/resource-packs/chatbox/background.png" id="13_ycdy4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dg77c"]
 
 [node name="Game" type="Node2D" unique_id=1331184047]
 
@@ -141,25 +145,25 @@ position = Vector2(128, 128)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=996357377]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1342843202]
+[node name="Board Controls" type="VBoxContainer" parent="CanvasLayer" unique_id=1342843202]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SyncButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1734037534]
+[node name="SyncButton" type="Button" parent="CanvasLayer/Board Controls" unique_id=1734037534]
 z_index = 104
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Sync"
 script = ExtResource("5_lquwl")
 
-[node name="ItemsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=618121912]
+[node name="ItemsButton" type="Button" parent="CanvasLayer/Board Controls" unique_id=618121912]
 z_index = 104
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Items"
 script = ExtResource("5_lquwl")
 
-[node name="ItemIconsButtom" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=787997725]
+[node name="ItemIconsButtom" type="Button" parent="CanvasLayer/Board Controls" unique_id=787997725]
 z_index = 104
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
@@ -167,33 +171,33 @@ disabled = true
 text = "Items with icons"
 script = ExtResource("5_lquwl")
 
-[node name="PlayerName" type="LineEdit" parent="CanvasLayer/VBoxContainer" unique_id=720465123]
+[node name="PlayerName" type="LineEdit" parent="CanvasLayer/Board Controls" unique_id=720465123]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 placeholder_text = "Player Name"
 
-[node name="SaveButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1072086209]
+[node name="SaveButton" type="Button" parent="CanvasLayer/Board Controls" unique_id=1072086209]
 z_index = 104
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Save player"
 script = ExtResource("5_lquwl")
 
-[node name="LoadButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1986932729]
+[node name="LoadButton" type="Button" parent="CanvasLayer/Board Controls" unique_id=1986932729]
 z_index = 104
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Load player"
 script = ExtResource("5_lquwl")
 
-[node name="CreateButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1535569744]
+[node name="CreateButton" type="Button" parent="CanvasLayer/Board Controls" unique_id=1535569744]
 z_index = 104
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Create Player"
 script = ExtResource("5_lquwl")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer" unique_id=1684814623]
+[node name="Bounty Controls" type="VBoxContainer" parent="CanvasLayer" unique_id=1684814623]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -201,35 +205,118 @@ offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
-[node name="AllowanceEdit" type="LineEdit" parent="CanvasLayer/VBoxContainer2" unique_id=1983489975]
+[node name="AllowanceEdit" type="LineEdit" parent="CanvasLayer/Bounty Controls" unique_id=1983489975]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 placeholder_text = "Allowance"
 expand_to_text_length = true
 
-[node name="KeysLabel" type="Label" parent="CanvasLayer/VBoxContainer2" unique_id=520891877]
+[node name="KeysLabel" type="Label" parent="CanvasLayer/Bounty Controls" unique_id=520891877]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "0 Keys"
 
-[node name="RollBountiesButton" type="Button" parent="CanvasLayer/VBoxContainer2" unique_id=383077066]
+[node name="RollBountiesButton" type="Button" parent="CanvasLayer/Bounty Controls" unique_id=383077066]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Roll Bounties"
 
-[node name="CompleteBountyButton" type="Button" parent="CanvasLayer/VBoxContainer2" unique_id=1292625399]
+[node name="CompleteBountyButton" type="Button" parent="CanvasLayer/Bounty Controls" unique_id=1292625399]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Complete Bounty"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1042969198]
+visible = false
+offset_right = 300.0
+offset_bottom = 175.0
+
+[node name="Control" type="Control" parent="CanvasLayer/HBoxContainer" unique_id=578287103]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="InfoContainer" type="NinePatchRect" parent="CanvasLayer/HBoxContainer/Control" unique_id=1346969199]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -175.0
+offset_right = 300.0
+grow_vertical = 0
+texture = ExtResource("13_ycdy4")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/Control/InfoContainer" unique_id=1254500459]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 34.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_dg77c")
+
+[node name="Title" type="Label" parent="CanvasLayer/HBoxContainer/Control/InfoContainer" unique_id=1708316963]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 35.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "
+Boss!"
+label_settings = SubResource("LabelSettings_dg77c")
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="CanvasLayer/HBoxContainer/Control/InfoContainer" unique_id=1563482941]
+custom_minimum_size = Vector2(300, 10)
+layout_mode = 0
+offset_top = 121.0
+offset_right = 300.0
+offset_bottom = 175.0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "Kill this boss 10 times. This is a long description so it wraps
+"
+label_settings = SubResource("LabelSettings_dg77c")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="PanelContainer" type="NinePatchRect" parent="CanvasLayer/HBoxContainer/Control" unique_id=1172064438]
+z_index = -3
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = -15.0
+offset_right = 249.0
+offset_bottom = 60.00006
+grow_vertical = 0
+texture = ExtResource("13_ycdy4")
+
+[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer/Control/PanelContainer" unique_id=1874384399]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 75.00006
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "Complete!"
+
 [connection signal="gui_input" from="Tiles/TooltipButton" to="Camera2D" method="_on_gui_input"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/SyncButton" to="CanvasLayer/VBoxContainer/SyncButton" method="_on_sync_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/ItemsButton" to="CanvasLayer/VBoxContainer/ItemsButton" method="_on_items_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/ItemIconsButtom" to="CanvasLayer/VBoxContainer/ItemIconsButtom" method="_on_items_with_icons_pressed"]
-[connection signal="text_changed" from="CanvasLayer/VBoxContainer/PlayerName" to="CanvasLayer/VBoxContainer/SaveButton" method="_on_player_text_changed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/SaveButton" to="CanvasLayer/VBoxContainer/SaveButton" method="_on_player_save"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/LoadButton" to="CanvasLayer/VBoxContainer/LoadButton" method="_on_player_load"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/CreateButton" to="CanvasLayer/VBoxContainer/CreateButton" method="_on_create_player"]
-[connection signal="text_changed" from="CanvasLayer/VBoxContainer2/AllowanceEdit" to="Camera2D" method="_on_allowance_edit_text_changed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer2/RollBountiesButton" to="CanvasLayer/VBoxContainer/CreateButton" method="_on_roll_bounties_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer2/CompleteBountyButton" to="CanvasLayer/VBoxContainer/CreateButton" method="_on_complete_bounty_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Board Controls/SyncButton" to="CanvasLayer/Board Controls/SyncButton" method="_on_sync_pressed"]
+[connection signal="pressed" from="CanvasLayer/Board Controls/ItemsButton" to="CanvasLayer/Board Controls/ItemsButton" method="_on_items_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Board Controls/ItemIconsButtom" to="CanvasLayer/Board Controls/ItemIconsButtom" method="_on_items_with_icons_pressed"]
+[connection signal="text_changed" from="CanvasLayer/Board Controls/PlayerName" to="CanvasLayer/Board Controls/SaveButton" method="_on_player_text_changed"]
+[connection signal="pressed" from="CanvasLayer/Board Controls/SaveButton" to="CanvasLayer/Board Controls/SaveButton" method="_on_player_save"]
+[connection signal="pressed" from="CanvasLayer/Board Controls/LoadButton" to="CanvasLayer/Board Controls/LoadButton" method="_on_player_load"]
+[connection signal="pressed" from="CanvasLayer/Board Controls/CreateButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_create_player"]
+[connection signal="text_changed" from="CanvasLayer/Bounty Controls/AllowanceEdit" to="CanvasLayer/Board Controls/CreateButton" method="_on_allowance_edit_text_changed"]
+[connection signal="pressed" from="CanvasLayer/Bounty Controls/RollBountiesButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_roll_bounties_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Bounty Controls/CompleteBountyButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_complete_bounty_button_pressed"]

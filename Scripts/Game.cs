@@ -109,7 +109,6 @@ public static class GameManager
         {
             return false;
         }
-        GD.Print($"Loading {player}");
 
         JsonSerializerOptions options = new();
         options.Converters.Add(new RangeSystemTextJsonConverter());
@@ -166,8 +165,6 @@ public static class GameManager
         }
 
         var singleLine = String.Join(" ", lines);
-
-        GD.Print(singleLine);
 
         var combinedLines = new List<String>
         {
@@ -242,6 +239,7 @@ public class GameState
 {
     public String playerName { get; set; }
     public int playerAllowance { get; set; }
+    public int playerKeys { get; set; }
 
     public Difficulty bountyDifficulty { get; set; }
     public List<Difficulty> allowedDifficulties { get; set; }
@@ -258,6 +256,16 @@ public class GameState
 
     [JsonIgnore]
     public Hashtable hashedTiles { get; set; }
+
+    [JsonIgnore]
+    private static Random rand = new();
+
+    public void CompleteBounty(Bounty bounty)
+    {
+        completedBounties.Add(bounty);
+        playerKeys += bounty.minKeys;
+        playerAllowance += rand.Next(bounty.minGp, bounty.maxGp);
+    }
 
 }
 

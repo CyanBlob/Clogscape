@@ -57,6 +57,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_cpv6t")
 
 [node name="Checks" type="Node2D" parent="." unique_id=223401016]
+position = Vector2(3, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Checks" unique_id=1519070624]
 position = Vector2(0, -24)
