@@ -164,7 +164,6 @@ position = Vector2(128, 128)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=996357377]
 
 [node name="Board Controls" type="VBoxContainer" parent="CanvasLayer" unique_id=1342843202]
-visible = false
 offset_right = 102.0
 offset_bottom = 192.0
 

@@ -154,7 +154,19 @@ public static class GameManager
 
         tileGenerator.UpdateState();
 
+        LoadBounties(player);
+
+
+        return true;
+    }
+
+    public static void LoadBounties(String player)
+    {
+
         String[] lines = [];
+        JsonSerializerOptions options = new();
+        options.Converters.Add(new RangeSystemTextJsonConverter());
+
         if (File.Exists(PossibleBountiesFile(player)))
         {
             lines = File.ReadAllLines(PossibleBountiesFile(player));
@@ -173,8 +185,6 @@ public static class GameManager
 
         // Bounties should be on one line for now
         state.allBounties = JsonSerializer.Deserialize<List<Bounty>>(combinedLines[0], options);
-
-        return true;
     }
 
     public static void LoadFromFile(String filePath)

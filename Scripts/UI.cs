@@ -253,6 +253,8 @@ public partial class UI : Button
         state.playerName = playerNameEdit.Text;
 
         GameManager.SetState(state);
+        GameManager.LoadBounties("default");
+        GameManager.UpdateBounties();
 
         if (tileGenerator == null)
         {
