@@ -53,6 +53,10 @@ public partial class BountyContainer : NinePatchRect
 
     public void Update()
     {
+        if (GameManager.GetState().currentBounties.Count < 3)
+        {
+            return;
+        }
         bounty = GameManager.GetState().currentBounties[bountyIndex];
 
         title.Text = "\n" + bounty.name;

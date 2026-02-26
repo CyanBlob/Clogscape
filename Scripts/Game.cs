@@ -8,6 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading;
 using Godot;
 using Range = System.Range;
 
@@ -51,24 +52,6 @@ public static class GameManager
 
         state.hashedTiles = new();
 
-        var bounty = new Bounty();
-        bounty.name = "Test bounty";
-        bounty.imagePath = "img";
-        bounty.keyChance = 100f;
-        bounty.minKeys = 1;
-        bounty.maxKeys = 1;
-        bounty.minGp = 100;
-        bounty.maxGp = 1000;
-        bounty.difficulty = Difficulty.Novice;
-        bounty.skipChance = 0f;
-        bounty.description = "A bounty";
-        bounty.help = "Just do it";
-        bounty.isWildy = false;
-        bounty.requirementLocked = false;
-        bounty.completedLocked = false;
-
-        state.allBounties.Add(bounty);
-
         return state;
     }
 
@@ -95,6 +78,12 @@ public static class GameManager
                 tile.Serialize()
             };
             File.AppendAllLines(TilesFile(playerName), tileJson);
+        }
+
+        if (state.allBounties.Count() < 3)
+        {
+            File.Delete(PossibleBountiesFile(playerName));
+            LoadBounties(playerName);
         }
 
         String allBountiesJson = JsonSerializer.Serialize(state.allBounties, options);
@@ -187,6 +176,11 @@ public static class GameManager
 
         // Bounties should be on one line for now
         state.allBounties = JsonSerializer.Deserialize<List<Bounty>>(combinedLines[0], options);
+
+        if (state.allBounties.Count < 3)
+        {
+            GD.Print("Could not load bounties");
+        }
     }
 
     public static void LoadFromFile(String filePath)
@@ -214,27 +208,17 @@ public static class GameManager
         bounties.Add(newBounty);
 
         newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-        while (bounties.Contains(newBounty))
+        while (bounties.Contains(newBounty) || newBounty == null || rerollBounty(newBounty))
         {
             newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-
-            if (rerollBounty(newBounty) == true)
-            {
-                GD.Print($"Re-rolling {newBounty.name}. {newBounty.lifetimeClaimedKeys}:{newBounty.maxLifetimeKeys}");
-            }
         }
 
         bounties.Add(newBounty);
 
         newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-        while (bounties.Contains(newBounty))
+        while (bounties.Contains(newBounty) || newBounty == null || rerollBounty(newBounty))
         {
             newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-
-            if (rerollBounty(newBounty) == true)
-            {
-                GD.Print($"Re-rolling {newBounty.name}. {newBounty.lifetimeClaimedKeys}:{newBounty.maxLifetimeKeys}");
-            }
         }
 
         bounties.Add(newBounty);
@@ -246,7 +230,9 @@ public static class GameManager
 
     public static bool rerollBounty(Bounty bounty)
     {
-        if (rand.NextSingle() >= (bounty.skipChance / 100.0f))
+        var randSingle = rand.NextSingle();
+        var chance = bounty.skipChance / 100.0f;
+        if (randSingle <= chance)
         {
             return true;
         }
@@ -254,6 +240,17 @@ public static class GameManager
         if (bounty.lifetimeClaimedKeys >= bounty.maxLifetimeKeys)
         {
             return true;
+        }
+
+        if (bounty.difficulty > state.GetPlayerDifficulty())
+        {
+            return true;
+        }
+
+        if (bounty.difficulty < state.GetPlayerDifficulty())
+        {
+            // As the player difficulty increases we should get fewer easy tasks
+            return rand.Next((int)bounty.difficulty, (int)state.GetPlayerDifficulty()) == (int)state.GetPlayerDifficulty();
         }
 
         return false;
@@ -303,6 +300,7 @@ public class GameState
     [JsonIgnore]
     private static Random rand = new();
 
+    // TODO: Decrease minKeys by 1 for every difficulty tier above the task you are
     public void CompleteBounty(Bounty bounty)
     {
         completedBounties.Add(bounty);
@@ -324,6 +322,46 @@ public class GameState
         GameManager.UpdateAllowance(rand.Next(bounty.minGp, bounty.maxGp));
 
         GameManager.UpdateBounties();
+
+        GetPlayerDifficulty();
+    }
+
+    public Difficulty GetPlayerDifficulty()
+    {
+        var completedExpert = completedBounties.Where(p => { return p.difficulty == Difficulty.Expert; }).Count();
+        var completedHard = completedBounties.Where(p => { return p.difficulty == Difficulty.Hard; }).Count();
+        var completedMedium = completedBounties.Where(p => { return p.difficulty == Difficulty.Medium; }).Count();
+        var completedEasy = completedBounties.Where(p => { return p.difficulty == Difficulty.Easy; }).Count();
+        var completedNovice = completedBounties.Where(p => { return p.difficulty == Difficulty.Novice; }).Count();
+
+        GD.Print($"{completedNovice}, {completedEasy}, {completedMedium}, {completedHard}, {completedExpert}");
+        if (completedExpert >= 5)
+        {
+            GD.Print("Grandmaster");
+            return Difficulty.Grandmaster;
+        }
+        if (completedHard >= 5)
+        {
+            GD.Print("Expert");
+            return Difficulty.Expert;
+        }
+        if (completedMedium >= 5)
+        {
+            GD.Print("Hard");
+            return Difficulty.Hard;
+        }
+        if (completedEasy >= 5)
+        {
+            GD.Print("Medium");
+            return Difficulty.Medium;
+        }
+        if (completedNovice >= 5)
+        {
+            GD.Print("Easy");
+            return Difficulty.Easy;
+        }
+        GD.Print("Novice");
+        return Difficulty.Novice;
     }
 }
 
