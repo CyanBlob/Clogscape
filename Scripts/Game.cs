@@ -306,13 +306,13 @@ public class GameState
         completedBounties.Add(bounty);
         var bountyKeys = bounty.minKeys;
 
-        for (int i = bounty.minKeys; i <= bounty.maxKeys; ++i)
+        for (int i = bounty.minKeys; i < bounty.maxKeys; ++i)
         {
             if (bountyKeys + bounty.lifetimeClaimedKeys >= bounty.maxLifetimeKeys)
             {
                 break;
             }
-            bountyKeys += rand.NextDouble() >= bounty.keyChance ? 1 : 0;
+            bountyKeys += rand.NextDouble() <= bounty.keyChance ? 1 : 0;
         }
 
         playerKeys += bountyKeys;
