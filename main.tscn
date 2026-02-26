@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgs1s5f4qf2oq"]
 
 [ext_resource type="Script" uid="uid://mskcgyybb7od" path="res://Scripts/TileGenerator.cs" id="1_0xm2m"]
+[ext_resource type="Shader" uid="uid://bugfp1dlf3y8o" path="res://newfog.gdshader" id="1_yaehf"]
 [ext_resource type="PackedScene" uid="uid://csphs4nufpcth" path="res://tile.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b4y6mahplg2se" path="res://tooltip_button.tscn" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://3uayx624cber" path="res://Scripts/Camera.cs" id="3_h2yge"]
@@ -15,8 +16,36 @@
 [ext_resource type="Texture2D" uid="uid://b2vay27wiojjo" path="res://Resources/resource-packs/chatbox/background.png" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://6h578j5chwmt" path="res://bounty_ui.tscn" id="15_vivmo"]
 [ext_resource type="Texture2D" uid="uid://cho68tq7fckq0" path="res://Resources/resource-packs/welcome_screen/key.png" id="15_xuqvo"]
+[ext_resource type="Script" uid="uid://dtelbd0tobnyd" path="res://Scripts/FogRect.cs" id="16_2cqfq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_074og"]
+shader = ExtResource("1_yaehf")
+shader_parameter/mask_origin_world = Vector2(0, 0)
+shader_parameter/grid_size_cells = Vector2(128, 128)
+shader_parameter/cell_size_world = 74.0
+shader_parameter/fog_color = Color(0.06, 0.08, 0.1, 1)
+shader_parameter/fog_opacity = 1.0
+shader_parameter/noise_scale = 0.02
+shader_parameter/noise_speed = 1.0
+shader_parameter/edge_softness = 0.865
+
+[sub_resource type="Gradient" id="Gradient_yaehf"]
+offsets = PackedFloat32Array(0, 0.004716981)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_074og"]
+gradient = SubResource("Gradient_yaehf")
+width = 4096
+height = 4096
+fill_from = Vector2(0, 1)
 
 [node name="Game" type="Node2D" unique_id=1331184047]
+
+[node name="FogRect" type="Sprite2D" parent="." unique_id=1911895558]
+z_index = 5
+material = SubResource("ShaderMaterial_074og")
+texture = SubResource("GradientTexture2D_074og")
+script = ExtResource("16_2cqfq")
+CellSizeWorld = 74.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1291291693]
 zoom = Vector2(0.75, 0.75)
@@ -146,8 +175,6 @@ icon = ExtResource("10_efxa6")
 flat = true
 
 [node name="Tile" parent="Tiles" unique_id=32004639 instance=ExtResource("2_0xm2m")]
-visible = false
-position = Vector2(128, 128)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=996357377]
 

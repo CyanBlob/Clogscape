@@ -18,10 +18,14 @@ public partial class UI : Button
     static Label keysLabel;
     static LineEdit allowanceEdit;
 
+    static FogRect fogRect;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         GameManager.ui = this;
+
+        fogRect = (FogRect)GetParent().GetParent().GetParent().FindChild("FogRect");
 
         var label = GetParent().GetParent().FindChild("Bounty Controls").FindChild("KeysLabel");
         if (label != null)
@@ -264,6 +268,8 @@ public partial class UI : Button
         }
 
         tileGenerator._Ready();
+        UpdateAllowance();
+        fogRect._Ready();
     }
 
     public void _on_player_text_changed(String name)

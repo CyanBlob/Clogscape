@@ -30,11 +30,15 @@ public partial class Tile : Node2D
 
     public bool hidden = true;
 
+    public FogRect fogRect;
+
     // TODO: Use a signal instead
     public TileGenerator tileGenerator;
 
     public override void _Ready()
     {
+        fogRect = (FogRect)GetParent().GetParent().FindChild("FogRect");
+
         TooltipButton = GetParent().GetChild<Button>(0);
         UnlockContainer = (Control)TooltipButton.FindChild("UnlockContainer");
         ClaimContainer = (Control)TooltipButton.FindChild("ClaimContainer");
@@ -92,6 +96,7 @@ public partial class Tile : Node2D
         _on_mouse_entered();
         ClaimButton.Pressed -= Claim;
         ButtonLocked = null;
+        TooltipButton.Visible = false;
     }
 
     public void _on_mouse_entered()
@@ -180,6 +185,12 @@ public partial class Tile : Node2D
         else
         {
             icon.Modulate = new Color(.5f, .5f, .5f, .5f);
+        }
+
+        if (unlockable.IsClaimed())
+        {
+            //fogRect.SetVisibleWorldPos(Position, true);
+            fogRect.RevealCircle(new Vector2(Position.X, Position.Y), .5f, 1.0f);
         }
 
         lockIcon.Visible = !unlockable.IsUnlocked();// && !(unlockable is FreeTile);
