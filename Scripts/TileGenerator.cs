@@ -128,14 +128,14 @@ public partial class TileGenerator : Node
                     // First tile is free
                     if (squareSize == 1)
                     {
-                        tile.unlockable = GetAndPopUnlockable(allUnlocks, true);
+                        tile.unlockable = GetAndPopUnlockable(allUnlocks, true, true);
                         tile.unlockable.Unlock();
                         tile.unlockable.Claim();
                     }
                     else
                     {
 
-                        tile.unlockable = GetAndPopUnlockable(allUnlocks, false);
+                        tile.unlockable = GetAndPopUnlockable(allUnlocks, false, squareSize <= 3);
                     }
 
                     // These are duplicated in the unlockable for easier serialization
@@ -230,9 +230,14 @@ public partial class TileGenerator : Node
         return unlockables;
     }
 
-    public Unlockable GetAndPopUnlockable(List<Unlockable> allUnlockables, bool firstTile)
+    public Unlockable GetAndPopUnlockable(List<Unlockable> allUnlockables, bool firstTile, bool earlyTiles)
     {
         List<Range> windows = [0..12, 0..12, 0..24, 0..36, 0..48];
+
+        if (earlyTiles)
+        {
+            windows = [0..12, 0..12, 0..18];
+        }
 
         if (firstTile)
         {

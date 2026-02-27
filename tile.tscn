@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://csphs4nufpcth"]
 
 [ext_resource type="Script" uid="uid://dx6s0xcoh07ka" path="res://Scripts/Tile.cs" id="2_vx4y2"]
+[ext_resource type="AudioStream" uid="uid://cwvha151fqo30" path="res://Resources/Sounds/mixkit-gear-metallic-lock-sound-2858.wav" id="3_6wlc4"]
 [ext_resource type="Texture2D" uid="uid://df0wi08hih1kw" path="res://Resources/resource-packs/dialog/background.png" id="3_a2t34"]
 [ext_resource type="Texture2D" uid="uid://ctbsxsw8a3pae" path="res://Resources/resource-packs/skill/thieving.png" id="3_tfor0"]
 [ext_resource type="FontFile" uid="uid://c5e4i4ullqe30" path="res://Resources/Fonts/runescape_uf.ttf" id="4_tfor0"]
 [ext_resource type="Shader" uid="uid://d03wpia3etfa3" path="res://tile.gdshader" id="4_tmaxv"]
+[ext_resource type="AudioStream" uid="uid://b2q52whl4ydt" path="res://Resources/Sounds/mixkit-unlock-game-notification-253.wav" id="4_toxkw"]
 [ext_resource type="Texture2D" uid="uid://byw2rneay11nj" path="res://Resources/Items/Gold locks.png" id="5_cpv6t"]
 [ext_resource type="Texture2D" uid="uid://dib8rgkwgfeyt" path="res://Resources/resource-packs/ge/button.png" id="5_t20d7"]
+[ext_resource type="AudioStream" uid="uid://bjt6vmbgktvkw" path="res://Resources/Sounds/mixkit-tech-break-fail-2947.wav" id="5_toxkw"]
 [ext_resource type="Texture2D" uid="uid://ef4m1dkhtuwj" path="res://Resources/resource-packs/icon/checkmark_green.png" id="6_0w8l7"]
+[ext_resource type="AudioStream" uid="uid://ccoah3ud7qy50" path="res://Resources/Sounds/mixkit-game-ball-tap-2073.wav" id="6_k2dl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3f48"]
 size = Vector2(120, 120)
@@ -18,6 +22,24 @@ shader = ExtResource("4_tmaxv")
 [node name="Tile" type="Node2D" unique_id=1328665337]
 z_index = 1
 script = ExtResource("2_vx4y2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=363490551]
+stream = ExtResource("6_k2dl1")
+volume_db = -4.555
+pitch_scale = 0.68
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1350210725]
+stream = ExtResource("3_6wlc4")
+volume_db = -4.555
+pitch_scale = 0.68
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=1620858704]
+stream = ExtResource("4_toxkw")
+volume_db = -4.555
+pitch_scale = 0.68
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." unique_id=726281506]
+stream = ExtResource("5_toxkw")
 
 [node name="Label" type="Label" parent="." unique_id=1063871421]
 offset_left = -32.0

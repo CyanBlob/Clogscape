@@ -21,10 +21,14 @@ public partial class UI : Button
 
     static FogRect fogRect;
 
+    private AudioStreamPlayer spendAudioPlayer;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         GameManager.ui = this;
+
+        spendAudioPlayer = (AudioStreamPlayer)GetChild(0);
 
         fogRect = (FogRect)GetParent().GetParent().GetParent().FindChild("FogRect");
 
@@ -328,7 +332,7 @@ public partial class UI : Button
         if (Int32.TryParse(allowance, out spentAllowance))
         {
             GameManager.GetState().playerAllowance -= spentAllowance;
-            GameManager.Save($"{GameManager.GetState().playerName}", $"_auto_allowance_{DateTime.Now.ToString("MM_dd_yy_HH_mm_ss")}");
+            GameManager.Save($"{GameManager.GetState().playerName}", $"_auto_allowance_{DateTime.Now.ToString("MM_dd_yy_HH_mm_ss")}", false);
             UpdateAllowance();
         }
     }
@@ -337,5 +341,6 @@ public partial class UI : Button
     {
         _on_spend_allowance(spendingEdit.Text);
         spendingEdit.Text = "0";
+        spendAudioPlayer.Play();
     }
 }

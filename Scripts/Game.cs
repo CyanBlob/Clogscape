@@ -51,7 +51,7 @@ public static class GameManager
         return state;
     }
 
-    public static void Save(String playerName, String suffix = "")
+    public static void Save(String playerName, String suffix = "", bool saveTiles = true)
     {
         JsonSerializerOptions options = new();
         options.Converters.Add(new RangeSystemTextJsonConverter());
@@ -66,14 +66,17 @@ public static class GameManager
         };
         File.WriteAllLines(PlayerFile(playerName + suffix), lines);
 
-        File.Delete(TilesFile(playerName));
-
-        foreach (Tile tile in state.hashedTiles.Values)
+        if (saveTiles)
         {
-            var tileJson = new List<String> {
+            File.Delete(TilesFile(playerName));
+
+            foreach (Tile tile in state.hashedTiles.Values)
+            {
+                var tileJson = new List<String> {
                 tile.Serialize()
             };
-            File.AppendAllLines(TilesFile(playerName + suffix), tileJson);
+                File.AppendAllLines(TilesFile(playerName + suffix), tileJson);
+            }
         }
 
         if (state.allBounties.Count() < 3)

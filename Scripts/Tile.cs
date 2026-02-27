@@ -35,8 +35,18 @@ public partial class Tile : Node2D
     // TODO: Use a signal instead
     public TileGenerator tileGenerator;
 
+    private AudioStreamPlayer selectAudioPlayer;
+    private AudioStreamPlayer unlockAudioPlayer;
+    private AudioStreamPlayer claimAudioPlayer;
+    private AudioStreamPlayer errorAudioPlayer;
+
     public override void _Ready()
     {
+        selectAudioPlayer = (AudioStreamPlayer)GetChild(0);
+        unlockAudioPlayer = (AudioStreamPlayer)GetChild(1);
+        claimAudioPlayer = (AudioStreamPlayer)GetChild(2);
+        errorAudioPlayer = (AudioStreamPlayer)GetChild(3);
+
         fogRect = (FogRect)GetParent().GetParent().FindChild("FogRect");
 
         TooltipButton = GetParent().GetChild<Button>(0);
@@ -76,8 +86,11 @@ public partial class Tile : Node2D
         if (GameManager.GetState().playerKeys <= 0)
         {
             GD.Print("No keys! Can't unlock");
+            errorAudioPlayer.Play();
             return;
         }
+
+        unlockAudioPlayer.Play();
 
         GameManager.GetState().playerKeys -= 1;
 
@@ -92,6 +105,8 @@ public partial class Tile : Node2D
 
     public void Claim()
     {
+        claimAudioPlayer.Play();
+
         unlockable.Claim();
         tileGenerator.UpdateState();
         _on_mouse_entered();
@@ -170,6 +185,7 @@ public partial class Tile : Node2D
                 }
 
                 ButtonLocked = this;
+                selectAudioPlayer.Play();
                 _on_mouse_entered();
                 return;
             }
