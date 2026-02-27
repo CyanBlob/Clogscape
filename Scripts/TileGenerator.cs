@@ -24,6 +24,9 @@ public partial class TileGenerator : Node
     float FreeTilePercentage = 0.05f;
 
     private Random rand { get; set; }
+    
+    [Export]
+    public int NonSkillPadding = 12;
 
     public void ClearTiles()
     {
@@ -172,18 +175,48 @@ public partial class TileGenerator : Node
         {
             skillUnlocks.Insert(rand.Next(0, skillUnlocks.Count), null);
         }
+
+        // Pad the beginning to make skills closer to center tile
+        for (int i = 0; i < NonSkillPadding; ++i)
+        {
+            questUnlocks.Insert(0, null);
+        }
+
         while (questUnlocks.Count < maxLength)
         {
             questUnlocks.Insert(rand.Next(0, questUnlocks.Count), null);
         }
+
+        // Pad the beginning to make skills closer to center tile
+        for (int i = 0; i < NonSkillPadding; ++i)
+        {
+            diaryUnlocks.Insert(0, null);
+        }
+
         while (diaryUnlocks.Count < maxLength * 2)
         {
             diaryUnlocks.Insert(rand.Next(0, diaryUnlocks.Count), null);
+        }
+
+        // Pad the beginning to make skills closer to center tile
+        for (int i = 0; i < NonSkillPadding; ++i)
+        {
+            freeTiles.Insert(0, null);
         }
         while (freeTiles.Count < maxLength * 2)
         {
             freeTiles.Insert(rand.Next(0, freeTiles.Count), null);
         }
+
+        // Move important quests forward
+        var druidicRitual = questUnlocks.Find(p => {return p != null && p.name == "Druidic Ritual";});
+        var currentAffairs = questUnlocks.Find(p => {return p != null && p.name == "Current Affairs";});
+
+        questUnlocks.Remove(druidicRitual);
+        questUnlocks.Remove(currentAffairs);
+
+        questUnlocks.Insert(0, currentAffairs);
+        questUnlocks.Insert(0, druidicRitual);
 
         var mixed = skillUnlocks.Interleave<Unlockable>(questUnlocks);
         mixed = mixed.Interleave<Unlockable>(diaryUnlocks);
@@ -199,7 +232,7 @@ public partial class TileGenerator : Node
 
     public Unlockable GetAndPopUnlockable(List<Unlockable> allUnlockables, bool firstTile)
     {
-        List<Range> windows = [0..12, 0..24, 0..24, 0..36, 0..48, 0..96, 0..128];
+        List<Range> windows = [0..12, 0..12, 0..24, 0..36, 0..48];
 
         if (firstTile)
         {

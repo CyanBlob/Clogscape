@@ -43,6 +43,11 @@ public partial class BountyContainer : NinePatchRect
         icon = (TextureRect)container.FindChild("Icon");
         description = (Label)container.FindChild("DescriptionContainer").FindChild("Description");
         rewards = (Label)container.FindChild("Rewards");
+
+        if (GameManager.GetState().currentBounties.Count < 3)
+        {
+            GameManager.UpdateBounties();
+        }
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -109,5 +114,7 @@ public partial class BountyContainer : NinePatchRect
     {
         GD.Print($"Completing: {bounty.name}");
         GameManager.GetState().CompleteBounty(bounty);
+
+        GameManager.Save($"{GameManager.GetState().playerName}", $"_auto_bounty_{DateTime.Now.ToString("MM_dd_yy_HH_mm_ss")}");
     }
 }

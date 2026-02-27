@@ -73,7 +73,6 @@ public partial class Tile : Node2D
 
     public void Unlock()
     {
-
         if (GameManager.GetState().playerKeys <= 0)
         {
             GD.Print("No keys! Can't unlock");
@@ -87,6 +86,8 @@ public partial class Tile : Node2D
         _on_mouse_entered();
         UnlockButton.Pressed -= Unlock;
         ClaimButton.Pressed += Claim;
+
+        GameManager.Save($"{GameManager.GetState().playerName}", $"_auto_unlock_{DateTime.Now.ToString("MM_dd_yy_HH_mm_ss")}");
     }
 
     public void Claim()
@@ -97,6 +98,8 @@ public partial class Tile : Node2D
         ClaimButton.Pressed -= Claim;
         ButtonLocked = null;
         TooltipButton.Visible = false;
+
+        GameManager.Save($"{GameManager.GetState().playerName}", $"_auto_claim_{DateTime.Now.ToString("MM_dd_yy_HH_mm_ss")}");
     }
 
     public void _on_mouse_entered()

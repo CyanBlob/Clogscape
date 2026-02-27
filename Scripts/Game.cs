@@ -55,7 +55,7 @@ public static class GameManager
         return state;
     }
 
-    public static void Save(String playerName)
+    public static void Save(String playerName, String suffix = "")
     {
         JsonSerializerOptions options = new();
         options.Converters.Add(new RangeSystemTextJsonConverter());
@@ -68,7 +68,7 @@ public static class GameManager
         {
             json
         };
-        File.WriteAllLines(PlayerFile(playerName), lines);
+        File.WriteAllLines(PlayerFile(playerName + suffix), lines);
 
         File.Delete(TilesFile(playerName));
 
@@ -77,12 +77,12 @@ public static class GameManager
             var tileJson = new List<String> {
                 tile.Serialize()
             };
-            File.AppendAllLines(TilesFile(playerName), tileJson);
+            File.AppendAllLines(TilesFile(playerName + suffix), tileJson);
         }
 
         if (state.allBounties.Count() < 3)
         {
-            File.Delete(PossibleBountiesFile(playerName));
+            File.Delete(PossibleBountiesFile(playerName + suffix));
             LoadBounties(playerName);
         }
 
@@ -92,7 +92,7 @@ public static class GameManager
         {
             allBountiesJson
         };
-        File.WriteAllLines(PossibleBountiesFile(playerName), allBountiesLines);
+        File.WriteAllLines(PossibleBountiesFile(playerName + suffix), allBountiesLines);
     }
 
     public static bool Load(String player, TileGenerator tileGenerator)
@@ -258,20 +258,28 @@ public static class GameManager
 
     public static String PlayerFile(String playerName)
     {
-        return $"{playerName}.json";
+        CreateSavePath(playerName);
+        return $"saves/{playerName}.json";
     }
     public static String TilesFile(String playerName)
     {
-        return $"{playerName}_tiles.json";
+        CreateSavePath(playerName);
+        return $"saves/{playerName}_tiles.json";
     }
     public static String PossibleBountiesFile(String playerName)
     {
-        return $"{playerName}_possible_bounties.json";
+        CreateSavePath(playerName);
+        return $"saves/{playerName}_possible_bounties.json";
     }
 
     public static String DefaultPossibleBountiesFile()
     {
         return $"default_possible_bounties.json";
+    }
+
+    public static void CreateSavePath(String playerName)
+    {
+        Directory.CreateDirectory($"saves/");
     }
 }
 

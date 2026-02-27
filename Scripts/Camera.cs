@@ -6,7 +6,10 @@ using Vector2 = Godot.Vector2;
 public partial class Camera : Camera2D
 {
     [Export]
-    public float ZoomSpeed = .1f;
+    public float ZoomSpeed = .05f;
+    [Export]
+    public float MinZoom = .35f;
+
     public float ZoomTarget = 1f;
 
     [Export]
@@ -29,6 +32,11 @@ public partial class Camera : Camera2D
         if (Input.IsActionJustPressed("zoom_out") && ZoomTarget - ZoomSpeed > 0.0f)
         {
             ZoomTarget -= ZoomSpeed;
+
+            if (ZoomTarget < MinZoom)
+            {
+                ZoomTarget = MinZoom;
+            }
         }
 
         Zoom = Zoom.Lerp(new Vector2(ZoomTarget, ZoomTarget), (float)delta * ZoomLerpFactor);

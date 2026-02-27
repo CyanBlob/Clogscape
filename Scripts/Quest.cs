@@ -55,6 +55,19 @@ public class QuestUnlock : Unlockable
     {
         List<QuestUnlock> quests = new();
 
+        QuestUnlock CurrentAffairs = new("Current Affairs");
+        CurrentAffairs.questDifficulty = QuestDifficulty.Novice;
+        CurrentAffairs.skillRequirements.Add((Skill.Sailing, 22));
+        quests.Add(CurrentAffairs);
+
+        QuestUnlock DruidicRitual = new("Druidic Ritual");
+        DruidicRitual.questDifficulty = QuestDifficulty.Novice;
+        quests.Add(DruidicRitual);
+
+        QuestUnlock IdesOfMilk = new("The Ides of Milk");
+        DruidicRitual.questDifficulty = QuestDifficulty.Novice;
+        quests.Add(IdesOfMilk);
+
         QuestUnlock APorcineOfInterest = new("A Porcine of Interest");
         APorcineOfInterest.questDifficulty = QuestDifficulty.Novice;
         quests.Add(APorcineOfInterest);
@@ -93,11 +106,6 @@ public class QuestUnlock : Unlockable
         CooksAssistant.questDifficulty = QuestDifficulty.Novice;
         quests.Add(CooksAssistant);
 
-        QuestUnlock CurrentAffairs = new("Current Affairs");
-        CurrentAffairs.questDifficulty = QuestDifficulty.Novice;
-        CurrentAffairs.skillRequirements.Add((Skill.Sailing, 22));
-        quests.Add(CurrentAffairs);
-
         QuestUnlock DaddysHome = new("Daddy's Home");
         DaddysHome.questDifficulty = QuestDifficulty.Novice;
         quests.Add(DaddysHome);
@@ -113,10 +121,6 @@ public class QuestUnlock : Unlockable
         QuestUnlock DoricsQuest = new("Doric's Quest");
         DoricsQuest.questDifficulty = QuestDifficulty.Novice;
         quests.Add(DoricsQuest);
-
-        QuestUnlock DruidicRitual = new("Druidic Ritual");
-        DruidicRitual.questDifficulty = QuestDifficulty.Novice;
-        quests.Add(DruidicRitual);
 
         QuestUnlock DwarfCannon = new("Dwarf Cannon");
         DwarfCannon.questDifficulty = QuestDifficulty.Novice;
