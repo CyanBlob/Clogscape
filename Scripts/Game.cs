@@ -314,7 +314,7 @@ public class GameState
         completedBounties.Add(bounty);
         var bountyKeys = bounty.minKeys;
 
-        for (int i = bounty.minKeys; i < bounty.maxKeys; ++i)
+        for (int i = (int)bounty.minKeys; i < bounty.maxKeys; ++i)
         {
             if (bountyKeys + bounty.lifetimeClaimedKeys >= bounty.maxLifetimeKeys)
             {
@@ -323,11 +323,11 @@ public class GameState
             bountyKeys += rand.NextDouble() <= bounty.keyChance ? 1 : 0;
         }
 
-        playerKeys += bountyKeys;
+        playerKeys += (int)bountyKeys;
 
         bounty.lifetimeClaimedKeys += bountyKeys;
 
-        GameManager.UpdateAllowance(rand.Next(bounty.minGp, bounty.maxGp));
+        GameManager.UpdateAllowance(rand.Next((int)bounty.minGp, (int)bounty.maxGp));
 
         GameManager.UpdateBounties();
 

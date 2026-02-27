@@ -17,6 +17,7 @@ public partial class UI : Button
 
     static Label keysLabel;
     static LineEdit allowanceEdit;
+    static LineEdit spendingEdit;
 
     static FogRect fogRect;
 
@@ -41,6 +42,8 @@ public partial class UI : Button
             allowanceEdit.Text = GameManager.GetState().playerAllowance.ToString();
         }
 
+        spendingEdit = (LineEdit)GetParent().GetParent().FindChild("Bounty Controls").FindChild("SpendEdit");
+
         tileGenerator = (TileGenerator)GetParent().GetParent().GetParent().FindChild("Tiles");
         if (File.Exists(nameFilePath))
         {
@@ -57,6 +60,7 @@ public partial class UI : Button
                 GameManager.Save(playerNameEdit.Text);
             }
         }
+        UpdateAllowance();
 
         client = new HttpClient();
         client.DefaultRequestHeaders.UserAgent.ParseAdd(
@@ -315,5 +319,23 @@ public partial class UI : Button
             GD.Print(newAllowance);
             GameManager.GetState().playerAllowance = newAllowance;
         }
+    }
+
+    public void _on_spend_allowance(String allowance)
+    {
+        int spentAllowance;
+
+        if (Int32.TryParse(allowance, out spentAllowance))
+        {
+            GameManager.GetState().playerAllowance -= spentAllowance;
+            GameManager.Save($"{GameManager.GetState().playerName}", $"_auto_allowance_{DateTime.Now.ToString("MM_dd_yy_HH_mm_ss")}");
+            UpdateAllowance();
+        }
+    }
+
+    public void _on_spend_button_pressed()
+    {
+        _on_spend_allowance(spendingEdit.Text);
+        spendingEdit.Text = "0";
     }
 }

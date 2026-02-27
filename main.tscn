@@ -12,11 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://h7c0updkdrhe" path="res://Resources/resource-packs/bank/pin_marble_button_red.png" id="8_vivmo"]
 [ext_resource type="Texture2D" uid="uid://b44ipbxrtybiv" path="res://Resources/resource-packs/bank/placeholders_lock.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://ef4m1dkhtuwj" path="res://Resources/resource-packs/icon/checkmark_green.png" id="10_efxa6"]
-[ext_resource type="Texture2D" uid="uid://830yp0v8hrrd" path="res://Resources/resource-packs/welcome_screen/coins.png" id="13_lswn8"]
 [ext_resource type="Texture2D" uid="uid://b2vay27wiojjo" path="res://Resources/resource-packs/chatbox/background.png" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://6h578j5chwmt" path="res://bounty_ui.tscn" id="15_vivmo"]
 [ext_resource type="Texture2D" uid="uid://cho68tq7fckq0" path="res://Resources/resource-packs/welcome_screen/key.png" id="15_xuqvo"]
 [ext_resource type="Script" uid="uid://dtelbd0tobnyd" path="res://Scripts/FogRect.cs" id="16_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://dxpdc6hnouvyj" path="res://Resources/resource-packs/bonds_pouch/gold_pouch.png" id="16_074og"]
+[ext_resource type="Texture2D" uid="uid://c1g2lc5uq6jnj" path="res://Resources/resource-packs/ge/make_offer_sell.png" id="18_cegan"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_074og"]
 shader = ExtResource("1_yaehf")
@@ -222,7 +223,6 @@ z_index = 104
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Sync"
-script = ExtResource("5_lquwl")
 
 [node name="ItemsButton" type="Button" parent="CanvasLayer/Board Controls" unique_id=618121912]
 visible = false
@@ -230,7 +230,6 @@ z_index = 104
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Items"
-script = ExtResource("5_lquwl")
 
 [node name="ItemIconsButtom" type="Button" parent="CanvasLayer/Board Controls" unique_id=787997725]
 visible = false
@@ -239,7 +238,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 disabled = true
 text = "Items with icons"
-script = ExtResource("5_lquwl")
 
 [node name="PlayerName" type="LineEdit" parent="CanvasLayer/Board Controls" unique_id=720465123]
 layout_mode = 2
@@ -251,14 +249,12 @@ z_index = 104
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Save player"
-script = ExtResource("5_lquwl")
 
 [node name="LoadButton" type="Button" parent="CanvasLayer/Board Controls" unique_id=1986932729]
 z_index = 104
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Load player"
-script = ExtResource("5_lquwl")
 
 [node name="CreateButton" type="Button" parent="CanvasLayer/Board Controls" unique_id=1535569744]
 z_index = 104
@@ -271,17 +267,69 @@ script = ExtResource("5_lquwl")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -105.0
-offset_bottom = 100.0
+offset_left = -304.0
+offset_bottom = 82.0
 grow_horizontal = 0
 
-[node name="AllowanceRect" type="NinePatchRect" parent="CanvasLayer/Bounty Controls" unique_id=884574922]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Bounty Controls" unique_id=1171253811]
+layout_mode = 2
+
+[node name="KeysRect" type="NinePatchRect" parent="CanvasLayer/Bounty Controls/HBoxContainer" unique_id=885201127]
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+texture = ExtResource("8_vivmo")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Bounty Controls/HBoxContainer/KeysRect" unique_id=1267507219]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = -25.0
+offset_right = 81.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Bounty Controls/HBoxContainer/KeysRect/MarginContainer" unique_id=1555315031]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Bounty Controls/HBoxContainer/KeysRect/MarginContainer/HBoxContainer" unique_id=250858553]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("15_xuqvo")
+expand_mode = 2
+
+[node name="KeysLabel" type="Label" parent="CanvasLayer/Bounty Controls/HBoxContainer/KeysRect/MarginContainer/HBoxContainer" unique_id=520891877]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "0 Keys"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Bounty Controls/HBoxContainer" unique_id=1363657910]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="AllowanceRect" type="NinePatchRect" parent="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer" unique_id=884574922]
 z_index = -2
-custom_minimum_size = Vector2(150, 50)
+custom_minimum_size = Vector2(150, 32)
 layout_mode = 2
 texture = ExtResource("13_ycdy4")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Bounty Controls/AllowanceRect" unique_id=273367063]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer/AllowanceRect" unique_id=273367063]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -289,19 +337,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Bounty Controls/AllowanceRect/HBoxContainer" unique_id=2042503939]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer/AllowanceRect/HBoxContainer" unique_id=2042503939]
 layout_mode = 2
-texture = ExtResource("13_lswn8")
+texture = ExtResource("16_074og")
 expand_mode = 2
 
-[node name="AllowanceEdit" type="LineEdit" parent="CanvasLayer/Bounty Controls/AllowanceRect/HBoxContainer" unique_id=1983489975]
+[node name="AllowanceEdit" type="LineEdit" parent="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer/AllowanceRect/HBoxContainer" unique_id=1983489975]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.2195015, 0.21950078, 0.21950099, 1)
+theme_override_colors/font_uneditable_color = Color(0.21960784, 0.21960784, 0.21960784, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("5_272bh")
 theme_override_font_sizes/font_size = 16
-placeholder_text = "Allowance"
+text = "0"
+editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
@@ -310,40 +360,39 @@ drag_and_drop_selection_enabled = false
 flat = true
 virtual_keyboard_type = 2
 
-[node name="KeysRect" type="NinePatchRect" parent="CanvasLayer/Bounty Controls" unique_id=885201127]
-custom_minimum_size = Vector2(150, 50)
+[node name="SpendRect" type="NinePatchRect" parent="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer" unique_id=2085406441]
+custom_minimum_size = Vector2(15.795, 35)
 layout_mode = 2
-texture = ExtResource("8_vivmo")
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
+texture = ExtResource("13_ycdy4")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Bounty Controls/KeysRect" unique_id=1267507219]
-layout_mode = 0
-offset_right = 50.0
-offset_bottom = 50.0
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer/SpendRect" unique_id=1618725706]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Bounty Controls/KeysRect/MarginContainer" unique_id=1555315031]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer/SpendRect/MarginContainer" unique_id=1171663647]
 layout_mode = 2
+size_flags_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Bounty Controls/KeysRect/MarginContainer/HBoxContainer" unique_id=250858553]
+[node name="SpendButton" type="TextureButton" parent="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer/SpendRect/MarginContainer/HBoxContainer" unique_id=138418729]
 layout_mode = 2
-texture = ExtResource("15_xuqvo")
-expand_mode = 2
+texture_normal = ExtResource("18_cegan")
 
-[node name="KeysLabel" type="Label" parent="CanvasLayer/Bounty Controls/KeysRect/MarginContainer/HBoxContainer" unique_id=520891877]
-custom_minimum_size = Vector2(95, 0)
+[node name="SpendEdit" type="LineEdit" parent="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer/SpendRect/MarginContainer/HBoxContainer" unique_id=1235018360]
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.21960784, 0.21960784, 0.21960784, 1)
 theme_override_fonts/font = ExtResource("5_272bh")
-text = "0 Keys"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "0"
+placeholder_text = "Spending"
+flat = true
 
 [node name="RollBountiesButton" type="Button" parent="CanvasLayer/Bounty Controls" unique_id=383077066]
 visible = false
@@ -384,9 +433,10 @@ bountyIndex = 2
 [connection signal="pressed" from="CanvasLayer/Board Controls/ItemsButton" to="CanvasLayer/Board Controls/ItemsButton" method="_on_items_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Board Controls/ItemIconsButtom" to="CanvasLayer/Board Controls/ItemIconsButtom" method="_on_items_with_icons_pressed"]
 [connection signal="text_changed" from="CanvasLayer/Board Controls/PlayerName" to="CanvasLayer/Board Controls/SaveButton" method="_on_player_text_changed"]
-[connection signal="pressed" from="CanvasLayer/Board Controls/SaveButton" to="CanvasLayer/Board Controls/SaveButton" method="_on_player_save"]
-[connection signal="pressed" from="CanvasLayer/Board Controls/LoadButton" to="CanvasLayer/Board Controls/LoadButton" method="_on_player_load"]
+[connection signal="pressed" from="CanvasLayer/Board Controls/SaveButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_player_save"]
+[connection signal="pressed" from="CanvasLayer/Board Controls/LoadButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_player_load"]
 [connection signal="pressed" from="CanvasLayer/Board Controls/CreateButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_create_player"]
-[connection signal="text_changed" from="CanvasLayer/Bounty Controls/AllowanceRect/HBoxContainer/AllowanceEdit" to="CanvasLayer/Board Controls/CreateButton" method="_on_allowance_edit_text_changed"]
+[connection signal="text_changed" from="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer/AllowanceRect/HBoxContainer/AllowanceEdit" to="CanvasLayer/Board Controls/CreateButton" method="_on_allowance_edit_text_changed"]
+[connection signal="pressed" from="CanvasLayer/Bounty Controls/HBoxContainer/VBoxContainer/SpendRect/MarginContainer/HBoxContainer/SpendButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_spend_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Bounty Controls/RollBountiesButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_roll_bounties_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Bounty Controls/CompleteBountyButton" to="CanvasLayer/Board Controls/CreateButton" method="_on_complete_bounty_button_pressed"]
