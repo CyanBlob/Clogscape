@@ -34,6 +34,8 @@ public partial class BountyContainer : NinePatchRect
     Label rewards;
     TextureRect icon;
 
+    TextEdit rewardsEdit;
+
     Bounty bounty;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -43,6 +45,8 @@ public partial class BountyContainer : NinePatchRect
         icon = (TextureRect)container.FindChild("Icon");
         description = (Label)container.FindChild("DescriptionContainer").FindChild("Description");
         rewards = (Label)container.FindChild("Rewards");
+
+        rewardsEdit = (TextEdit)GetParent().GetParent().FindChild("RewardsEdit");
 
         if (GameManager.GetState().currentBounties.Count < 3)
         {
@@ -113,7 +117,12 @@ public partial class BountyContainer : NinePatchRect
     public void _on_complete_bounty_button_pressed()
     {
         GD.Print($"Completing: {bounty.name}");
-        GameManager.GetState().CompleteBounty(bounty);
+        var rewards = GameManager.GetState().CompleteBounty(bounty);
+
+        rewardsEdit.Text = $"+{rewards.Item1} Keys\n+{rewards.Item2}gp";
+
+        var fade = (Fade)rewardsEdit;
+        fade.visibility = 100.0f;
 
         GameManager.Save($"{GameManager.GetState().playerName}", $"_auto_bounty_{DateTime.Now.ToString("MM_dd_yy_HH_mm_ss")}");
     }

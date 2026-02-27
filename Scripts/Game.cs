@@ -40,11 +40,7 @@ public static class GameManager
 
         state.allowedDifficulties = [Difficulty.Novice, Difficulty.Easy, Difficulty.Medium, Difficulty.Hard, Difficulty.Expert, Difficulty.Grandmaster];
         state.bountyDifficulty = Difficulty.Novice;
-        state.playerAllowance = 100;
-
-        state.skill = new SkillUnlock(Skill.Agility, new System.Range(69, 420), false);
-        state.quest = new QuestUnlock("TEST");
-        state.diary = new DiaryUnlock("DIARY", DiaryDifficulty.Medium);
+        state.playerAllowance = 0;
 
         state.allBounties = new();
         state.currentBounties = new();
@@ -292,10 +288,6 @@ public class GameState
     public Difficulty bountyDifficulty { get; set; }
     public List<Difficulty> allowedDifficulties { get; set; }
 
-    public SkillUnlock skill { get; set; }
-    public QuestUnlock quest { get; set; }
-    public DiaryUnlock diary { get; set; }
-
     public List<Bounty> currentBounties { get; set; }
     public List<Bounty> completedBounties { get; set; }
 
@@ -309,7 +301,7 @@ public class GameState
     private static Random rand = new();
 
     // TODO: Decrease minKeys by 1 for every difficulty tier above the task you are
-    public void CompleteBounty(Bounty bounty)
+    public (int, int) CompleteBounty(Bounty bounty)
     {
         completedBounties.Add(bounty);
         var bountyKeys = bounty.minKeys;
@@ -327,11 +319,15 @@ public class GameState
 
         bounty.lifetimeClaimedKeys += bountyKeys;
 
-        GameManager.UpdateAllowance(rand.Next((int)bounty.minGp, (int)bounty.maxGp));
+        var allowance = rand.Next((int)bounty.minGp, (int)bounty.maxGp);
+
+        GameManager.UpdateAllowance(allowance);
 
         GameManager.UpdateBounties();
 
         GetPlayerDifficulty();
+
+        return ((int)bountyKeys, allowance);
     }
 
     public Difficulty GetPlayerDifficulty()

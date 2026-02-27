@@ -70,23 +70,26 @@ public class Bounty
             case Difficulty.Novice:
                 minKeys = minKeys == null ? 0 : minKeys;
                 maxKeys = maxKeys == null ? 1 : maxKeys;
-                keyChance = keyChance == null ? .25f : keyChance;
+                keyChance = keyChance == null ? .5f : keyChance;
                 minGp = minGp == null ? 0 : minGp;
                 maxGp = maxGp == null ? 100 : maxGp;
+                maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
                 break;
             case Difficulty.Easy:
                 minKeys = minKeys == null ? 0 : minKeys;
                 maxKeys = maxKeys == null ? 1 : maxKeys;
-                keyChance = keyChance == null ? .50f : keyChance;
+                keyChance = keyChance == null ? .75f : keyChance;
                 minGp = minGp == null ? 100 : minGp;
                 maxGp = maxGp == null ? 500 : maxGp;
+                maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
                 break;
             case Difficulty.Medium:
                 minKeys = minKeys == null ? 0 : minKeys;
                 maxKeys = maxKeys == null ? 1 : maxKeys;
-                keyChance = keyChance == null ? .75f : keyChance;
+                keyChance = keyChance == null ? 1f : keyChance;
                 minGp = minGp == null ? 500 : minGp;
                 maxGp = maxGp == null ? 1000 : maxGp;
+                maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
                 break;
             case Difficulty.Hard:
                 minKeys = minKeys == null ? 1 : minKeys;
@@ -94,6 +97,7 @@ public class Bounty
                 keyChance = keyChance == null ? .25f : keyChance;
                 minGp = minGp == null ? 1000 : minGp;
                 maxGp = maxGp == null ? 10000 : maxGp;
+                maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
                 break;
             case Difficulty.Expert:
                 minKeys = minKeys == null ? 1 : minKeys;
@@ -101,6 +105,7 @@ public class Bounty
                 keyChance = keyChance == null ? .50f : keyChance;
                 minGp = minGp == null ? 10000 : minGp;
                 maxGp = maxGp == null ? 50000 : maxGp;
+                maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
                 break;
             case Difficulty.Grandmaster:
                 minKeys = minKeys == null ? 2 : minKeys;
@@ -108,6 +113,7 @@ public class Bounty
                 keyChance = keyChance == null ? .50f : keyChance;
                 minGp = minGp == null ? 50000 : minGp;
                 maxGp = maxGp == null ? 100000 : maxGp;
+                maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
                 break;
         }
     }

@@ -4,19 +4,19 @@
 	"description": "Any region, any style",
 	"difficulty": 0,
 	"bountyType": 10,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
 	"maxLifetimeKeys": 2,
 	"minGp": 100,
 	"maxGp": 200,
 	"countMin": 15,
 	"countMax": 50,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -26,19 +26,19 @@
 	"description": "Complete a quest without looking anything up",
 	"difficulty": 1,
 	"bountyType": 6,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -48,19 +48,19 @@
 	"description": "Defeat a boss 3x without leaving",
 	"difficulty": 2,
 	"bountyType": 6,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 50.0,
-	"maxLifetimeKeys": null,
+	
 	"minGp": 10000,
 	"maxGp": 20000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -70,19 +70,19 @@
 	"description": "Defeat a boss with only gear you've crafted yourself",
 	"difficulty": 2,
 	"bountyType": 6,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 50.0,
-	"maxLifetimeKeys": null,
+	
 	"minGp": 1000,
 	"maxGp": 5000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -95,16 +95,16 @@
 	"minKeys": 2,
 	"maxKeys": 2,
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
+	
 	"minGp": 1000,
 	"maxGp": 20000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -114,7 +114,7 @@
 	"description": "Complete a clue scroll without looking anything up",
 	"difficulty": 2,
 	"bountyType": 2,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 25.0,
 	"maxLifetimeKeys": 10,
@@ -122,11 +122,11 @@
 	"maxGp": 2000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -144,11 +144,11 @@
 	"maxGp": 50000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -158,19 +158,19 @@
 	"description": "Retrieve a full inventory of loot from the wilderness",
 	"difficulty": 1,
 	"bountyType": 8,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
 	"maxLifetimeKeys": 1,
 	"minGp": 500,
 	"maxGp": 2000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -180,19 +180,19 @@
 	"description": "Kill 3 different wilderness bosses without dying",
 	"difficulty": 3,
 	"bountyType": 0,
-	"minKeys": 1,
+	
 	"maxKeys": 5,
 	"extraKeyChance": 50.0,
-	"maxLifetimeKeys": null,
+	
 	"minGp": 25000,
 	"maxGp": 75000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -202,19 +202,19 @@
 	"description": "Any means necessary",
 	"difficulty": 2,
 	"bountyType": 4,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
 	"maxLifetimeKeys": 3,
 	"minGp": 100000,
 	"maxGp": 100000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -224,19 +224,19 @@
 	"description": "Any means necessary",
 	"difficulty": 3,
 	"bountyType": 4,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
 	"maxLifetimeKeys": 3,
 	"minGp": 500000,
 	"maxGp": 500000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -246,7 +246,7 @@
 	"description": "Wear a complete skilling outfit",
 	"difficulty": 2,
 	"bountyType": 5,
-	"minKeys": 1,
+	
 	"maxKeys": 4,
 	"extraKeyChance": 25.0,
 	"maxLifetimeKeys": 5,
@@ -254,11 +254,11 @@
 	"maxGp": 50000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -268,19 +268,19 @@
 	"description": "Go out to dinner with a friend, partner, or loved one",
 	"difficulty": 0,
 	"bountyType": 9,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
 	"maxLifetimeKeys": 2,
 	"minGp": 10000,
 	"maxGp": 15000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -290,7 +290,7 @@
 	"description": "Meet a friend in person (or a call >30 min)",
 	"difficulty": 1,
 	"bountyType": 9,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 25.0,
 	"maxLifetimeKeys": 2,
@@ -298,11 +298,11 @@
 	"maxGp": 30000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -312,19 +312,19 @@
 	"description": "Complete 10 slayer tasks from Konar without skipping any",
 	"difficulty": 2,
 	"bountyType": 5,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 50.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -337,16 +337,16 @@
 	"minKeys": 2,
 	"maxKeys": 2,
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
+	
 	"minGp": 10000,
 	"maxGp": 25000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -356,19 +356,19 @@
 	"description": "Defeat all 3 Dagannoth Kings in one trip",
 	"difficulty": 2,
 	"bountyType": 0,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 50.0,
-	"maxLifetimeKeys": null,
+	
 	"minGp": 20000,
 	"maxGp": 50000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -378,19 +378,19 @@
 	"description": "Catch and cook 100 fish",
 	"difficulty": 0,
 	"bountyType": 5,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
 	"maxLifetimeKeys": 1,
 	"minGp": 100,
 	"maxGp": 1000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -400,19 +400,19 @@
 	"description": "Craft a potion with only self-grown supplies",
 	"difficulty": 2,
 	"bountyType": 5,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
 	"maxLifetimeKeys": 1,
 	"minGp": 1000,
 	"maxGp": 2000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -422,19 +422,19 @@
 	"description": null,
 	"difficulty": 1,
 	"bountyType": 5,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -444,19 +444,19 @@
 	"description": "Get someone to follow you using only emotes",
 	"difficulty": 0,
 	"bountyType": 7,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -466,19 +466,19 @@
 	"description": "Get someone to follow you using only emotes while wearing the full Mime set",
 	"difficulty": 2,
 	"bountyType": 7,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -488,19 +488,19 @@
 	"description": "Kill X monsters whose levels are all +1 from the last",
 	"difficulty": 1,
 	"bountyType": 10,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 50.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": 5,
 	"countMax": 10,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -513,16 +513,16 @@
 	"minKeys": 2,
 	"maxKeys": 4,
 	"extraKeyChance": 75.0,
-	"maxLifetimeKeys": null,
+	
 	"minGp": 10000,
 	"maxGp": 50000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -535,16 +535,16 @@
 	"minKeys": 2,
 	"maxKeys": 2,
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
+	
 	"minGp": 10000,
 	"maxGp": 15000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -557,16 +557,16 @@
 	"minKeys": 2,
 	"maxKeys": 2,
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
+	
 	"minGp": 99000,
 	"maxGp": 99000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -584,11 +584,11 @@
 	"maxGp": 20000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -598,7 +598,7 @@
 	"description": "Complete one slayer task without eating any food",
 	"difficulty": 2,
 	"bountyType": 6,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 50.0,
 	"maxLifetimeKeys": 2,
@@ -606,11 +606,11 @@
 	"maxGp": 6000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -628,11 +628,11 @@
 	"maxGp": 30000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -642,7 +642,7 @@
 	"description": "Equip a full set of Barrows gear",
 	"difficulty": 2,
 	"bountyType": 4,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 50.0,
 	"maxLifetimeKeys": 2,
@@ -650,11 +650,11 @@
 	"maxGp": 30000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -664,19 +664,19 @@
 	"description": "Win two games of Castle Wars in a row",
 	"difficulty": 1,
 	"bountyType": 3,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
+	
 	"minGp": 10000,
 	"maxGp": 30000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -694,11 +694,11 @@
 	"maxGp": 90000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -708,7 +708,7 @@
 	"description": "Defeat Scurrius 10 times",
 	"difficulty": 2,
 	"bountyType": 0,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 35.0,
 	"maxLifetimeKeys": 3,
@@ -716,11 +716,11 @@
 	"maxGp": 25000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -730,7 +730,7 @@
 	"description": "Defeat Hespori 3 times",
 	"difficulty": 2,
 	"bountyType": 0,
-	"minKeys": 1,
+	
 	"maxKeys": 2,
 	"extraKeyChance": 35.0,
 	"maxLifetimeKeys": 3,
@@ -738,11 +738,11 @@
 	"maxGp": 20000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -752,7 +752,7 @@
 	"description": "Defeat Rex 10 times (any trip count)",
 	"difficulty": 2,
 	"bountyType": 0,
-	"minKeys": 1,
+	
 	"maxKeys": 3,
 	"extraKeyChance": 35.0,
 	"maxLifetimeKeys": 2,
@@ -760,11 +760,11 @@
 	"maxGp": 60000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -774,7 +774,7 @@
 	"description": "Defeat Prime 10 times (any trip count)",
 	"difficulty": 2,
 	"bountyType": 0,
-	"minKeys": 1,
+	
 	"maxKeys": 3,
 	"extraKeyChance": 35.0,
 	"maxLifetimeKeys": 2,
@@ -782,11 +782,11 @@
 	"maxGp": 60000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -796,7 +796,7 @@
 	"description": "Defeat Supreme 10 times (any trip count)",
 	"difficulty": 2,
 	"bountyType": 0,
-	"minKeys": 1,
+	
 	"maxKeys": 3,
 	"extraKeyChance": 35.0,
 	"maxLifetimeKeys": 2,
@@ -804,11 +804,11 @@
 	"maxGp": 60000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -826,11 +826,11 @@
 	"maxGp": 120000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -848,11 +848,11 @@
 	"maxGp": 120000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -870,11 +870,11 @@
 	"maxGp": 125000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -892,11 +892,11 @@
 	"maxGp": 200000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -914,11 +914,11 @@
 	"maxGp": 250000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -936,11 +936,11 @@
 	"maxGp": 300000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -958,11 +958,11 @@
 	"maxGp": 250000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -980,11 +980,11 @@
 	"maxGp": 300000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1002,11 +1002,11 @@
 	"maxGp": 400000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1024,11 +1024,11 @@
 	"maxGp": 300000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1046,11 +1046,11 @@
 	"maxGp": 300000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1068,11 +1068,11 @@
 	"maxGp": 500000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1090,11 +1090,11 @@
 	"maxGp": 600000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1104,19 +1104,19 @@
 	"description": "Gather, spin, and sell 100 flax",
 	"difficulty": 0,
 	"bountyType": 8,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 75.0,
 	"maxLifetimeKeys": 1,
 	"minGp": 1000,
 	"maxGp": 10000,
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1126,19 +1126,19 @@
 	"description": "Drink a strength potion",
 	"difficulty": 0,
 	"bountyType": 8,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1148,19 +1148,19 @@
 	"description": "Kill 10 werewolves",
 	"difficulty": 1,
 	"bountyType": 10,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1170,19 +1170,19 @@
 	"description": "Equip a Dragon Defender",
 	"difficulty": 2,
 	"bountyType": 8,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1192,19 +1192,19 @@
 	"description": "Imbue any piece of jewelry",
 	"difficulty": 2,
 	"bountyType": 7,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1214,19 +1214,19 @@
 	"description": "Defeat one of each of the chromatic dragons",
 	"difficulty": 2,
 	"bountyType": 10,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1236,19 +1236,19 @@
 	"description": "Defeat one of each of the metallic dragons",
 	"difficulty": 3,
 	"bountyType": 10,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1258,19 +1258,19 @@
 	"description": "Equip an imbued god cap",
 	"difficulty": 2,
 	"bountyType": 8,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1280,19 +1280,19 @@
 	"description": "Heal a Pyromancer in Wintertodt 5 times",
 	"difficulty": 1,
 	"bountyType": 3,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1302,19 +1302,19 @@
 	"description": "Obtain a Sinister Key from Salarin the Twisted",
 	"difficulty": 2,
 	"bountyType": 0,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1324,19 +1324,19 @@
 	"description": "Fill a S.T.A.S.H unit",
 	"difficulty": 1,
 	"bountyType": 5,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1346,19 +1346,19 @@
 	"description": "Obtain a Rune Crossbow from an impling",
 	"difficulty": 5,
 	"bountyType": 8,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1368,19 +1368,19 @@
 	"description": "Wear full graceful (overleveling agility is ok)",
 	"difficulty": 2,
 	"bountyType": 4,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1390,19 +1390,19 @@
 	"description": "Hit level 10 combat",
 	"difficulty": 0,
 	"bountyType": 4,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1412,19 +1412,19 @@
 	"description": "Hit a 10+",
 	"difficulty": 1,
 	"bountyType": 7,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1434,19 +1434,19 @@
 	"description": "Wear a team cape in level 20+ wilderness",
 	"difficulty": 0,
 	"bountyType": 7,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1456,19 +1456,19 @@
 	"description": "Craft a 4-dose potion",
 	"difficulty": 3,
 	"bountyType": 5,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1478,19 +1478,19 @@
 	"description": "Get a random player to play a chess game with you",
 	"difficulty": 0,
 	"bountyType": 7,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1500,19 +1500,19 @@
 	"description": "Enter any skilling guild",
 	"difficulty": 1,
 	"bountyType": 5,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1522,19 +1522,19 @@
 	"description": "Win a game of Last Man Standing",
 	"difficulty": 4,
 	"bountyType": 6,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1544,19 +1544,19 @@
 	"description": "Earn 10 Combat Achievement points",
 	"difficulty": 2,
 	"bountyType": 6,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1566,19 +1566,19 @@
 	"description": "Defeat a boss using only gear that they drop",
 	"difficulty": 4,
 	"bountyType": 6,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1588,19 +1588,19 @@
 	"description": "Defeat a boss using a weapon you got from them",
 	"difficulty": 2,
 	"bountyType": 6,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1610,19 +1610,19 @@
 	"description": "Defeat a guard in Ardougne, Falador, Varrock, Edgeville, and a soldier in Yanille ",
 	"difficulty": 1,
 	"bountyType": 10,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1632,19 +1632,19 @@
 	"description": "Go to a POH party for 30 minutes. No AFKing allowed",
 	"difficulty": 0,
 	"bountyType": 7,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1654,19 +1654,19 @@
 	"description": "Sell something to an NPC that you stole from them",
 	"difficulty": 0,
 	"bountyType": 5,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1676,19 +1676,19 @@
 	"description": "Wield and use a Rune pickaxe or axe",
 	"difficulty": 1,
 	"bountyType": 5,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1698,19 +1698,19 @@
 	"description": "Trade in a cat for Death Runes",
 	"difficulty": 1,
 	"bountyType": 7,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1720,19 +1720,19 @@
 	"description": "Obtain a collection log item from combat",
 	"difficulty": 1,
 	"bountyType": 8,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false
@@ -1742,19 +1742,19 @@
 	"description": "Obtain a collection log item from a clue scroll",
 	"difficulty": 1,
 	"bountyType": 8,
-	"minKeys": 1,
-	"maxKeys": 1,
+	
+	
 	"extraKeyChance": 0.0,
-	"maxLifetimeKeys": null,
-	"minGp": 0,
-	"maxGp": 0,
+	
+	
+	
 	"countMin": null,
 	"countMax": null,
-	"keyChance": 0.0,
+	
 	"skipChance": 5.0,
 	"lastCompleted": null,
 	"lastRolled": null,
-	"combatLevel": 3,
+	
 	"isWildy": false,
 	"requirementLocked": false,
 	"completedLocked": false

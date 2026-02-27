@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cho68tq7fckq0" path="res://Resources/resource-packs/welcome_screen/key.png" id="15_xuqvo"]
 [ext_resource type="Script" uid="uid://dtelbd0tobnyd" path="res://Scripts/FogRect.cs" id="16_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://dxpdc6hnouvyj" path="res://Resources/resource-packs/bonds_pouch/gold_pouch.png" id="16_074og"]
+[ext_resource type="Script" uid="uid://d1rwoqe5e5ae2" path="res://Fade.cs" id="18_82xsv"]
 [ext_resource type="Texture2D" uid="uid://c1g2lc5uq6jnj" path="res://Resources/resource-packs/ge/make_offer_sell.png" id="18_cegan"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_074og"]
@@ -405,6 +406,17 @@ visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_272bh")
 text = "Complete Bounty"
+
+[node name="RewardsEdit" type="TextEdit" parent="CanvasLayer/Bounty Controls" unique_id=862638679]
+z_index = 5
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_272bh")
+text = "+1 Key
++1000gp"
+editable = false
+script = ExtResource("18_82xsv")
+fadeSpeed = 45.0
 
 [node name="BountyContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1395489263]
 custom_minimum_size = Vector2(1000, 175)
