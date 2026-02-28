@@ -51,6 +51,9 @@ public class Bounty
 #nullable enable
     // Chance that the bounty will be skipped if rolled
     public float? skipChance { get; set; }
+    public float? skipChancePerCompletion { get; set; }
+    public float? maxSkipChance { get; set; }
+
     public String? description { get; set; }
     public String? help { get; set; }
 
@@ -74,6 +77,8 @@ public class Bounty
                 minGp = minGp == null ? 0 : minGp;
                 maxGp = maxGp == null ? 100 : maxGp;
                 maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
+                skipChancePerCompletion = 15.0f;
+                maxSkipChance = 100.0f;
                 break;
             case Difficulty.Easy:
                 minKeys = minKeys == null ? 0 : minKeys;
@@ -82,6 +87,8 @@ public class Bounty
                 minGp = minGp == null ? 100 : minGp;
                 maxGp = maxGp == null ? 500 : maxGp;
                 maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
+                skipChancePerCompletion = 15.0f;
+                maxSkipChance = 95.0f;
                 break;
             case Difficulty.Medium:
                 minKeys = minKeys == null ? 0 : minKeys;
@@ -90,6 +97,8 @@ public class Bounty
                 minGp = minGp == null ? 500 : minGp;
                 maxGp = maxGp == null ? 1000 : maxGp;
                 maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
+                skipChancePerCompletion = 15.0f;
+                maxSkipChance = 80.0f;
                 break;
             case Difficulty.Hard:
                 minKeys = minKeys == null ? 1 : minKeys;
@@ -98,6 +107,8 @@ public class Bounty
                 minGp = minGp == null ? 1000 : minGp;
                 maxGp = maxGp == null ? 10000 : maxGp;
                 maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
+                skipChancePerCompletion = 15.0f;
+                maxSkipChance = 80.0f;
                 break;
             case Difficulty.Expert:
                 minKeys = minKeys == null ? 1 : minKeys;
@@ -106,6 +117,8 @@ public class Bounty
                 minGp = minGp == null ? 10000 : minGp;
                 maxGp = maxGp == null ? 50000 : maxGp;
                 maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
+                skipChancePerCompletion = 15.0f;
+                maxSkipChance = 80.0f;
                 break;
             case Difficulty.Grandmaster:
                 minKeys = minKeys == null ? 2 : minKeys;
@@ -114,6 +127,8 @@ public class Bounty
                 minGp = minGp == null ? 50000 : minGp;
                 maxGp = maxGp == null ? 100000 : maxGp;
                 maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
+                skipChancePerCompletion = 15.0f;
+                maxSkipChance = 80.0f;
                 break;
         }
     }

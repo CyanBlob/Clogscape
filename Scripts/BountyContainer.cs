@@ -37,6 +37,10 @@ public partial class BountyContainer : NinePatchRect
     TextEdit rewardsEdit;
 
     Bounty bounty;
+    private Bounty lastBounty = null;
+
+    private Random rand = new();
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -66,10 +70,23 @@ public partial class BountyContainer : NinePatchRect
         {
             GameManager.UpdateBounties();
         }
+
         bounty = GameManager.GetState().currentBounties[bountyIndex];
+        if (bounty == lastBounty && lastBounty != null)
+        {
+            return;
+        }
+
+        lastBounty = bounty;
 
         title.Text = "\n" + bounty.name;
         description.Text = bounty.description;
+
+        if (bounty.countMin != null && bounty.countMax != null)
+        {
+            description.Text = description.Text.Replace("{{COUNT}}", rand.Next((int)bounty.countMin, (int)bounty.countMax).ToString());
+        }
+
         rewards.Text = $"Keys: {bounty.minKeys} {(bounty.maxKeys == bounty.minKeys ? "" : $"-{bounty.maxKeys}")}";
         rewards.Text += $" GP: {bounty.minGp} {(bounty.maxGp == bounty.minGp ? "" : $"-{bounty.maxGp}")}";
 

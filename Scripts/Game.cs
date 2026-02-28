@@ -322,13 +322,12 @@ public class GameState
     [JsonIgnore]
     private static Random rand = new();
 
-    // TODO: Decrease minKeys by 1 for every difficulty tier above the task you are
     public (int, int) CompleteBounty(Bounty bounty)
     {
         completedBounties.Add(bounty);
-        if (bounty.skipChance < 80)
+        if (bounty.skipChance < bounty.maxSkipChance)
         {
-            bounty.skipChance += 15.0f;
+            bounty.skipChance += bounty.skipChancePerCompletion;
         }
         var bountyKeys = bounty.minKeys;
 
