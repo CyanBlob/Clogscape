@@ -362,27 +362,27 @@ public class GameState
         var completedNovice = completedBounties.Where(p => { return p.difficulty == Difficulty.Novice; }).Count();
 
         GD.Print($"{completedNovice}, {completedEasy}, {completedMedium}, {completedHard}, {completedExpert}");
-        if (completedExpert >= 5)
+        if (completedExpert >= 10)
         {
             GD.Print("Grandmaster");
             return Difficulty.Grandmaster;
         }
-        if (completedHard >= 5)
+        if (completedHard >= 10)
         {
             GD.Print("Expert");
             return Difficulty.Expert;
         }
-        if (completedMedium >= 5)
+        if (completedMedium >= 15)
         {
             GD.Print("Hard");
             return Difficulty.Hard;
         }
-        if (completedEasy >= 5)
+        if (completedEasy >= 15)
         {
             GD.Print("Medium");
             return Difficulty.Medium;
         }
-        if (completedNovice >= 5)
+        if (completedNovice >= 20)
         {
             GD.Print("Easy");
             return Difficulty.Easy;

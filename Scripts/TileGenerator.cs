@@ -26,7 +26,7 @@ public partial class TileGenerator : Node
     private Random rand { get; set; }
     
     [Export]
-    public int NonSkillPadding = 12;
+    public int NonSkillPadding = 18;
 
     public void ClearTiles()
     {
@@ -135,7 +135,7 @@ public partial class TileGenerator : Node
                     else
                     {
 
-                        tile.unlockable = GetAndPopUnlockable(allUnlocks, false, squareSize <= 3);
+                        tile.unlockable = GetAndPopUnlockable(allUnlocks, false, squareSize <= 7);
                     }
 
                     // These are duplicated in the unlockable for easier serialization
@@ -211,12 +211,15 @@ public partial class TileGenerator : Node
         // Move important quests forward
         var druidicRitual = questUnlocks.Find(p => {return p != null && p.name == "Druidic Ritual";});
         var currentAffairs = questUnlocks.Find(p => {return p != null && p.name == "Current Affairs";});
+        var runeMysteries = questUnlocks.Find(p => {return p != null && p.name == "Rune Mysteries";});
 
         questUnlocks.Remove(druidicRitual);
         questUnlocks.Remove(currentAffairs);
+        questUnlocks.Remove(runeMysteries);
 
         questUnlocks.Insert(0, currentAffairs);
         questUnlocks.Insert(0, druidicRitual);
+        questUnlocks.Insert(0, runeMysteries);
 
         var mixed = skillUnlocks.Interleave<Unlockable>(questUnlocks);
         mixed = mixed.Interleave<Unlockable>(diaryUnlocks);
@@ -232,11 +235,11 @@ public partial class TileGenerator : Node
 
     public Unlockable GetAndPopUnlockable(List<Unlockable> allUnlockables, bool firstTile, bool earlyTiles)
     {
-        List<Range> windows = [0..12, 0..12, 0..24, 0..36, 0..48];
+        List<Range> windows = [0..18, 0..18, 0..24, 0..36];
 
         if (earlyTiles)
         {
-            windows = [0..12, 0..12, 0..18];
+            windows = [0..12, 0..18, 0..18];
         }
 
         if (firstTile)

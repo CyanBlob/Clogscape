@@ -83,6 +83,12 @@ public partial class Tile : Node2D
 
     public void Unlock()
     {
+        if (ButtonLocked != this)
+        {
+            UnlockButton.Pressed -= Unlock;
+            return;
+        }
+
         if (GameManager.GetState().playerKeys <= 0)
         {
             GD.Print("No keys! Can't unlock");
@@ -105,6 +111,12 @@ public partial class Tile : Node2D
 
     public void Claim()
     {
+        if (ButtonLocked != this)
+        {
+            ClaimButton.Pressed -= Claim;
+            return;
+        }
+
         claimAudioPlayer.Play();
 
         unlockable.Claim();

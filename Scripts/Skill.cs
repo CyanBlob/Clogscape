@@ -17,20 +17,20 @@ public enum Skill
     Firemaking,
     Fishing,
     Fletching,
-    Herblore,
     //Hitpoints,
     Hunter,
     //Magic,
     Mining,
     Prayer,
     //Ranged,
-    Runecraft,
-    Sailing,
     Slayer,
     Smithing,
     //Strength,
     Thieving,
     Woodcutting,
+    Herblore,
+    Sailing,
+    Runecraft,
 }
 
 

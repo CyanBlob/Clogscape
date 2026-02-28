@@ -73,7 +73,7 @@ public class Bounty
             case Difficulty.Novice:
                 minKeys = minKeys == null ? 0 : minKeys;
                 maxKeys = maxKeys == null ? 1 : maxKeys;
-                keyChance = keyChance == null ? .5f : keyChance;
+                keyChance = keyChance == null ? .75f : keyChance;
                 minGp = minGp == null ? 0 : minGp;
                 maxGp = maxGp == null ? 100 : maxGp;
                 maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
@@ -83,7 +83,7 @@ public class Bounty
             case Difficulty.Easy:
                 minKeys = minKeys == null ? 0 : minKeys;
                 maxKeys = maxKeys == null ? 1 : maxKeys;
-                keyChance = keyChance == null ? .75f : keyChance;
+                keyChance = keyChance == null ? .9f : keyChance;
                 minGp = minGp == null ? 100 : minGp;
                 maxGp = maxGp == null ? 500 : maxGp;
                 maxLifetimeKeys = maxLifetimeKeys == null ? 100000 : maxLifetimeKeys;
