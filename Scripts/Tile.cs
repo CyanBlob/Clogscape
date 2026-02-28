@@ -40,6 +40,43 @@ public partial class Tile : Node2D
     private AudioStreamPlayer claimAudioPlayer;
     private AudioStreamPlayer errorAudioPlayer;
 
+    [Export]
+    Texture2D agilityIcon;
+    [Export]
+    Texture2D constructionIcon;
+    [Export]
+    Texture2D cookingIcon;
+    [Export]
+    Texture2D craftingIcon;
+    [Export]
+    Texture2D farmingIcon;
+    [Export]
+    Texture2D firemakingIcon;
+    [Export]
+    Texture2D fishingIcon;
+    [Export]
+    Texture2D fletchingIcon;
+    [Export]
+    Texture2D herbloreIcon;
+    [Export]
+    Texture2D huntingIcon;
+    [Export]
+    Texture2D miningIcon;
+    [Export]
+    Texture2D prayerIcon;
+    [Export]
+    Texture2D runecraftIcon;
+    [Export]
+    Texture2D sailingIcon;
+    [Export]
+    Texture2D slayerIcon;
+    [Export]
+    Texture2D smithingIcon;
+    [Export]
+    Texture2D thievingIcon;
+    [Export]
+    Texture2D woodcuttingIcon;
+
     public override void _Ready()
     {
         selectAudioPlayer = (AudioStreamPlayer)GetChild(0);

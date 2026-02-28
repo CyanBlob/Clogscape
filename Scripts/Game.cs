@@ -48,6 +48,8 @@ public static class GameManager
 
         state.hashedTiles = new();
 
+        LoadBounties("");
+
         return state;
     }
 
@@ -96,6 +98,9 @@ public static class GameManager
 
     public static bool Load(String player, TileGenerator tileGenerator)
     {
+        GD.Print($"Loading player: {player}");
+        LoadBounties(player);
+
         if (!File.Exists(PlayerFile(player)) || !File.Exists(TilesFile(player)))
         {
             return false;
@@ -145,8 +150,6 @@ public static class GameManager
 
         tileGenerator.UpdateState();
 
-        LoadBounties(player);
-
         return true;
     }
 
@@ -180,6 +183,10 @@ public static class GameManager
         {
             GD.Print("Could not load bounties");
         }
+        else
+        {
+            GD.Print($"Loaded bounties");
+        }
     }
 
     public static void LoadFromFile(String filePath)
@@ -196,6 +203,11 @@ public static class GameManager
     public static List<Bounty> UpdateBounties()
     {
         List<Bounty> bounties = new();
+
+        if (state.allBounties == null || state.allBounties.Count < 3)
+        {
+            LoadBounties(state.playerName);
+        }
 
         var newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
         while (rerollBounty(newBounty) == true)

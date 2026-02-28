@@ -30,10 +30,7 @@ public class DiaryUnlock : Unlockable
     {
         try
         {
-            ImageTexture texture = new ImageTexture();
-            Image image = new Image();
-            image.Load($"Resources/resource-packs/quests_tab/green_achievement_diaries_icon.png");
-            texture.SetImage(image);
+            Texture2D texture = (Texture2D)GD.Load($"res://Resources/resource-packs/quests_tab/green_achievement_diaries_icon.png");
             return texture;
         }
         catch

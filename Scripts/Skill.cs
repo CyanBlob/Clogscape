@@ -60,10 +60,7 @@ public class SkillUnlock : Unlockable, IComparable
     {
         try
         {
-            ImageTexture texture = new ImageTexture();
-            Image image = new Image();
-            image.Load($"Resources/resource-packs/skill/{skill}.png");
-            texture.SetImage(image);
+            Texture2D texture = (Texture2D)GD.Load($"res://Resources/resource-packs/skill/{skill.ToString().ToLower()}.png");
             return texture;
         }
         catch

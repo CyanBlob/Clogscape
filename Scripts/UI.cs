@@ -64,6 +64,11 @@ public partial class UI : Button
                 GameManager.Save(playerNameEdit.Text);
             }
         }
+        else
+        {
+            File.Create(nameFilePath);
+            GameManager.SetState(GameManager.GetDefaultState());
+        }
         UpdateAllowance();
 
         client = new HttpClient();

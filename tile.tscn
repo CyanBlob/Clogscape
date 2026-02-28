@@ -1,17 +1,34 @@
 [gd_scene format=3 uid="uid://csphs4nufpcth"]
 
+[ext_resource type="Texture2D" uid="uid://b73kjhri7cl5y" path="res://Resources/resource-packs/skill/agility.png" id="2_3rhrr"]
 [ext_resource type="Script" uid="uid://dx6s0xcoh07ka" path="res://Scripts/Tile.cs" id="2_vx4y2"]
 [ext_resource type="AudioStream" uid="uid://cwvha151fqo30" path="res://Resources/Sounds/mixkit-gear-metallic-lock-sound-2858.wav" id="3_6wlc4"]
 [ext_resource type="Texture2D" uid="uid://df0wi08hih1kw" path="res://Resources/resource-packs/dialog/background.png" id="3_a2t34"]
+[ext_resource type="Texture2D" uid="uid://tue83l5vutvp" path="res://Resources/resource-packs/skill/construction.png" id="3_pea0d"]
 [ext_resource type="Texture2D" uid="uid://ctbsxsw8a3pae" path="res://Resources/resource-packs/skill/thieving.png" id="3_tfor0"]
+[ext_resource type="Texture2D" uid="uid://bstyp6mqjltux" path="res://Resources/resource-packs/skill/cooking.png" id="4_3dcad"]
 [ext_resource type="FontFile" uid="uid://c5e4i4ullqe30" path="res://Resources/Fonts/runescape_uf.ttf" id="4_tfor0"]
 [ext_resource type="Shader" uid="uid://d03wpia3etfa3" path="res://tile.gdshader" id="4_tmaxv"]
 [ext_resource type="AudioStream" uid="uid://b2q52whl4ydt" path="res://Resources/Sounds/mixkit-unlock-game-notification-253.wav" id="4_toxkw"]
-[ext_resource type="Texture2D" uid="uid://byw2rneay11nj" path="res://Resources/Items/Gold locks.png" id="5_cpv6t"]
+[ext_resource type="Texture2D" uid="uid://dmuutjd2n65c1" path="res://Resources/resource-packs/skill/crafting.png" id="5_26ieh"]
+[ext_resource type="Texture2D" uid="uid://ci700kx1ewi42" path="res://Resources/Items/Gold locks.png" id="5_cpv6t"]
 [ext_resource type="Texture2D" uid="uid://dib8rgkwgfeyt" path="res://Resources/resource-packs/ge/button.png" id="5_t20d7"]
 [ext_resource type="AudioStream" uid="uid://bjt6vmbgktvkw" path="res://Resources/Sounds/mixkit-tech-break-fail-2947.wav" id="5_toxkw"]
 [ext_resource type="Texture2D" uid="uid://ef4m1dkhtuwj" path="res://Resources/resource-packs/icon/checkmark_green.png" id="6_0w8l7"]
+[ext_resource type="Texture2D" uid="uid://cey33xitohed7" path="res://Resources/resource-packs/skill/farming.png" id="6_h3veb"]
 [ext_resource type="AudioStream" uid="uid://ccoah3ud7qy50" path="res://Resources/Sounds/mixkit-game-ball-tap-2073.wav" id="6_k2dl1"]
+[ext_resource type="Texture2D" uid="uid://vltbwgfswd8t" path="res://Resources/resource-packs/skill/firemaking.png" id="7_yvvxc"]
+[ext_resource type="Texture2D" uid="uid://dvc6l563ffu0m" path="res://Resources/resource-packs/skill/fishing.png" id="8_vwpil"]
+[ext_resource type="Texture2D" uid="uid://c5a0umffj6ncq" path="res://Resources/resource-packs/skill/fletching.png" id="9_hb413"]
+[ext_resource type="Texture2D" uid="uid://b2ey13cnvws1g" path="res://Resources/resource-packs/skill/herblore.png" id="10_dhlei"]
+[ext_resource type="Texture2D" uid="uid://cwhwefo8tchy0" path="res://Resources/resource-packs/skill/hunter.png" id="11_mhcyg"]
+[ext_resource type="Texture2D" uid="uid://es61ptg04iml" path="res://Resources/resource-packs/skill/mining.png" id="12_pcajv"]
+[ext_resource type="Texture2D" uid="uid://cbuyabt0mnq0h" path="res://Resources/resource-packs/skill/prayer.png" id="13_4tfij"]
+[ext_resource type="Texture2D" uid="uid://p70oy1pwke1t" path="res://Resources/resource-packs/skill/runecraft.png" id="14_10acr"]
+[ext_resource type="Texture2D" uid="uid://bje7pcbl246o7" path="res://Resources/resource-packs/skill/sailing.png" id="15_pfrt1"]
+[ext_resource type="Texture2D" uid="uid://cjey3at7c70aa" path="res://Resources/resource-packs/skill/slayer.png" id="16_ebp03"]
+[ext_resource type="Texture2D" uid="uid://l5qhetd0x4dd" path="res://Resources/resource-packs/skill/smithing.png" id="17_4jrp3"]
+[ext_resource type="Texture2D" uid="uid://brkekk7ak7cjx" path="res://Resources/resource-packs/skill/woodcutting.png" id="19_mepa7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3f48"]
 size = Vector2(120, 120)
@@ -22,6 +39,7 @@ shader = ExtResource("4_tmaxv")
 [node name="Tile" type="Node2D" unique_id=1328665337]
 z_index = 1
 script = ExtResource("2_vx4y2")
+icons = [ExtResource("2_3rhrr"), ExtResource("3_pea0d"), ExtResource("4_3dcad"), ExtResource("5_26ieh"), ExtResource("6_h3veb"), ExtResource("7_yvvxc"), ExtResource("8_vwpil"), ExtResource("9_hb413"), ExtResource("10_dhlei"), ExtResource("11_mhcyg"), ExtResource("12_pcajv"), ExtResource("13_4tfij"), ExtResource("14_10acr"), ExtResource("15_pfrt1"), ExtResource("16_ebp03"), ExtResource("17_4jrp3"), ExtResource("3_tfor0"), ExtResource("19_mepa7")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=363490551]
 stream = ExtResource("6_k2dl1")

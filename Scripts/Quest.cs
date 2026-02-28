@@ -27,10 +27,7 @@ public class QuestUnlock : Unlockable
     {
         try
         {
-            ImageTexture texture = new ImageTexture();
-            Image image = new Image();
-            image.Load($"Resources/resource-packs/quests_tab/blue_quests_icon.png");
-            texture.SetImage(image);
+            Texture2D texture = (Texture2D)GD.Load($"res://Resources/resource-packs/quests_tab/blue_quests_icon.png");
             return texture;
         }
         catch

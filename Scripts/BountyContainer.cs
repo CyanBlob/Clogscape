@@ -48,7 +48,7 @@ public partial class BountyContainer : NinePatchRect
 
         rewardsEdit = (TextEdit)GetParent().GetParent().FindChild("RewardsEdit");
 
-        if (GameManager.GetState().currentBounties.Count < 3)
+        if (GameManager.GetState().currentBounties == null ||  GameManager.GetState().currentBounties.Count < 3)
         {
             GameManager.UpdateBounties();
         }
@@ -62,9 +62,9 @@ public partial class BountyContainer : NinePatchRect
 
     public void Update()
     {
-        if (GameManager.GetState().currentBounties.Count < 3)
+        if (GameManager.GetState().currentBounties == null ||  GameManager.GetState().currentBounties.Count < 3)
         {
-            return;
+            GameManager.UpdateBounties();
         }
         bounty = GameManager.GetState().currentBounties[bountyIndex];
 
