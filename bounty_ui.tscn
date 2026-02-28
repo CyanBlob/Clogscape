@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b2vay27wiojjo" path="res://Resources/resource-packs/chatbox/background.png" id="1_lpi5i"]
 [ext_resource type="Script" uid="uid://ifpwtwcft5u2" path="res://Scripts/BountyContainer.cs" id="2_4vuf1"]
 [ext_resource type="Texture2D" uid="uid://cid325ovdje07" path="res://Resources/resource-packs/quests_tab/combat_achievements_icon.png" id="3_tdqil"]
-[ext_resource type="Texture2D" uid="uid://dwucp50p0gb6" path="res://Resources/resource-packs/emote/party.png" id="4_1dy4p"]
-[ext_resource type="Texture2D" uid="uid://dodncu8adxcxr" path="res://Resources/Items/Ghoul champion scroll.png" id="5_07sef"]
+[ext_resource type="Texture2D" uid="uid://b6phaq4fmn7dv" path="res://Resources/resource-packs/tab/quests_brown_raiding_party.png" id="4_lpi5i"]
+[ext_resource type="Texture2D" uid="uid://bckoc0kjciyoc" path="res://Resources/resource-packs/emote/explorer.png" id="5_4vuf1"]
 [ext_resource type="Texture2D" uid="uid://yy0jtp62dbug" path="res://Resources/resource-packs/quests_tab/red_minigames_icon.png" id="6_rpga1"]
 [ext_resource type="Texture2D" uid="uid://brnw3edyq46c8" path="res://Resources/resource-packs/bonds_pouch/inventory.png" id="7_leer6"]
 [ext_resource type="Texture2D" uid="uid://xbdlaypcqmvu" path="res://Resources/resource-packs/quests_tab/combat_achievements_total_level.png" id="8_a0evi"]
@@ -26,8 +26,8 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 script = ExtResource("2_4vuf1")
 bossTexture = ExtResource("3_tdqil")
-raidTexture = ExtResource("4_1dy4p")
-clueTexture = ExtResource("5_07sef")
+raidTexture = ExtResource("4_lpi5i")
+clueTexture = ExtResource("5_4vuf1")
 minigameTexture = ExtResource("6_rpga1")
 grindTexture = ExtResource("7_leer6")
 skillingTexture = ExtResource("8_a0evi")
@@ -51,6 +51,7 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_hcrvl")
+theme_override_font_sizes/font_size = 13
 text = "
 Boss!"
 horizontal_alignment = 1
@@ -76,6 +77,7 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
 theme_override_fonts/font = ExtResource("14_hcrvl")
+theme_override_font_sizes/font_size = 12
 text = "Kill this boss 10 times. This is a long description so it wraps"
 horizontal_alignment = 1
 
@@ -85,6 +87,7 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
 theme_override_fonts/font = ExtResource("14_hcrvl")
+theme_override_font_sizes/font_size = 12
 text = "Rewards: X-Y keys, W-Z GP"
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -99,6 +102,7 @@ theme_override_constants/margin_bottom = 25
 z_index = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("14_hcrvl")
+theme_override_font_sizes/font_size = 14
 text = "Complete!"
 flat = true
 

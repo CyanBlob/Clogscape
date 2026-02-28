@@ -428,7 +428,7 @@ stream = ExtResource("14_ryguw")
 volume_db = -4.555
 
 [node name="BountyContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1395489263]
-custom_minimum_size = Vector2(1000, 175)
+custom_minimum_size = Vector2(1000, 150)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0

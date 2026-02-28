@@ -204,22 +204,15 @@ public static class GameManager
     {
         List<Bounty> bounties = new();
 
+        var playerDifficulty = state.GetPlayerDifficulty();
+
         if (state.allBounties == null || state.allBounties.Count < 3)
         {
             LoadBounties(state.playerName);
         }
 
         var newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-        while (rerollBounty(newBounty) == true)
-        {
-            GD.Print($"Re-rolling {newBounty.name}. {newBounty.lifetimeClaimedKeys}:{newBounty.maxLifetimeKeys}");
-            newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-        }
-
-        bounties.Add(newBounty);
-
-        newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-        while (bounties.Contains(newBounty) || newBounty == null || rerollBounty(newBounty))
+        while (rerollBounty(newBounty, playerDifficulty) == true)
         {
             newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
         }
@@ -227,7 +220,15 @@ public static class GameManager
         bounties.Add(newBounty);
 
         newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-        while (bounties.Contains(newBounty) || newBounty == null || rerollBounty(newBounty))
+        while (bounties.Contains(newBounty) || newBounty == null || rerollBounty(newBounty, playerDifficulty))
+        {
+            newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+        }
+
+        bounties.Add(newBounty);
+
+        newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+        while (bounties.Contains(newBounty) || newBounty == null || rerollBounty(newBounty, playerDifficulty))
         {
             newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
         }
@@ -239,29 +240,35 @@ public static class GameManager
         return bounties;
     }
 
-    public static bool rerollBounty(Bounty bounty)
+    public static bool rerollBounty(Bounty bounty, Difficulty playerDifficulty)
     {
         var randSingle = rand.NextSingle();
         var chance = bounty.skipChance / 100.0f;
+
         if (randSingle <= chance)
         {
+            GD.Print($"Re-rolling {bounty.name}. {bounty.skipChance}%");
             return true;
         }
 
         if (bounty.lifetimeClaimedKeys >= bounty.maxLifetimeKeys)
         {
+            GD.Print($"Re-rolling {bounty.name}. {bounty.lifetimeClaimedKeys}/{bounty.maxLifetimeKeys} keys");
             return true;
         }
 
-        if (bounty.difficulty > state.GetPlayerDifficulty())
+        if (bounty.difficulty > playerDifficulty)
         {
+            GD.Print($"Re-rolling {bounty.name}. {bounty.difficulty} > {playerDifficulty}");
             return true;
         }
 
-        if (bounty.difficulty < state.GetPlayerDifficulty())
+        if (bounty.difficulty < playerDifficulty)
         {
             // As the player difficulty increases we should get fewer easy tasks
-            return rand.Next((int)bounty.difficulty, (int)state.GetPlayerDifficulty()) == (int)state.GetPlayerDifficulty();
+            bool skip = rand.Next((int)bounty.difficulty, (int)playerDifficulty) == (int)playerDifficulty;
+            GD.Print($"Re-rolling {bounty.name}. {bounty.difficulty} < {playerDifficulty}");
+            return skip;
         }
 
         return false;
@@ -319,6 +326,10 @@ public class GameState
     public (int, int) CompleteBounty(Bounty bounty)
     {
         completedBounties.Add(bounty);
+        if (bounty.skipChance < 80)
+        {
+            bounty.skipChance += 15.0f;
+        }
         var bountyKeys = bounty.minKeys;
 
         for (int i = (int)bounty.minKeys; i < bounty.maxKeys; ++i)
@@ -339,8 +350,6 @@ public class GameState
         GameManager.UpdateAllowance(allowance);
 
         GameManager.UpdateBounties();
-
-        GetPlayerDifficulty();
 
         return ((int)bountyKeys, allowance);
     }
