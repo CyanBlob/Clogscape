@@ -81,7 +81,7 @@ public static class GameManager
             }
         }
 
-        if (state.allBounties.Count() < 3)
+        if (state.allBounties == null || state.allBounties.Count() < 3)
         {
             File.Delete(PossibleBountiesFile(playerName + suffix));
             LoadBounties(playerName);
@@ -99,7 +99,6 @@ public static class GameManager
     public static bool Load(String player, TileGenerator tileGenerator)
     {
         GD.Print($"Loading player: {player}");
-        LoadBounties(player);
 
         if (!File.Exists(PlayerFile(player)) || !File.Exists(TilesFile(player)))
         {
@@ -114,6 +113,17 @@ public static class GameManager
         file.ReadExactly(bytes, 0, (int)file.Length);
 
         state = JsonSerializer.Deserialize<GameState>(bytes, options);
+
+        LoadBounties(player);
+
+        for (int i = 0; i < state.currentBounties.Count; ++i)
+        {
+            var bounty = state.currentBounties[i];
+            if (bounty.completedLocked != null && bounty.completedLocked == true)
+            {
+                ReplaceBounty(i);
+            }
+        }
 
         state.hashedTiles = new();
 
@@ -240,6 +250,21 @@ public static class GameManager
         return bounties;
     }
 
+    public static void ReplaceBounty(int index)
+    {
+        var playerDifficulty = GameManager.GetState().GetPlayerDifficulty();
+
+        var newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+        while (rerollBounty(newBounty, playerDifficulty) == true)
+        {
+            newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
+        }
+
+        GD.Print($"Replacing bounty {GameManager.GetState().currentBounties[index].name} with {newBounty.name}");
+
+        GameManager.GetState().currentBounties[index] = newBounty;
+    }
+
     public static bool rerollBounty(Bounty bounty, Difficulty playerDifficulty)
     {
         var randSingle = rand.NextSingle();
@@ -277,27 +302,27 @@ public static class GameManager
     public static String PlayerFile(String playerName)
     {
         CreateSavePath(playerName);
-        return $"saves/{playerName}.json";
+        return $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)}/Bountyscape/saves/{playerName}.json";
     }
     public static String TilesFile(String playerName)
     {
         CreateSavePath(playerName);
-        return $"saves/{playerName}_tiles.json";
+        return $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)}/Bountyscape/saves/{playerName}_tiles.json";
     }
     public static String PossibleBountiesFile(String playerName)
     {
         CreateSavePath(playerName);
-        return $"saves/{playerName}_possible_bounties.json";
+        return $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)}/Bountyscape/saves/{playerName}_possible_bounties.json";
     }
 
     public static String DefaultPossibleBountiesFile()
     {
-        return $"default_possible_bounties.json";
+        return $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)}/Bountyscape/default_possible_bounties.json";
     }
 
-    public static void CreateSavePath(String playerName)
+    public static void CreateSavePath(String playerName = "")
     {
-        Directory.CreateDirectory($"saves/");
+        Directory.CreateDirectory($"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)}/Bountyscape/saves/");
     }
 }
 
@@ -355,11 +380,11 @@ public class GameState
 
     public Difficulty GetPlayerDifficulty()
     {
-        var completedExpert = completedBounties.Where(p => { return p.difficulty == Difficulty.Expert; }).Count();
-        var completedHard = completedBounties.Where(p => { return p.difficulty == Difficulty.Hard; }).Count();
-        var completedMedium = completedBounties.Where(p => { return p.difficulty == Difficulty.Medium; }).Count();
-        var completedEasy = completedBounties.Where(p => { return p.difficulty == Difficulty.Easy; }).Count();
-        var completedNovice = completedBounties.Where(p => { return p.difficulty == Difficulty.Novice; }).Count();
+        var completedExpert = completedBounties.Count(p => { return p.difficulty == Difficulty.Expert; });
+        var completedHard = completedBounties.Count(p => { return p.difficulty == Difficulty.Hard; });
+        var completedMedium = completedBounties.Count(p => { return p.difficulty == Difficulty.Medium; });
+        var completedEasy = completedBounties.Count(p => { return p.difficulty == Difficulty.Easy; });
+        var completedNovice = completedBounties.Count(p => { return p.difficulty == Difficulty.Novice; });
 
         GD.Print($"{completedNovice}, {completedEasy}, {completedMedium}, {completedHard}, {completedExpert}");
         if (completedExpert >= 10)

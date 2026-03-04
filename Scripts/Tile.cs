@@ -227,6 +227,11 @@ public partial class Tile : Node2D
         lockIcon.Visible = !unlockable.IsUnlocked();// && !(unlockable is FreeTile);
         checkIcon.Visible = unlockable.IsClaimed() && unlockable.IsUnlocked();// && !(unlockable is FreeTile);
 
+        if (!(unlockable is FreeTile))
+        {
+            if (unlockable.IsClaimed() || unlockable.IsUnlocked())
+            hidden = false;
+        }
         // Unlocked tiles can't be hidden
         if (!unlockable.IsUnlocked()/* || unlockable is FreeTile*/)
         {

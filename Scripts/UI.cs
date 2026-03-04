@@ -12,7 +12,7 @@ public partial class UI : Button
 {
     // HttpClient is intended to be instantiated once per application, rather than per-use. See Remarks.
     static HttpClient client;
-    static String nameFilePath = "name.txt";
+    static String nameFilePath = $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)}/Bountyscape/name.txt";
     static TileGenerator tileGenerator;
 
     static Label keysLabel;
@@ -66,6 +66,7 @@ public partial class UI : Button
         }
         else
         {
+            GameManager.CreateSavePath();
             File.Create(nameFilePath);
             GameManager.SetState(GameManager.GetDefaultState());
         }

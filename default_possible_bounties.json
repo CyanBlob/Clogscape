@@ -1329,7 +1329,7 @@
 		"lastRolled": null,
 		"isWildy": false,
 		"requirementLocked": false,
-		"completedLocked": false
+		"completedLocked": true
 	},
 	{
 		"name": "Dodgy Deals",

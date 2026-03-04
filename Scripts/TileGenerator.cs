@@ -210,14 +210,14 @@ public partial class TileGenerator : Node
 
         // Move important quests forward
         var druidicRitual = questUnlocks.Find(p => {return p != null && p.name == "Druidic Ritual";});
-        var currentAffairs = questUnlocks.Find(p => {return p != null && p.name == "Current Affairs";});
+        var pandemonium = questUnlocks.Find(p => {return p != null && p.name == "Pandemonium";});
         var runeMysteries = questUnlocks.Find(p => {return p != null && p.name == "Rune Mysteries";});
 
         questUnlocks.Remove(druidicRitual);
-        questUnlocks.Remove(currentAffairs);
+        questUnlocks.Remove(pandemonium);
         questUnlocks.Remove(runeMysteries);
 
-        questUnlocks.Insert(0, currentAffairs);
+        questUnlocks.Insert(0, pandemonium);
         questUnlocks.Insert(0, druidicRitual);
         questUnlocks.Insert(0, runeMysteries);
 
@@ -239,7 +239,7 @@ public partial class TileGenerator : Node
 
         if (earlyTiles)
         {
-            windows = [0..12, 0..18, 0..18];
+            windows = [0..12, 0..12, 0..18];
         }
 
         if (firstTile)
