@@ -255,7 +255,7 @@ public static class GameManager
         var playerDifficulty = GameManager.GetState().GetPlayerDifficulty();
 
         var newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
-        while (rerollBounty(newBounty, playerDifficulty) == true)
+        while (rerollBounty(newBounty, playerDifficulty) == true || state.currentBounties.Contains(newBounty))
         {
             newBounty = state.allBounties.ElementAt(rand.Next(0, state.allBounties.Count));
         }
