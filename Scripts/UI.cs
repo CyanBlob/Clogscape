@@ -69,6 +69,7 @@ public partial class UI : Button
             if (!GameManager.Load(playerNameEdit.Text, tileGenerator))
             {
                 GameManager.SetState(GameManager.GetDefaultState());
+                tileGenerator._Ready();
                 GameManager.Save(playerNameEdit.Text);
             }
         }
@@ -292,6 +293,7 @@ public partial class UI : Button
         tileGenerator._Ready();
         UpdateAllowance();
         fogRect._Ready();
+        GameManager.Save(playerNameEdit.Text);
     }
 
     public void _on_player_text_changed(String name)

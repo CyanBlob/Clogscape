@@ -216,7 +216,7 @@ public static class GameManager
 
         if (state.completedBounties == null)
         {
-            state = GetDefaultState();
+            state.completedBounties = new List<Bounty>();
         }
 
         var playerDifficulty = state.GetPlayerDifficulty();
@@ -392,7 +392,7 @@ public class GameState
     {
         if (completedBounties == null)
         {
-            GameManager.SetState(GameManager.GetDefaultState());
+            completedBounties = new List<Bounty>();
         }
         var completedExpert = completedBounties.Count(p => { return p.difficulty == Difficulty.Expert; });
         var completedHard = completedBounties.Count(p => { return p.difficulty == Difficulty.Hard; });

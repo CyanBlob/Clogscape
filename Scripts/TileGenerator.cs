@@ -74,8 +74,8 @@ public partial class TileGenerator : Node
         GameManager.GetState().hashedTiles = new();
         rand = new();
 
-        var allSkillUnlocks = SkillUnlock.GetSkillUnlocks();
-        var allQuestUnlocks = QuestUnlock.GetQuests();
+        var allSkillUnlocks = SkillUnlock.GetRandomizedSkillUnlocks(rand);
+        var allQuestUnlocks = QuestUnlock.GetRandomizedQuests();
         var allDiaryUnlocks = DiaryUnlock.GetDiaries();
 
         var totalCount = allSkillUnlocks.Count + allQuestUnlocks.Count + allDiaryUnlocks.Count;

@@ -25,6 +25,8 @@ public enum Skill
 
     //Magic,
     Mining,
+    
+    //Prayer is removed from the tiles, but is kept in since it's a requirement for some quests
     Prayer,
 
     //Ranged,
@@ -152,6 +154,36 @@ public class SkillUnlock : Unlockable, IComparable
                 SkillUnlock newUnlock = new SkillUnlock((Skill)skill, range, false);
                 skillUnlocks.Add(newUnlock);
             }
+        }
+
+        return skillUnlocks;
+    }
+
+    public static List<SkillUnlock> GetRandomizedSkillUnlocks(Random rand)
+    {
+        List<SkillUnlock> skillUnlocks = new();
+
+        foreach (var range in standardRanges)
+        {
+            List<SkillUnlock> bracket = new();
+
+            foreach (var skill in Enum.GetValues(typeof(Skill)))
+            {
+                if ((Skill)skill == Skill.Prayer)
+                {
+                    continue;
+                }
+
+                bracket.Add(new SkillUnlock((Skill)skill, range, false));
+            }
+
+            for (int i = bracket.Count - 1; i > 0; --i)
+            {
+                int j = rand.Next(i + 1);
+                (bracket[i], bracket[j]) = (bracket[j], bracket[i]);
+            }
+
+            skillUnlocks.AddRange(bracket);
         }
 
         return skillUnlocks;
