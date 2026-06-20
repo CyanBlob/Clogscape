@@ -1,4 +1,4 @@
-# Clogscape
+# Bountyscape
 
 A tile-based progression tracker for Old School RuneScape. The game board is a grid of tiles representing skills, quests, and achievement diaries. Tiles start hidden — completing bounties earns keys, keys unlock adjacent tiles, and claiming an unlocked tile reveals its neighbours, gradually expanding your visible map.
 

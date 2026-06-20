@@ -81,7 +81,7 @@ public partial class UI : Button
 
         client = new HttpClient();
         client.DefaultRequestHeaders.UserAgent.ParseAdd(
-            "Clogscape/1.0 (+https://github.com/CyanBlob/clogscape; andrewthomas255@duck.com)");
+            "Bountyscape/1.0 (+https://github.com/CyanBlob/bountyscape; andrewthomas255@duck.com)");
 
         //client.DefaultRequestHeaders.UserAgent.ParseAdd(
         //"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36");

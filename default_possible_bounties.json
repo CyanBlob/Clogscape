@@ -1380,7 +1380,7 @@
 		"completedLocked": false
 	},
 	{
-		"name": "Clogscape",
+		"name": "Logged",
 		"description": "Obtain a collection log item from combat",
 		"difficulty": 1,
 		"bountyType": 8,

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Exports Clogscape for macOS, Windows, and Linux using Godot's headless CLI.
+# Exports Bountyscape for macOS, Windows, and Linux using Godot's headless CLI.
 #
 # Prerequisites:
 #   - Export templates installed (Editor → Export → Manage Export Templates)
@@ -52,13 +52,13 @@ build_platform() {
 
 # ── Platform definitions ─────────────────────────────────────────────────────
 
-build_mac()     { build_platform "macOS"   "macOS"           "$BUILD_DIR/mac/Clogscape.app"; }
-build_windows() { build_platform "Windows" "Windows Desktop" "$BUILD_DIR/windows/Clogscape.exe"; }
-build_linux()   { build_platform "Linux"   "Linux/X11"       "$BUILD_DIR/linux/Clogscape.x86_64"; }
+build_mac()     { build_platform "macOS"   "macOS"           "$BUILD_DIR/mac/Bountyscape.app"; }
+build_windows() { build_platform "Windows" "Windows Desktop" "$BUILD_DIR/windows/Bountyscape.exe"; }
+build_linux()   { build_platform "Linux"   "Linux/X11"       "$BUILD_DIR/linux/Bountyscape.x86_64"; }
 
 # ── Entry point ──────────────────────────────────────────────────────────────
 
-echo "Clogscape build — $(date '+%Y-%m-%d %H:%M:%S')"
+echo "Bountyscape build — $(date '+%Y-%m-%d %H:%M:%S')"
 echo "Project : $PROJECT_DIR"
 echo "Output  : $BUILD_DIR"
 echo "Godot   : $GODOT"

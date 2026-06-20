@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Clogscape"
+config/name="Bountyscape"
 run/main_scene="uid://bgs1s5f4qf2oq"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
@@ -21,7 +21,7 @@ window/stretch/mode="canvas_items"
 
 [dotnet]
 
-project/assembly_name="Clogscape"
+project/assembly_name="Bountyscape"
 
 [input]
 
