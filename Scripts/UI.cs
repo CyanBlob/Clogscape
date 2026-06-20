@@ -326,6 +326,7 @@ public partial class UI : Button
         allowanceEdit.Text = GameManager.GetState().playerAllowance.ToString();
 
         _on_roll_bounties_button_pressed();
+        GameManager.Save(GameManager.GetState().playerName);
     }
 
     public void _on_allowance_edit_text_changed(String allowance)

@@ -106,7 +106,7 @@ public partial class Tile : Node2D
         UnlockButton.Pressed -= Unlock;
         ClaimButton.Pressed += Claim;
 
-        GameManager.Save($"{GameManager.GetState().playerName}", $"_auto_unlock_{DateTime.Now.ToString("MM_dd_yy_HH_mm_ss")}");
+        GameManager.Save(GameManager.GetState().playerName);
     }
 
     public void Claim()
@@ -126,7 +126,7 @@ public partial class Tile : Node2D
         ButtonLocked = null;
         TooltipButton.Visible = false;
 
-        GameManager.Save($"{GameManager.GetState().playerName}", $"_auto_claim_{DateTime.Now.ToString("MM_dd_yy_HH_mm_ss")}");
+        GameManager.Save(GameManager.GetState().playerName);
     }
 
     public void _on_mouse_entered()

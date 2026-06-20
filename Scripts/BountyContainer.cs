@@ -141,6 +141,6 @@ public partial class BountyContainer : NinePatchRect
         var fade = (Fade)rewardsEdit;
         fade.visibility = 100.0f;
 
-        GameManager.Save($"{GameManager.GetState().playerName}", $"_auto_bounty_{DateTime.Now.ToString("MM_dd_yy_HH_mm_ss")}", false);
+        GameManager.Save(GameManager.GetState().playerName, saveTiles: false);
     }
 }
