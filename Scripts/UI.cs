@@ -51,7 +51,15 @@ public partial class UI : Button
         tileGenerator = (TileGenerator)GetParent().GetParent().GetParent().FindChild("Tiles");
         if (File.Exists(nameFilePath))
         {
-            GameManager.GetState().playerName = File.ReadAllLines(nameFilePath)[0];
+            var allLines = File.ReadAllLines(nameFilePath);
+            if (allLines.Length == 0)
+            {
+                GameManager.GetState().playerName = "Player";
+            }
+            else
+            {
+                GameManager.GetState().playerName = allLines[0];
+            }
 
             var playerNameEdit = (LineEdit)GetParent().FindChild("PlayerName");
 

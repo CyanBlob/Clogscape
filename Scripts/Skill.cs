@@ -8,23 +8,29 @@ using Range = System.Range;
 public enum Skill
 {
     Agility,
+
     //Attack,
     Construction,
     Cooking,
     Crafting,
+
     //Defence,
     Farming,
     Firemaking,
     Fishing,
     Fletching,
+
     //Hitpoints,
     Hunter,
+
     //Magic,
     Mining,
     Prayer,
+
     //Ranged,
     Slayer,
     Smithing,
+
     //Strength,
     Thieving,
     Woodcutting,
@@ -36,11 +42,16 @@ public enum Skill
 
 public class SkillUnlock : Unlockable, IComparable
 {
-    public Skill skill {get; set; }
+    public Skill skill { get; set; }
 
-    public static List<Range> standardRanges = [new Range(1, 10), new Range(11, 20), new Range(21, 30), new Range(31, 40), new Range(41, 50), new Range(51, 60), new Range(61, 70), new Range(71, 75), new Range(76, 80), new Range(81, 85), new Range(86, 90), new Range(91, 95), new Range(96, 99)];
+    public static List<Range> standardRanges =
+    [
+        new Range(1, 10), new Range(11, 20), new Range(21, 30), new Range(31, 40), new Range(41, 50), new Range(51, 60),
+        new Range(61, 70), new Range(71, 75), new Range(76, 80), new Range(81, 85), new Range(86, 90),
+        new Range(91, 95), new Range(96, 99)
+    ];
 
-    public Range levels {get; set;}
+    public Range levels { get; set; }
 
     public SkillUnlock(Skill skill, Range levels, bool unlocked)
     {
@@ -60,7 +71,8 @@ public class SkillUnlock : Unlockable, IComparable
     {
         try
         {
-            Texture2D texture = (Texture2D)GD.Load($"res://Resources/resource-packs/skill/{skill.ToString().ToLower()}.png");
+            Texture2D texture =
+                (Texture2D)GD.Load($"res://Resources/resource-packs/skill/{skill.ToString().ToLower()}.png");
             return texture;
         }
         catch
@@ -72,10 +84,8 @@ public class SkillUnlock : Unlockable, IComparable
     // TODO: Unit tests
     public override bool RequirementsMet(List<SkillUnlock> unlocks, List<QuestUnlock> quests, int combatLevel = 0)
     {
-        List<SkillUnlock> levelsUnlocked = unlocks.TakeWhile(unlock =>
-        {
-            return unlock.skill == skill;
-        }).ToList<SkillUnlock>();
+        List<SkillUnlock> levelsUnlocked =
+            unlocks.TakeWhile(unlock => { return unlock.skill == skill; }).ToList<SkillUnlock>();
 
         levelsUnlocked.Sort();
 
@@ -88,7 +98,10 @@ public class SkillUnlock : Unlockable, IComparable
             return true;
         }
 
-        var previousLevelsIndex = levelsUnlocked.FindIndex(unlock => { return unlock.levels.Start.Value == standardRanges[levelsIndex - 1].Start.Value; });
+        var previousLevelsIndex = levelsUnlocked.FindIndex(unlock =>
+        {
+            return unlock.levels.Start.Value == standardRanges[levelsIndex - 1].Start.Value;
+        });
 
         if (previousLevelsIndex > 0)
         {
@@ -97,6 +110,7 @@ public class SkillUnlock : Unlockable, IComparable
                 GD.Print($"Requirements met! {skill}: {levels}");
                 return true;
             }
+
             return false;
         }
 
@@ -130,8 +144,13 @@ public class SkillUnlock : Unlockable, IComparable
         {
             foreach (var skill in Enum.GetValues(typeof(Skill)))
             {
-               SkillUnlock newUnlock = new SkillUnlock((Skill)skill, range, false); 
-               skillUnlocks.Add(newUnlock);
+                if ((Skill)skill == Skill.Prayer)
+                {
+                    continue;
+                }
+
+                SkillUnlock newUnlock = new SkillUnlock((Skill)skill, range, false);
+                skillUnlocks.Add(newUnlock);
             }
         }
 

@@ -214,6 +214,11 @@ public static class GameManager
     {
         List<Bounty> bounties = new();
 
+        if (state.completedBounties == null)
+        {
+            state = GetDefaultState();
+        }
+
         var playerDifficulty = state.GetPlayerDifficulty();
 
         if (state.allBounties == null || state.allBounties.Count < 3)
@@ -317,7 +322,12 @@ public static class GameManager
 
     public static String DefaultPossibleBountiesFile()
     {
-        return $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)}/Bountyscape/default_possible_bounties.json";
+        String path = $"{System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)}/Bountyscape/default_possible_bounties.json";
+        if (!File.Exists(path))
+        {
+           File.Copy("default_possible_bounties.json", path); 
+        }
+        return path;
     }
 
     public static void CreateSavePath(String playerName = "")
@@ -380,6 +390,10 @@ public class GameState
 
     public Difficulty GetPlayerDifficulty()
     {
+        if (completedBounties == null)
+        {
+            GameManager.SetState(GameManager.GetDefaultState());
+        }
         var completedExpert = completedBounties.Count(p => { return p.difficulty == Difficulty.Expert; });
         var completedHard = completedBounties.Count(p => { return p.difficulty == Difficulty.Hard; });
         var completedMedium = completedBounties.Count(p => { return p.difficulty == Difficulty.Medium; });
