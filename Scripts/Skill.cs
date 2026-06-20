@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Transactions;
 using Godot;
 using Range = System.Range;
 
@@ -87,7 +86,7 @@ public class SkillUnlock : Unlockable, IComparable
     public override bool RequirementsMet(List<SkillUnlock> unlocks, List<QuestUnlock> quests, int combatLevel = 0)
     {
         List<SkillUnlock> levelsUnlocked =
-            unlocks.TakeWhile(unlock => { return unlock.skill == skill; }).ToList<SkillUnlock>();
+            unlocks.Where(unlock => { return unlock.skill == skill; }).ToList<SkillUnlock>();
 
         levelsUnlocked.Sort();
 
@@ -105,7 +104,7 @@ public class SkillUnlock : Unlockable, IComparable
             return unlock.levels.Start.Value == standardRanges[levelsIndex - 1].Start.Value;
         });
 
-        if (previousLevelsIndex > 0)
+        if (previousLevelsIndex >= 0)
         {
             if (levelsUnlocked[previousLevelsIndex].IsUnlocked())
             {

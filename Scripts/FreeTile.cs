@@ -28,13 +28,4 @@ public class FreeTile : Unlockable
         return true;
     }
 
-    public override bool IsUnlocked()
-    {
-        return Unlocked;
-    }
-
-    public override bool IsClaimed()
-    {
-        return Claimed;
-    }
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using Godot;
 
 public enum DiaryDifficulty
@@ -10,8 +9,8 @@ public enum DiaryDifficulty
 
 public class DiaryUnlock : Unlockable
 {
-    public String name {get; set; }
-    public DiaryDifficulty diaryDifficulty {get; set; }
+    public String name { get; set; }
+    public DiaryDifficulty diaryDifficulty { get; set; }
 
     public DiaryUnlock(String name, DiaryDifficulty diaryDifficulty)
     {

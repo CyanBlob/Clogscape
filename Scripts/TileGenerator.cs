@@ -1,12 +1,7 @@
 using Godot;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
 using Range = System.Range;
 
 public partial class TileGenerator : Node
@@ -75,7 +70,7 @@ public partial class TileGenerator : Node
         rand = new();
 
         var allSkillUnlocks = SkillUnlock.GetRandomizedSkillUnlocks(rand);
-        var allQuestUnlocks = QuestUnlock.GetRandomizedQuests();
+        var allQuestUnlocks = QuestUnlock.GetRandomizedQuests(rand);
         var allDiaryUnlocks = DiaryUnlock.GetDiaries();
 
         var totalCount = allSkillUnlocks.Count + allQuestUnlocks.Count + allDiaryUnlocks.Count;
