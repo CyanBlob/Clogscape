@@ -1,3 +1,6 @@
 [submodule "Resources/resource-packs"]
 	path = Resources/resource-packs
 	url = https://github.com/melkypie/resource-packs.git
+[submodule "addons/gdUnit4"]
+	path = addons/gdUnit4
+	url = https://github.com/godot-gdunit-labs/gdUnit4
