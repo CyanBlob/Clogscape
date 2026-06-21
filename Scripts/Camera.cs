@@ -22,7 +22,36 @@ public partial class Camera : Camera2D
     [Export]
     public float PanLerpFactor = 4f;
 
-	public override void _Process(double delta)
+    private bool _middleDragging = false;
+    private Vector2 _dragStartMouse = Vector2.Zero;
+    private Vector2 _dragStartPan = Vector2.Zero;
+
+    public override void _Input(InputEvent inputEvent)
+    {
+        if (inputEvent is InputEventMouseButton mb)
+        {
+            if (mb.ButtonIndex == MouseButton.Middle)
+            {
+                if (mb.Pressed)
+                {
+                    _middleDragging = true;
+                    _dragStartMouse = mb.GlobalPosition;
+                    _dragStartPan = PanTarget;
+                }
+                else
+                {
+                    _middleDragging = false;
+                }
+            }
+        }
+
+        if (_middleDragging && inputEvent is InputEventMouseMotion motion)
+        {
+            PanTarget = _dragStartPan - motion.GlobalPosition / Zoom.X + _dragStartMouse / Zoom.X;
+        }
+    }
+
+    public override void _Process(double delta)
     {
         if (Input.IsActionJustPressed("zoom_in"))
         {

@@ -23,7 +23,7 @@ public partial class TileGenerator : Node
     [Export]
     public int NonSkillPadding = 18;
 
-    public void ClearTiles()
+    public virtual void ClearTiles()
     {
         GameManager.GetState().hashedTiles = new();
         foreach (var child in GetChildren())
@@ -35,7 +35,7 @@ public partial class TileGenerator : Node
         }
     }
 
-    public void AddTileFromUnlock(Unlockable unlockable)
+    public virtual void AddTileFromUnlock(Unlockable unlockable)
     {
         int x = unlockable.gridPosX;
         int y = unlockable.gridPosY;
@@ -150,9 +150,9 @@ public partial class TileGenerator : Node
 
     }
 
-    public void UpdateState()
+    public virtual void UpdateState()
     {
-        while (!IsNodeReady()) { }
+        if (!IsNodeReady()) return;
         foreach (Tile tile in GameManager.GetState().hashedTiles.Values)
         {
             tile._on_board_state_changed(GameManager.GetState().hashedTiles);

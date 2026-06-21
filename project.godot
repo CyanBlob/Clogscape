@@ -23,6 +23,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Bountyscape"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
+
 [input]
 
 zoom_in={

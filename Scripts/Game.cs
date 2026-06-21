@@ -14,6 +14,8 @@ public static class GameManager
 
     private static Random rand = new();
 
+    public static Action<string> Log { get; set; } = GD.Print;
+
     [JsonIgnore]
     public static UI ui { get; set; }
 
@@ -66,15 +68,11 @@ public static class GameManager
 
         if (saveTiles)
         {
-            File.Delete(TilesFile(playerName));
-
-            foreach (Tile tile in state.hashedTiles.Values)
-            {
-                var tileJson = new List<String> {
-                tile.Serialize()
-            };
-                File.AppendAllLines(TilesFile(playerName + suffix), tileJson);
-            }
+            var tileLines = state.hashedTiles.Values
+                .Cast<Tile>()
+                .Select(t => t.Serialize())
+                .ToList();
+            File.WriteAllLines(TilesFile(playerName + suffix), tileLines);
         }
 
         if (state.allBounties == null || state.allBounties.Count() < 3)
@@ -203,7 +201,7 @@ public static class GameManager
     public static void UpdateAllowance(int gp)
     {
         state.playerAllowance += gp;
-        ui.UpdateAllowance();
+        ui?.UpdateAllowance();
     }
 
     public static List<Bounty> UpdateBounties()
@@ -358,7 +356,9 @@ public class GameState
         completedBounties.Add(bounty);
         if (bounty.skipChance < bounty.maxSkipChance)
         {
-            bounty.skipChance += bounty.skipChancePerCompletion;
+            bounty.skipChance = Math.Min(
+                (bounty.skipChance ?? 0f) + (bounty.skipChancePerCompletion ?? 0f),
+                bounty.maxSkipChance ?? 100f);
         }
         var bountyKeys = bounty.minKeys;
 
